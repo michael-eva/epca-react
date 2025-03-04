@@ -174,7 +174,7 @@ const Home = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <VehicleCard 
-                    imageSrc="/public/placeholder.svg"
+                    imageSrc="/placeholder.svg"
                     altText="E-777 Mining Truck"
                     title="E-777D"
                     subtitle="Subtitle"
@@ -192,7 +192,7 @@ const Home = () => {
                 />
 
                 <VehicleCard 
-                    imageSrc="/public/placeholder.svg"
+                    imageSrc="/placeholder.svg"
                     altText="E-785 Mining Truck"
                     title="E-785"
                     subtitle="Subtitle"
@@ -201,7 +201,7 @@ const Home = () => {
                 />
 
                 <VehicleCard 
-                    imageSrc="/public/placeholder.svg"
+                    imageSrc="/placeholder.svg"
                     altText="E-993 Loader"
                     title="E-993"
                     subtitle="Subtitle"
@@ -220,7 +220,7 @@ const Home = () => {
                 >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
                     <img 
-                        src="/public/placeholder.svg" 
+                        src="/placeholder.svg" 
                         alt="UON SMART CELL Charging Station" 
                         className="w-full h-full object-cover"
                     />

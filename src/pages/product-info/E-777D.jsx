@@ -235,7 +235,7 @@ const E777D = () => {
             <div className="relative mb-16 h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/public/placeholder.svg"
+                  src="/placeholder.svg"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-cover rounded-lg"
                   loading="lazy"
@@ -258,7 +258,7 @@ const E777D = () => {
             <div className="relative mb-16 h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/public/placeholder.svg"
+                  src="/placeholder.svg"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-cover rounded-lg"
                   loading="lazy"
