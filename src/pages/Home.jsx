@@ -1,0 +1,450 @@
+import { useState, useEffect, useRef } from 'react';
+import Navbar from '../components/Navbar';
+import VehicleCard from '../components/VehicleCard';
+
+const Home = () => {
+  // State for testimonials
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+  // State for number animation
+  const [numbers, setNumbers] = useState({
+    carbon: 0,
+    footprint: 54,
+    efficiency: 30
+  });
+
+  // Number animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateNumbers();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.querySelector('.impact-section');
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const animateNumbers = () => {
+    const targets = {
+      carbon: 100,
+      footprint: 54,
+      efficiency: 30
+    };
+
+    Object.entries(targets).forEach(([key, target]) => {
+      let current = 0;
+      const steps = 50;
+      const increment = target / steps;
+      const duration = 2000;
+
+      const timer = setInterval(() => {
+        current += increment;
+        setNumbers(prev => ({
+          ...prev,
+          [key]: Math.min(Math.round(current), target)
+        }));
+
+        if (current >= target) {
+          clearInterval(timer);
+        }
+      }, duration / steps);
+    });
+  };
+
+  // Testimonial data
+  const testimonials = [
+    {
+      name: "John Smith",
+      role: "Operations Director, Global Mining Corp",
+      text: "EPCA's E-777 has transformed our mining operations. We've seen significant cost savings and our sustainability targets are now within reach."
+    },
+    {
+      name: "Sarah Johnson",
+      role: "CEO, Mining Solutions Ltd",
+      text: "The transition to electric vehicles was seamless with EPCA's support. The performance and reliability have exceeded our expectations."
+    },
+    {
+      name: "Michael Chen",
+      role: "Sustainability Director, EcoMine",
+      text: "The UON SMART CELL charging infrastructure has revolutionized our operations. Charging times are minimal, and uptime is maximized."
+    }
+  ];
+
+  // Testimonials auto-advance
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonialIndex(prev => 
+        (prev + 1) % testimonials.length
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Testimonial navigation handlers
+  const nextSlide = () => {
+    setCurrentTestimonialIndex(prev => 
+      (prev + 1) % testimonials.length
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentTestimonialIndex(prev => 
+      (prev - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  const goToSlide = (index) => {
+    setCurrentTestimonialIndex(index);
+  };
+
+  return (
+    <>
+    <Navbar />
+    <div className="text-gray-800 leading-relaxed overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="h-screen flex items-center relative bg-gray-100">
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
+        </video>
+        <div className="max-w-7xl mx-auto px-4 relative z-20">
+          <div className="max-w-2xl text-white">
+            <h1 className="text-6xl font-bold leading-tight mb-6">Powering the Future of Mining</h1>
+            <p className="text-2xl mb-10">Leading the transition to battery-electric mining solutions.</p>
+            <div className="flex space-x-4">
+              <a href="/product-info/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-full font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
+              <a href="/product-enquiry/E-777D" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-full font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section className=" py-60">
+        <div className="max-w-7xl mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-0">
+                <div className="relative text-center px-6 md:px-8 group">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">100<span className="text-4xl md:text-5xl">%</span></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">100% Carbon Zero</span> &ndash; 
+                        Retrofitting Technology
+                    </p>
+                    <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
+                    <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
+                </div>
+                
+                <div className="relative text-center px-6 md:px-8 group">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10<span className="text-4xl md:text-5xl">hr</span></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
+                        10-hour runtime, 15% more power
+                    </p>
+                    <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
+                    <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
+                </div>
+                
+                <div className="text-center px-6 md:px-8">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">54<span className="text-4xl md:text-5xl">%</span></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">Cost Savings</span> &ndash; 
+                        54% reduction in haulage costs
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section className="py-20 bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold mb-4">Vehicles</h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <VehicleCard 
+                    imageSrc="/public/placeholder.svg"
+                    altText="E-777 Mining Truck"
+                    title="E-777D"
+                    subtitle="Subtitle"
+                    buttonText="View More"
+                    buttonLink="/product-info/E-777D"
+                    vehicleInfo={{
+                        sample: "Sample",
+                        sample1: "Sample",
+                        sample2: "Sample",
+                        sample3: "Sample",
+                        sample4: "Sample",
+                        sample5: "Sample",
+                        sample6: "Sample",
+                      }}
+                />
+
+                <VehicleCard 
+                    imageSrc="/public/placeholder.svg"
+                    altText="E-785 Mining Truck"
+                    title="E-785"
+                    subtitle="Subtitle"
+                    buttonText="Express Interest"
+                    buttonLink="/enquiry?subject=E-785"
+                />
+
+                <VehicleCard 
+                    imageSrc="/public/placeholder.svg"
+                    altText="E-993 Loader"
+                    title="E-993"
+                    subtitle="Subtitle"
+                    buttonText="Express Interest"
+                    buttonLink="/enquiry?subject=E-993"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section className="py-20 bg-gradient-to-br from-white to-gray-50">
+        <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
+                <div className="lg:w-1/2 h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 relative group cursor-pointer"
+                onClick={() => window.location.href = '/product-info/UON-smart-cell'}
+                >
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
+                    <img 
+                        src="/public/placeholder.svg" 
+                        alt="UON SMART CELL Charging Station" 
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                
+                <div className="lg:w-1/2">
+                    <div className="relative">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">UON SMART™ CELL:</span>
+                            <br />High-Speed DC Charging
+                        </h2>
+                    </div>
+                    
+                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Revolutionary charging infrastructure designed specifically for heavy mining equipment. 
+                        Achieve full charge in <span className="font-semibold text-[#00CC66]">under 2 hours</span> with our proprietary fast-charging technology, 
+                        minimizing downtime and maximizing productivity.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                        <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="text-[#00CC66] mb-2">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <span className="font-medium text-gray-800">Fast Charging</span>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="text-[#00CC66] mb-2">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <span className="font-medium text-gray-800">Remote Monitoring</span>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="text-[#00CC66] mb-2">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span className="font-medium text-gray-800">Off-Grid Ready</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/product-info/UON-smart-cell" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-full">
+                        <span className="absolute left-0 w-0 h-full bg-[#009f50] transition-all duration-300 ease-out group-hover:w-full"></span>
+                        <span className="relative flex items-center font-medium text-white">
+                            Learn More
+                            <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section className="py-20 bg-gray-100 impact-section">
+        <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-16">Sustainable Mining Impact</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>
+                    <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
+                        {numbers.carbon}%
+                    </div>
+                    <p className="text-gray-600 text-lg max-w-xs mx-auto">
+                        CO₂ Reduction compared to traditional mining equipment
+                    </p>
+                </div>
+
+                <div className="text-center">
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Reduced footprint</div>
+                    <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
+                        {numbers.footprint}%
+                    </div>
+                    <p className="text-gray-600 text-lg max-w-xs mx-auto">
+                        Reduced haulage costs through electric vehicle efficiency
+                    </p>
+                </div>
+
+                <div className="text-center">
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Efficiency</div>
+                    <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
+                        {numbers.efficiency}%
+                    </div>
+                    <p className="text-gray-600 text-lg max-w-xs mx-auto">
+                        Increased operational efficiency in mining operations
+                    </p>
+                </div>
+            </div>
+            <div className="text-center mt-8">
+                <a href="#" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-full font-medium uppercase tracking-wide transition-colors">Learn About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-16">What People Say</h2>
+            <div className="flex justify-center">
+                <div className="max-w-3xl w-full">
+                    <div className="relative">
+                        <div className="testimonial-carousel overflow-hidden">
+                            <div 
+                                className="testimonials-container flex transition-transform duration-500 ease-in-out"
+                                style={{ transform: `translateX(-${currentTestimonialIndex * 100}%)` }}
+                            >
+                                {testimonials.map((testimonial, index) => (
+                                    <div 
+                                        key={index} 
+                                        className="testimonial-slide w-full flex-shrink-0 px-8"
+                                    >
+                                        <div className="bg-white rounded-3xl p-8 shadow-lg transform transition-all duration-500">
+                                            <div className="flex items-center mb-6">
+                                                <div className="h-12 w-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                                    <span className="text-gray-500 font-medium">{testimonial.name.charAt(0)}</span>
+                                                </div>
+                                                <div>
+                                                    <div className="font-medium text-gray-900">{testimonial.name}</div>
+                                                    <div className="text-gray-600">{testimonial.role}</div>
+                                                </div>
+                                            </div>
+                                            <p className="text-xl text-gray-800 mb-6">{testimonial.text}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <button className="absolute top-1/2 -translate-y-1/2 -left-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="prevButton" onClick={prevSlide}>
+                            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button className="absolute top-1/2 -translate-y-1/2 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="nextButton" onClick={nextSlide}>
+                            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+
+                        <div className="flex justify-center gap-2 mt-8">
+                            {testimonials.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                        index === currentTestimonialIndex 
+                                            ? 'bg-[#00CC66]' 
+                                            : 'bg-gray-300 hover:bg-gray-400'
+                                    }`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section className="py-20 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-6">Get Updates</h2>
+            <p className="text-base text-gray-600 text-center mb-10">Join the Electric Mining Revolution</p>
+            <form className="flex justify-center">
+                <input type="email" className="px-4 py-3 border border-gray-300 rounded-full" placeholder="Your Email Address"/>
+                <button type="submit" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-full font-medium uppercase tracking-wide transition-colors">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer className="bg-black text-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+            <div className="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div className="text-2xl font-bold mb-4">EPCA</div>
+                    <p className="text-base text-gray-400 mb-4">Leading the transition to zero-emission mining operations with innovative battery-electric solutions.</p>
+                    <div className="flex space-x-4">
+                        <a href="#" className="text-gray-400 hover:text-white">f</a>
+                        <a href="#" className="text-gray-400 hover:text-white">in</a>
+                        <a href="#" className="text-gray-400 hover:text-white">t</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold mb-4">Products</h3>
+                    <ul className="list-disc pl-6 text-base text-gray-400">
+                        <li><a href="/product-info/E-777D">E-777D Mining Truck</a></li>
+                        <li><a href="/enquiry?subject=E-785">E-785 Mining Truck</a></li>
+                        <li><a href="/enquiry?subject=E-993">E-993 Loader</a></li>
+                        <li><a href="/product-info/UON-smart-cell">UON SMART™ CELL</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold mb-4">Services</h3>
+                    <ul className="list-disc pl-6 text-base text-gray-400">
+                        <li><a href="#">Feasibility Study</a></li>
+                        <li><a href="/test-drive">Test Drive</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold mb-4">Company</h3>
+                    <ul className="list-disc pl-6 text-base text-gray-400">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="mt-8 text-center text-base text-gray-400">
+                <p>&copy; 2025 EPCA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+      
+    </div>
+    </>
+  );
+};
+
+export default Home;

@@ -1,0 +1,12 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rectangle -->
+  <rect width="100%" height="100%" fill="#e0e0e0"/>
+  
+  <!-- Diagonal lines pattern -->
+  <line x1="0" y1="0" x2="300" y2="200" stroke="#cccccc" stroke-width="2"/>
+  <line x1="0" y1="200" x2="300" y2="0" stroke="#cccccc" stroke-width="2"/>
+  
+  <!-- Border -->
+  <rect width="298" height="198" x="1" y="1" fill="none" stroke="#aaaaaa" stroke-width="2"/>
+  
+</svg>
