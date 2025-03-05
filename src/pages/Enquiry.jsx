@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Navbar from '../components/Navbar';
-
+import Footer from '../components/Footer';
 const Enquiry = () => {
     const [searchParams] = useSearchParams();
     const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const Enquiry = () => {
 
         if (subjectParam) {
             // Case-insensitive mapping of URL parameters to full subject options
-            const subjectMapping: Record<string, string> = {
+            const subjectMapping = {
                 'e-785': 'E-785 Loading Truck',
                 'e-777d': 'E-777D Mining Truck',
                 'e-993': 'E-993 Loader',
@@ -62,12 +62,12 @@ const Enquiry = () => {
         }
     }, [searchParams, subjectOptions]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Basic validation
@@ -259,6 +259,7 @@ const Enquiry = () => {
                     </div>
                 </form>
             </div>
+                <Footer />
         </>
     );
 };

@@ -4,10 +4,13 @@ import Home from './pages/Home'
 import E777DProduct from './pages/product-info/E-777D'
 import UONSmartCell from './pages/product-info/UON-smart-cell'
 import E777DEnquiry from './pages/product-enquiry/E-777D'
-import UONSmartCellEnquiry from './pages/product-enquiry/UON-smart-cell'
 import Contact from './pages/Contact'
 import TestDrive from './pages/Test-Drive'
 import Enquiry from './pages/Enquiry'
+import FeasabilityStudy from './pages/FeasabilityStudy'
+import Training from './pages/Training'
+import DataAnalytics from './pages/DataAnalytics'
+import About from './pages/About'
 function App() {
   return (
     <BrowserRouter>
@@ -16,10 +19,13 @@ function App() {
         <Route path="/product-info/E-777D" element={<E777DProduct />} />
         <Route path="/product-info/UON-smart-cell" element={<UONSmartCell />} />
         <Route path="/product-enquiry/E-777D" element={<E777DEnquiry />} />
-        <Route path="/product-enquiry/UON-smart-cell" element={<UONSmartCellEnquiry />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/test-drive" element={<TestDrive />} />
         <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/feasability-study" element={<FeasabilityStudy />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/data-analytics" element={<DataAnalytics />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   )

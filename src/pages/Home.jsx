@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import VehicleCard from '../components/VehicleCard';
-
+import Footer from '../components/Footer';
 const Home = () => {
   // State for testimonials
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -128,8 +128,8 @@ const Home = () => {
             <h1 className="text-6xl font-bold leading-tight mb-6">Powering the Future of Mining</h1>
             <p className="text-2xl mb-10">Leading the transition to battery-electric mining solutions.</p>
             <div className="flex space-x-4">
-              <a href="/product-info/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-full font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
-              <a href="/product-enquiry/E-777D" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-full font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+              <a href="/product-info/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
+              <a href="/product-enquiry/E-777D" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
             </div>
           </div>
         </div>
@@ -268,7 +268,7 @@ const Home = () => {
                         </div>
                     </div>
                     
-                    <a href="/product-info/UON-smart-cell" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-full">
+                    <a href="/product-info/UON-smart-cell" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-md">
                         <span className="absolute left-0 w-0 h-full bg-[#009f50] transition-all duration-300 ease-out group-hover:w-full"></span>
                         <span className="relative flex items-center font-medium text-white">
                             Learn More
@@ -317,7 +317,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="text-center mt-8">
-                <a href="#" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-full font-medium uppercase tracking-wide transition-colors">Learn About Us</a>
+                <a href="#" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors">Learn About Us</a>
             </div>
         </div>
     </section>
@@ -355,12 +355,12 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <button className="absolute top-1/2 -translate-y-1/2 -left-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="prevButton" onClick={prevSlide}>
+                        <button className="absolute top-1/2 -translate-y-1/2 -left-4 bg-white rounded-md p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="prevButton" onClick={prevSlide}>
                             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
                             </svg>
                         </button>
-                        <button className="absolute top-1/2 -translate-y-1/2 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="nextButton" onClick={nextSlide}>
+                        <button className="absolute top-1/2 -translate-y-1/2 -right-4 bg-white rounded-md p-2 shadow-lg hover:bg-gray-50 focus:outline-none" id="nextButton" onClick={nextSlide}>
                             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -371,7 +371,7 @@ const Home = () => {
                                 <button
                                     key={index}
                                     onClick={() => goToSlide(index)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                    className={`w-3 h-3 rounded-md transition-all duration-300 ${
                                         index === currentTestimonialIndex 
                                             ? 'bg-[#00CC66]' 
                                             : 'bg-gray-300 hover:bg-gray-400'
@@ -391,56 +391,12 @@ const Home = () => {
             <p className="text-base text-gray-600 text-center mb-10">Join the Electric Mining Revolution</p>
             <form className="flex justify-center">
                 <input type="email" className="px-4 py-3 border border-gray-300 rounded-full" placeholder="Your Email Address"/>
-                <button type="submit" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-full font-medium uppercase tracking-wide transition-colors">Submit</button>
+                <button type="submit" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors">Submit</button>
             </form>
         </div>
     </section>
 
-    <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div className="text-2xl font-bold mb-4">EPCA</div>
-                    <p className="text-base text-gray-400 mb-4">Leading the transition to zero-emission mining operations with innovative battery-electric solutions.</p>
-                    <div className="flex space-x-4">
-                        <a href="#" className="text-gray-400 hover:text-white">f</a>
-                        <a href="#" className="text-gray-400 hover:text-white">in</a>
-                        <a href="#" className="text-gray-400 hover:text-white">t</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-xl font-bold mb-4">Products</h3>
-                    <ul className="list-disc pl-6 text-base text-gray-400">
-                        <li><a href="/product-info/E-777D">E-777D Mining Truck</a></li>
-                        <li><a href="/enquiry?subject=E-785">E-785 Mining Truck</a></li>
-                        <li><a href="/enquiry?subject=E-993">E-993 Loader</a></li>
-                        <li><a href="/product-info/UON-smart-cell">UON SMART™ CELL</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 className="text-xl font-bold mb-4">Services</h3>
-                    <ul className="list-disc pl-6 text-base text-gray-400">
-                        <li><a href="#">Feasibility Study</a></li>
-                        <li><a href="/test-drive">Test Drive</a></li>
-                        <li><a href="#">Training</a></li>
-                        <li><a href="#">Data Analytics</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 className="text-xl font-bold mb-4">Company</h3>
-                    <ul className="list-disc pl-6 text-base text-gray-400">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="mt-8 text-center text-base text-gray-400">
-                <p>&copy; 2025 EPCA. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <Footer />
       
     </div>
     </>

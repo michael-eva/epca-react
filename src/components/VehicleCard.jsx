@@ -41,14 +41,14 @@ const VehicleCard = ({
             {buttonAction ? (
               <button 
                 onClick={buttonAction}
-                className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-full text-center font-medium transition-all duration-300 hover:shadow-md"
+                className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
               >
                 {buttonText}
               </button>
             ) : (
               <a 
                 href={buttonLink} 
-                className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-full text-center font-medium transition-all duration-300 hover:shadow-md"
+                className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
               >
                 {buttonText}
               </a>
@@ -68,14 +68,14 @@ const VehicleCard = ({
           {buttonAction ? (
             <button 
               onClick={buttonAction}
-              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-full text-center font-medium transition-all duration-300 hover:shadow-md"
+              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
             >
               {buttonText}
             </button>
           ) : (
             <a 
               href={buttonLink} 
-              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-full text-center font-medium transition-all duration-300 hover:shadow-md"
+              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
             >
               {buttonText}
             </a>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-
+import Footer from '../components/Footer';
 const TestDrive = () => {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
   
@@ -226,6 +226,7 @@ const TestDrive = () => {
           </button>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

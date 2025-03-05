@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import VehiclesDropdown from './VehiclesDropdown';
 
 const Navbar = ({ mode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showVehicles, setShowVehicles] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,60 +21,96 @@ const Navbar = ({ mode }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 transition-colors duration-300 z-50 
-      ${isScrolled ? 'bg-black/30 backdrop-blur-sm' : ''}`}>
-      <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-        <a href="/" className="text-white">
-          <img 
-            src="https://www.epca.net.au/wp-content/uploads/2022/10/epca-logo-alt-1.png" 
-            alt="EPCA Logo" 
-            className="h-8 w-auto"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </a>
-        
-        {/* Hamburger menu button */}
-        <button 
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => toggleMobileMenu(true)}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          ${isScrolled ? 'bg-black/30 backdrop-blur-sm' : ''}
+          ${showVehicles ? 'bg-white shadow-md' : ''}`}
+      >
+        <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+          <a href="/" className={`transition-colors duration-300 ${showVehicles ? 'text-black' : 'text-white'}`}>
+            <img 
+              src="epca-logo.png" 
+              alt="EPCA Logo" 
+              className="h-8 w-auto"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </a>
+          
+          {/* Hamburger menu button */}
+          <button 
+            className={`md:hidden focus:outline-none transition-colors duration-300 ${showVehicles ? 'text-black' : 'text-white'}`}
+            onClick={() => toggleMobileMenu(true)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
 
-        {/* Navigation links */}
-        <ul className="hidden md:flex md:space-x-8">
-          <li><a href="#" className={`font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} ${isScrolled ? 'hover:text-white/80' : 'hover:text-blue-200'} transition-colors`}>Machines</a></li>
-          <li><a href="/product-info/UON-smart-cell" className={`font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} ${isScrolled ? 'hover:text-white/80' : 'hover:text-blue-200'} transition-colors`}>Charging</a></li>
-          <li><a href="#" className={`font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} ${isScrolled ? 'hover:text-white/80' : 'hover:text-blue-200'} transition-colors`}>About Us</a></li>
-          <li><a href="/contact" className={`font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} ${isScrolled ? 'hover:text-white/80' : 'hover:text-blue-200'} transition-colors`}>Contact</a></li>
-        </ul>
-
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-40">
-            <div className="flex flex-col items-center justify-center h-full">
-              <ul className="space-y-8 text-center">
-                <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Machines</a></li>
-                <li><a href="/product-info/UON-smart-cell" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Charging</a></li>
-                <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>About Us</a></li>
-                <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Contact</a></li>
-              </ul>
-              <button 
-                className="absolute top-6 right-4 text-white"
-                onClick={() => toggleMobileMenu(false)}
+          {/* Navigation links */}
+          <ul className="hidden md:flex md:space-x-8 items-center">
+            <li>
+              <div 
+                onMouseEnter={() => setShowVehicles(true)}
+                onMouseLeave={() => setShowVehicles(false)}
+                className="relative h-full group"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
+                <span className={`font-medium transition-colors duration-300 cursor-pointer border-b-2 border-transparent group-hover:border-current pb-1
+                  ${showVehicles ? 'text-black hover:text-gray-600' : 
+                    mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} 
+                  ${isScrolled && !showVehicles ? 'hover:text-white/80' : 'hover:text-blue-200'}`}>
+                  Machines
+                </span>
+                
+                {/* Extended hover area that overlaps both navbar and dropdown */}
+                <div className="absolute h-6 -bottom-6 left-0 right-0 bg-transparent z-50" />
+              </div>
+            </li>
+            <li><a href="/product-info/UON-smart-cell" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'}`}>Charging</a></li>
+            <li><a href="#" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'}`}>About Us</a></li>
+            <li><a href="/contact" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'}`}>Contact</a></li>
+            <li>
+              <a 
+                href="/enquiry" 
+                className={`font-medium transition-colors duration-300
+                  ${showVehicles ? 'text-black hover:text-gray-600' : 
+                    mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M12 21a9 9 0 100-18 9 9 0 000 18z" />
                 </svg>
-              </button>
+              </a>
+            </li>
+          </ul>
+
+          {/* Mobile menu */}
+          {isMobileMenuOpen && (
+            <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-40">
+              <div className="flex flex-col items-center justify-center h-full">
+                <ul className="space-y-8 text-center">
+                  <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Machines</a></li>
+                  <li><a href="/product-info/UON-smart-cell" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Charging</a></li>
+                  <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>About Us</a></li>
+                  <li><a href="#" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Contact</a></li>
+                  <li><a href="/enquiry" className={`text-2xl font-medium ${mode === 'dark' && !isScrolled ? 'text-gray-800' : 'text-white'} hover:text-blue-200 transition-colors`} onClick={() => toggleMobileMenu(false)}>Enquiry</a></li>
+                </ul>
+                <button 
+                  className="absolute top-6 right-4 text-white"
+                  onClick={() => toggleMobileMenu(false)}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-    </header>
+          )}
+        </div>
+      </header>
+
+      <VehiclesDropdown showVehicles={showVehicles} setShowVehicles={setShowVehicles} />
+    </>
   );
 };
 

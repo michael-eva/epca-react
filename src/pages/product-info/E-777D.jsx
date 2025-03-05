@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '../../components/Navbar';
-import ImageCarousel from '../../components/ImgCarousel/ImgCarousel';
+import FiniteCarCarousel from '../../components/ImgCarousel/finite-car-carousel';
+import TCOCalculator from '../../components/TCOCalculator';
+import Footer from '../../components/Footer';
 const E777D = () => {
   // State for carousel
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -198,8 +200,8 @@ const E777D = () => {
               <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Ton Battery-Electric Mining Truck</h1>
               <p className="text-2xl mb-10">Built for tough mining conditions with zero emissions.</p>
               <div className="flex space-x-4">
-                <a href="#overview" className="px-8 py-3 bg-white hover:bg-gray-100 text-gray-900 rounded-full font-medium uppercase tracking-wide transition-colors">Learn More</a>
-                <a href="/product-enquiry/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-full font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+                <a href="#overview" className="px-8 py-3 bg-white hover:bg-gray-100 text-gray-900 rounded-md font-medium uppercase tracking-wide transition-colors">Learn More</a>
+                <a href="/product-enquiry/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -252,8 +254,8 @@ const E777D = () => {
           </div>
         </section>
 
- <ImageCarousel />
- <section className="py-20 bg-white md:px-10">
+        <FiniteCarCarousel />
+        <section className="py-20 bg-white md:px-10">
           <div className="mx-auto md:px-4 flex flex-col">
             <div className="relative mb-16 h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
@@ -275,7 +277,6 @@ const E777D = () => {
           </div>
         </section>
 
-
         {/* Key Features Section */}
         <section className="py-20 bg-white">
           <div className="max-w-[2428px] mx-auto px-4">
@@ -292,7 +293,10 @@ const E777D = () => {
             </div>
           </div>
         </section>
-
+        {/* TCO Calculator Section */}
+        <section className="py-20 bg-white">
+            <TCOCalculator />
+        </section>
         {/* Technical Specifications */}
         <section className="py-20 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4">
@@ -390,6 +394,8 @@ const E777D = () => {
           </div>
         </section>
 
+
+
         {/* CTA Section */}
         <section className="h-screen relative overflow-hidden flex items-center justify-center">
           {/* Background image with overlay */}
@@ -415,6 +421,7 @@ const E777D = () => {
             </a>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );
