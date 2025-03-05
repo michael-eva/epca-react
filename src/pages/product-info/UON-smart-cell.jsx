@@ -101,10 +101,10 @@ const UONSmartCell = () => {
             <div className="max-w-3xl text-white">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">UON SMART™ CELL: High-Speed DC Charging for Heavy Mining Equipment</h1>
               <p className="text-xl md:text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
-              <div className="flex space-x-4">
+              {/* <div className="flex space-x-4">
                 <a href="/product-enquiry/UON-smart-cell" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
                 <a href="#overview" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

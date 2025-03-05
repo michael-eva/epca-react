@@ -79,17 +79,6 @@ const Home = () => {
     }
   ];
 
-  // Testimonials auto-advance
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonialIndex(prev => 
-        (prev + 1) % testimonials.length
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   // Testimonial navigation handlers
   const nextSlide = () => {
     setCurrentTestimonialIndex(prev => 
@@ -123,19 +112,19 @@ const Home = () => {
         >
           <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
         </video>
-        <div className="max-w-7xl mx-auto px-4 relative z-20">
-          <div className="max-w-2xl text-white">
+        <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
+          <div className="max-w-2xl text-white mt-32">
             <h1 className="text-6xl font-bold leading-tight mb-6">Powering the Future of Mining</h1>
-            <p className="text-2xl mb-10">Leading the transition to battery-electric mining solutions.</p>
-            <div className="flex space-x-4">
-              <a href="/product-info/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
-              <a href="/product-enquiry/E-777D" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
-            </div>
+            <p className="text-2xl">Leading the transition to battery-electric mining solutions.</p>
+          </div>
+          <div className="mt-auto mb-20 flex space-x-4 justify-center items-center">
+            <a href="/product-info/E-777D" className="text-sm md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
+            <a href="/product-enquiry/E-777D" className="text-sm md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
           </div>
         </div>
       </section>
 
-    <section className=" py-60">
+    <section className=" py-30">
         <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-0">
                 <div className="relative text-center px-6 md:px-8 group">
@@ -336,19 +325,20 @@ const Home = () => {
                                 {testimonials.map((testimonial, index) => (
                                     <div 
                                         key={index} 
-                                        className="testimonial-slide w-full flex-shrink-0 px-8"
+                                        className="testimonial-slide w-full flex-shrink-0 px-8 py-4"
+                                        style={{ minWidth: '100%', height: 'auto' }}
                                     >
-                                        <div className="bg-white rounded-3xl p-8 shadow-lg transform transition-all duration-500">
+                                        <div className="bg-white rounded-3xl p-8 shadow-lg">
                                             <div className="flex items-center mb-6">
-                                                <div className="h-12 w-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                                <div className="h-12 w-12 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center mr-4">
                                                     <span className="text-gray-500 font-medium">{testimonial.name.charAt(0)}</span>
                                                 </div>
-                                                <div>
-                                                    <div className="font-medium text-gray-900">{testimonial.name}</div>
-                                                    <div className="text-gray-600">{testimonial.role}</div>
+                                                <div className="min-w-0">
+                                                    <div className="font-medium text-gray-900 truncate">{testimonial.name}</div>
+                                                    <div className="text-gray-600 truncate">{testimonial.role}</div>
                                                 </div>
                                             </div>
-                                            <p className="text-xl text-gray-800 mb-6">{testimonial.text}</p>
+                                            <p className="text-xl text-gray-800">{testimonial.text}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -389,7 +379,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-6">Get Updates</h2>
             <p className="text-base text-gray-600 text-center mb-10">Join the Electric Mining Revolution</p>
-            <form className="flex justify-center">
+            <form className="flex justify-center gap-3.5">
                 <input type="email" className="px-4 py-3 border border-gray-300 rounded-full" placeholder="Your Email Address"/>
                 <button type="submit" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors">Submit</button>
             </form>

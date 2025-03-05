@@ -8,8 +8,6 @@ import Contact from './pages/Contact'
 import TestDrive from './pages/Test-Drive'
 import Enquiry from './pages/Enquiry'
 import FeasabilityStudy from './pages/FeasabilityStudy'
-import Training from './pages/Training'
-import DataAnalytics from './pages/DataAnalytics'
 import About from './pages/About'
 function App() {
   return (
@@ -23,8 +21,6 @@ function App() {
         <Route path="/test-drive" element={<TestDrive />} />
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/feasability-study" element={<FeasabilityStudy />} />
-        <Route path="/training" element={<Training />} />
-        <Route path="/data-analytics" element={<DataAnalytics />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>

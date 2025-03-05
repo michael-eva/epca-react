@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from "react"
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
 import { cn } from "../../lib/utils"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function FiniteCarCarousel() {
   const [api, setApi] = useState(null)
@@ -541,6 +542,28 @@ export default function FiniteCarCarousel() {
         touchAction: 'pan-y pinch-zoom', // Allow vertical scrolling but handle horizontal ourselves
       }}
     >
+      {/* Add left arrow - only show when not at start */}
+      {current > 1 && (
+        <button
+          onClick={() => api?.scrollPrev({ duration: 3000 })}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 backdrop-blur-sm transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+      )}
+
+      {/* Add right arrow - only show when not at end */}
+      {current < carouselItems.length - 2 && (
+        <button
+          onClick={() => api?.scrollNext({ duration: 3000 })}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 backdrop-blur-sm transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+      )}
+
       <Carousel
         setApi={setApi}
         className="w-full"

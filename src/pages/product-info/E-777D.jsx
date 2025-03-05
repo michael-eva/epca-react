@@ -195,14 +195,13 @@ const E777D = () => {
             className="absolute inset-0 w-full h-full object-cover"
             alt="E-777D Mining Truck"
           />
-          <div className="max-w-7xl mx-auto px-4 relative z-20">
-            <div className="max-w-2xl text-white">
+          <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
+            <div className="max-w-2xl text-white mt-32">
               <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Ton Battery-Electric Mining Truck</h1>
               <p className="text-2xl mb-10">Built for tough mining conditions with zero emissions.</p>
-              <div className="flex space-x-4">
-                <a href="#overview" className="px-8 py-3 bg-white hover:bg-gray-100 text-gray-900 rounded-md font-medium uppercase tracking-wide transition-colors">Learn More</a>
-                <a href="/product-enquiry/E-777D" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
-              </div>
+            </div>
+            <div className="mt-auto mb-20 flex space-x-4 justify-center">
+              <a href="/product-enquiry/E-777D" className="text-sm md:text-base   px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
             </div>
           </div>
         </section>
@@ -415,7 +414,7 @@ const E777D = () => {
             </p>
             <a 
               href="/product-enquiry/E-777D" 
-              className="inline-block px-12 py-4 bg-[#4354e8] hover:bg-[#3a49cc] text-white rounded-md font-medium text-lg transition-colors"
+              className="inline-block px-12 py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium text-lg transition-colors"
             >
               Enquire Now
             </a>
