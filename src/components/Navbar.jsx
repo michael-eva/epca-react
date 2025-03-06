@@ -37,7 +37,7 @@ const Navbar = ({ mode }) => {
               src="/epca-logo.png" 
               alt="EPCA Logo" 
               className="h-8 w-auto cursor-pointer"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
             />
           </a>

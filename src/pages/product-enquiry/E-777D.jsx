@@ -2,13 +2,96 @@ import React, { useState } from 'react';
 import KeySpecs from '../../components/KeySpecs';
 import Footer from '../../components/Footer';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import Navbar from '../../components/Navbar';
+import { toast } from 'react-hot-toast';
 
 export default function E777DProductEnquiry() {
-  const [selectedRuntime, setSelectedRuntime] = useState('standard');
+  const [formData, setFormData] = useState({
+    selectedRuntime: 'standard',
+    enhancedPowerDelivery: false,
+    advancedRegenerativeBraking: false,
+    batteryDiagnostics: false,
+    eGovernor: false,
+    remoteControl: false,
+    extendedWarranty: false,
+    chargingSolution: false,
+    operatorTraining: false,
+    maintenanceTraining: false,
+    managementTraining: false,
+    fullName: '',
+    companyName: '',
+    email: '',
+    location: ''
+  });
+  const [loading, setLoading] = useState(false);
 
-  const handleRuntimeSelection = (runtime) => {
-    setSelectedRuntime(runtime);
-  };
+  // Handle form input changes
+const handleInputChange = (e) => {
+  const { name, value, type, checked } = e.target;
+  setFormData(prev => ({
+    ...prev,
+    [name]: type === 'checkbox' ? checked : value
+  }));
+};
+
+// Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  // Validate required fields
+  if (!formData.fullName || !formData.email) {
+    toast.error('Please fill in required fields (Full Name and Email)');
+    return;
+  }
+
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    toast.error('Please enter a valid email address');
+    return;
+  }
+  
+  setLoading(true);
+
+  try {
+    const response = await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'no-cors',
+      body: JSON.stringify({...formData, productEnquiryForm: true})
+    });
+
+    // With no-cors mode, we'll assume success if no error is thrown
+    toast.success('Your enquiry has been submitted!');
+
+    // Reset form
+    setFormData({
+      selectedRuntime: 'standard',
+      enhancedPowerDelivery: false,
+      advancedRegenerativeBraking: false,
+      batteryDiagnostics: false,
+      eGovernor: false,
+      remoteControl: false,
+      extendedWarranty: false,
+      chargingSolution: false,
+      operatorTraining: false,
+      maintenanceTraining: false,
+      managementTraining: false,
+      fullName: '',
+      companyName: '',
+      email: '',
+      location: ''
+    });
+
+  } catch (error) {
+    console.error('Error submitting configuration:', error);
+    toast.error('Failed to submit enquiry. Please try again later.');
+  } finally {
+    setLoading(false);
+  }
+};
   const specs = [
     { value: '100', unit: 't', label: 'Lorem\nIpsum' },
     { value: '54', unit: '%', label: 'Lorem\nIpsum' },
@@ -16,6 +99,7 @@ export default function E777DProductEnquiry() {
   ];
   return (
     <TooltipProvider>
+      <Navbar mode="dark"/>
       <div className="flex flex-col md:flex-row h-screen overflow-hidden">
         {/* Left side - Image Carousel */}
         <div className="w-full md:w-2/3 h-[50vh] md:h-screen overflow-hidden">
@@ -48,7 +132,7 @@ export default function E777DProductEnquiry() {
             
             <KeySpecs specs={specs} />
 
-            <form className="space-y-16">
+            <form className="space-y-16" onSubmit={handleSubmit}>
               {/* Runtime Selection */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-medium mb-6 relative">
@@ -58,11 +142,10 @@ export default function E777DProductEnquiry() {
                   <button 
                     type="button" 
                     className={`runtime-option p-6 border-2 rounded-xl hover:shadow-lg focus:outline-none transition-all group
-                      ${selectedRuntime === 'standard' ? 'border-[#00CC66] bg-[#00CC66]/5' : 'border-gray-200'}`}
-                    onClick={() => handleRuntimeSelection('standard')}
-                    aria-selected={selectedRuntime === 'standard'}
+                      ${formData.selectedRuntime === 'standard' ? 'border-[#00CC66] bg-[#00CC66]/5' : 'border-gray-200'}`}
+                    onClick={() => handleInputChange({ target: { name: 'selectedRuntime', value: 'standard' }})}
                   >
-                    <h3 className={`text-xl font-medium ${selectedRuntime === 'standard' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
+                    <h3 className={`text-xl font-medium ${formData.selectedRuntime === 'standard' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
                       Standard Runtime
                     </h3>
                     <p className="text-gray-600 mt-2">7 hours</p>
@@ -70,11 +153,10 @@ export default function E777DProductEnquiry() {
                   <button 
                     type="button" 
                     className={`runtime-option p-6 border-2 rounded-xl hover:shadow-lg focus:outline-none transition-all group
-                      ${selectedRuntime === 'extended' ? 'border-[#00CC66] bg-[#00CC66]/5' : 'border-gray-200 hover:border-[#00CC66]'}`}
-                    onClick={() => handleRuntimeSelection('extended')}
-                    aria-selected={selectedRuntime === 'extended'}
+                      ${formData.selectedRuntime === 'extended' ? 'border-[#00CC66] bg-[#00CC66]/5' : 'border-gray-200'}`}
+                    onClick={() => handleInputChange({ target: { name: 'selectedRuntime', value: 'extended' }})}
                   >
-                    <h3 className={`text-xl font-medium ${selectedRuntime === 'extended' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
+                    <h3 className={`text-xl font-medium ${formData.selectedRuntime === 'extended' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
                       Extended Runtime
                     </h3>
                     <p className="text-gray-600 mt-2">10 hours</p>
@@ -91,7 +173,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Enhanced Power Delivery System</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="enhancedPowerDelivery"
+                        checked={formData.enhancedPowerDelivery}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded" 
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -105,7 +193,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Advanced Regenerative Braking</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="advancedRegenerativeBraking"
+                        checked={formData.advancedRegenerativeBraking}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -126,7 +220,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Battery Diagnostics and System Monitoring™</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox"
+                        name="batteryDiagnostics"
+                        checked={formData.batteryDiagnostics}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -140,7 +240,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">eGovernor tyre manager™</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="eGovernor"
+                        checked={formData.eGovernor}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -154,7 +260,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Remote Control</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="remoteControl"
+                        checked={formData.remoteControl}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -168,7 +280,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Extended Warranty</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="extendedWarranty"
+                        checked={formData.extendedWarranty}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -189,7 +307,13 @@ export default function E777DProductEnquiry() {
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Include Charging Solution</span>
                     <div className="flex items-center gap-3">
-                      <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                      <input 
+                        type="checkbox" 
+                        name="chargingSolution"
+                        checked={formData.chargingSolution}
+                        onChange={handleInputChange}
+                        className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                      />
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
@@ -209,15 +333,33 @@ export default function E777DProductEnquiry() {
                 <div className="space-y-4">
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Operator Training</span>
-                    <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                    <input 
+                      type="checkbox" 
+                      name="operatorTraining"
+                      checked={formData.operatorTraining}
+                      onChange={handleInputChange}
+                      className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                    />
                   </label>
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Maintenance Training</span>
-                    <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                    <input 
+                      type="checkbox" 
+                      name="maintenanceTraining"
+                      checked={formData.maintenanceTraining}
+                      onChange={handleInputChange}
+                      className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                    />
                   </label>
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Management Training</span>
-                    <input type="checkbox" className="w-5 h-5 form-checkbox text-[#00CC66] rounded" />
+                    <input 
+                      type="checkbox" 
+                      name="managementTraining"
+                      checked={formData.managementTraining}
+                      onChange={handleInputChange}
+                      className="w-5 h-5 form-checkbox text-[#00CC66] rounded"
+                    />
                   </label>
                 </div>
               </div>
@@ -228,15 +370,49 @@ export default function E777DProductEnquiry() {
                   Contact Information
                 </h2>
                 <div className="space-y-4">
-                  <input type="text" placeholder="Full Name" className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" />
-                  <input type="text" placeholder="Company Name" className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" />
-                  <input type="email" placeholder="Email Address" className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" />
-                  <input type="text" placeholder="Location (Country)" className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" />
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    placeholder="Full Name" 
+                    className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" 
+                    required
+                  />
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleInputChange}
+                    placeholder="Company Name" 
+                    className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" 
+                  />
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Email Address" 
+                    className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" 
+                    required
+                  />
+                  <input 
+                    type="text" 
+                    name="location"
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    placeholder="Location (Country)" 
+                    className="w-full p-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[#00CC66] focus:ring-2 focus:ring-[#00CC66]/20 focus:outline-none transition-all" 
+                  />
                 </div>
               </div>
 
-              <button type="submit" className="w-full py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-xl text-lg font-medium transition-all hover:shadow-lg hover:shadow-[#00CC66]/20">
-                Submit Enquiry
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="w-full py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-xl text-lg font-medium transition-all hover:shadow-lg hover:shadow-[#00CC66]/20 disabled:opacity-50"
+              >
+                {loading ? 'Submitting...' : 'Submit Enquiry'}
               </button>
             </form>
 

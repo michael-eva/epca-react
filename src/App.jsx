@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import './styles.css'
 import Home from './pages/Home'
 import E777DProduct from './pages/product-info/E-777D'
@@ -9,9 +10,11 @@ import TestDrive from './pages/Test-Drive'
 import Enquiry from './pages/Enquiry'
 import FeasabilityStudy from './pages/FeasabilityStudy'
 import About from './pages/About'
+
 function App() {
   return (
     <BrowserRouter>
+      <Toaster/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product-info/E-777D" element={<E777DProduct />} />

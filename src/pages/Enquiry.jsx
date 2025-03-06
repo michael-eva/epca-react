@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+
 const Enquiry = () => {
     const [searchParams] = useSearchParams();
     const [formData, setFormData] = useState({
-        name: '',
+        fullName: '',
         email: '',
         phone: '',
         subject: '',
         message: '',
+        companyName: '',
+        updates: true 
     });
     const [loading, setLoading] = useState(false);
 
-    // Subject options for the dropdown
-    const subjectOptions = [
+    // Move subjectOptions outside of component or use useMemo
+    const subjectOptions = React.useMemo(() => [
         'Please select a subject',
         'E-785 Loading Truck',
         'E-777D Mining Truck',
@@ -27,7 +30,7 @@ const Enquiry = () => {
         'Parts Availability',
         'Financing Options',
         'Other',
-    ];
+    ], []); // Empty dependency array since this array never changes
 
     useEffect(() => {
         // Check if subject is provided in URL params
@@ -61,7 +64,7 @@ const Enquiry = () => {
             // Default to first option if no subject param is provided
             setFormData(prev => ({ ...prev, subject: subjectOptions[0] }));
         }
-    }, [searchParams, subjectOptions]);
+    }, [searchParams]); // Remove subjectOptions from dependency array
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -70,37 +73,45 @@ const Enquiry = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         // Basic validation
-        if (!formData.name || !formData.email || !formData.phone || !formData.subject || !formData.message) {
+        if (!formData.fullName || !formData.email || !formData.phone || !formData.subject || !formData.message) {
             toast.error('Please fill in all fields');
             return;
         }
-
+    
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
             toast.error('Please enter a valid email address');
             return;
         }
-
+    
         setLoading(true);
-
+    
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'no-cors',
+                body: JSON.stringify({...formData, enquiryForm: true})
+            });
 
-            console.log('Form submitted:', formData);
             toast.success('Enquiry sent successfully!');
-
-            // Reset form after successful submission
+            
+            // Reset form
             setFormData({
-                name: '',
+                fullName: '',
                 email: '',
                 phone: '',
                 subject: subjectOptions[0],
                 message: '',
+                companyName: '',
+                updates: true
             });
+
         } catch (error) {
             console.error('Error sending email:', error);
             toast.error('Failed to send enquiry. Please try again later.');
@@ -176,9 +187,9 @@ const Enquiry = () => {
                                 <p className="mb-2 font-medium">Full Name</p>
                                 <input
                                     type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
+                                    id="fullName"
+                                    name="fullName"
+                                    value={formData.fullName}
                                     onChange={handleChange}
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
                                     required
@@ -200,7 +211,17 @@ const Enquiry = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-
+                                <p className="mb-2 font-medium">Company Name</p>
+                                <input
+                                    type="text"
+                                    id="companyName"
+                                    name="companyName"
+                                    value={formData.companyName}
+                                    onChange={handleChange}
+                                    className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                                />
+                            </div>
+                            <div>
                                 <p className="mb-2 font-medium">Phone Number</p>
                                 <div className="relative">
                                     <input
@@ -229,18 +250,19 @@ const Enquiry = () => {
                         </div>
 
                         {/* Checkboxes */}
-                        <div className="space-y-4 mb-8">
-                            <div className="flex items-start">
-                                <input
-                                    id="updates"
-                                    type="checkbox"
-                                    className="w-4 h-4 mt-1 border-gray-300 rounded focus:ring-[#00CC66] text-[#00CC66]"
-                                />
-                                <label htmlFor="updates" className="ml-2 text-sm text-gray-700">
-                                    Get EPCA Updates
-                                </label>
-                            </div>
-                        </div>
+                        <div className="flex items-start">
+    <input
+        id="updates"
+        name="updates"
+        type="checkbox"
+        checked={formData.updates}
+        onChange={(e) => setFormData(prev => ({ ...prev, updates: e.target.checked }))}
+        className="w-4 h-4 mt-1 border-gray-300 rounded focus:ring-[#00CC66] text-[#00CC66]"
+    />
+    <label htmlFor="updates" className="ml-2 text-sm text-gray-700">
+        Get EPCA Updates
+    </label>
+</div>
 
                         {/* Privacy Notice */}
                         <div className="text-sm text-gray-600 mb-8">
