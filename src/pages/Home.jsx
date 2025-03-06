@@ -305,9 +305,7 @@ const Home = () => {
                     </p>
                 </div>
             </div>
-            <div className="text-center mt-8">
-                <a href="#" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors">Learn About Us</a>
-            </div>
+    
         </div>
     </section>
 

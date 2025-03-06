@@ -39,8 +39,9 @@ const Enquiry = () => {
                 'e-785': 'E-785 Loading Truck',
                 'e-777d': 'E-777D Mining Truck',
                 'e-993': 'E-993 Loader',
-                'uon smart cell': 'UON SMART™ CELL',
-                'uon': 'UON SMART™ CELL'
+                'UON-smart-cell': 'UON SMART™ CELL',
+                'uon': 'UON SMART™ CELL',
+                'general': 'General Enquiry',
             };
 
             // Try to find a match in our mapping

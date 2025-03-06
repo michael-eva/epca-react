@@ -21,7 +21,7 @@ const Contact = () => {
               <h2 className="text-xl font-medium">Customer Care Centre</h2>
               <p className="text-gray-300">customercare@lorem.ipsum.com.au</p>
               <p>1300 000 AUTO <span className="text-blue-400">(1300 000 000)</span></p>
-              <button className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
+              <button onClick={() => window.location.href = '/enquiry?subject=general'} className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
                 CONTACT US
               </button>
             </div>
