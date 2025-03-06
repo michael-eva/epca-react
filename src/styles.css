@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Base styles */
+:root {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply bg-background text-foreground;
+}
+
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));

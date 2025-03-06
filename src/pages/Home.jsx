@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-import Navbar from '../components/Navbar';
-import VehicleCard from '../components/VehicleCard';
-import Footer from '../components/Footer';
+import { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar.jsx';
+import VehicleCard from '../components/VehicleCard.jsx';
+import Footer from '../components/Footer.jsx';
 const Home = () => {
   // State for testimonials
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);

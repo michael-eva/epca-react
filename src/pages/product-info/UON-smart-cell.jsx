@@ -234,33 +234,6 @@ const UONSmartCell = () => {
             </div>
           </div>
         </section>
-
-
-        {/* CTA Section */}
-        <section id="enquiry" className="h-screen relative overflow-hidden flex items-center justify-center">
-          {/* Background image with overlay */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/placeholder.svg" 
-              alt="Mining site background" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">Ready to Electrify Your Mining Operations?</h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              Contact us today to learn how the UON SMART™ CELL can transform your mining fleet.
-            </p>
-            <a 
-              href="/product-enquiry/UON-smart-cell" 
-              className="inline-block px-12 py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium text-lg transition-colors uppercase tracking-wide"
-            >
-              Enquire Now
-            </a>
-          </div>
-        </section>
         <Footer />
       </div>
     </>

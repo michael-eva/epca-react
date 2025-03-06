@@ -530,7 +530,7 @@ export default function FiniteCarCarousel() {
 
   return (
     <div 
-      className="relative w-full max-w-7xl" 
+      className="relative w-full" 
       ref={carouselRef}
       style={{ 
         userSelect: 'none', 
@@ -585,11 +585,12 @@ export default function FiniteCarCarousel() {
             <CarouselItem 
               key={index} 
               className={cn(
-                "pl-4 md:basis-4/5 lg:basis-3/4",
+
+                "md:basis-full lg:basis-[90%]",
                 index === 0 || index === carouselItems.length - 1 ? "invisible" : ""
               )}
             >
-              <div className="relative h-[500px] w-full overflow-hidden rounded-lg">
+              <div className="relative h-[500px] w-full overflow-hidden rounded-lg max-w-[2085px]">
                 <img
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
