@@ -13,7 +13,8 @@ const Enquiry = () => {
         subject: '',
         message: '',
         companyName: '',
-        updates: true 
+        updates: true,
+        dialCode: '+61'
     });
     const [loading, setLoading] = useState(false);
 
@@ -88,7 +89,6 @@ const Enquiry = () => {
         }
     
         setLoading(true);
-    
         try {
             const response = await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
                 method: 'POST',
@@ -109,7 +109,8 @@ const Enquiry = () => {
                 subject: subjectOptions[0],
                 message: '',
                 companyName: '',
-                updates: true
+                updates: true,
+                dialCode: '+61'
             });
 
         } catch (error) {
@@ -235,7 +236,11 @@ const Enquiry = () => {
                                         required
                                     />
                                     <div className="absolute inset-y-0 left-0 flex items-center">
-                                        <select className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent">
+                                        <select 
+                                            className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent"
+                                            value={formData.dialCode}
+                                            onChange={(e) => setFormData(prev => ({ ...prev, dialCode: e.target.value }))}
+                                        >
                                             <option value="+61">AU +61</option>
                                             <option value="+1">US/CA +1</option>
                                             <option value="+44">UK +44</option>
