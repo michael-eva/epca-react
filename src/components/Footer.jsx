@@ -40,8 +40,7 @@ export default function Footer() {
                     <ul className="text-base text-gray-400">
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
                     </ul>
                 </div>
             </div>

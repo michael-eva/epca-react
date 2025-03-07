@@ -10,7 +10,8 @@ import TestDrive from './pages/Test-Drive'
 import Enquiry from './pages/Enquiry'
 import FeasabilityStudy from './pages/FeasabilityStudy'
 import About from './pages/About'
-
+import PrivacyPolicy from './pages/Privacy-Policy'
+import TermsAndConditions from './pages/Terms-and-Conditions'
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,8 @@ function App() {
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/feasability-study" element={<FeasabilityStudy />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   )
