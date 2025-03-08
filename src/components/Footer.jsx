@@ -22,25 +22,25 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-bold mb-4">Products</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a href="/product-info/E-777D">E-777D Mining Truck</a></li>
-                        <li><a href="/enquiry?subject=E-785">E-785 Mining Truck</a></li>
-                        <li><a href="/enquiry?subject=E-993">E-993 Loader</a></li>
-                        <li><a href="/product-info/UON-smart-cell">UON SMART™ CELL</a></li>
+                        <li><a onClick={() => window.location.href = '/product-info/E-777D'} className="cursor-pointer">E-777D Mining Truck</a></li>
+                        <li><a onClick={() => window.location.href = '/enquiry?subject=E-785'} className="cursor-pointer">E-785 Mining Truck</a></li>
+                        <li><a onClick={() => window.location.href = '/enquiry?subject=E-993'} className="cursor-pointer">E-993 Loader</a></li>
+                        <li><a onClick={() => window.location.href = '/product-info/UON-smart-cell'} className="cursor-pointer">UON SMART™ CELL</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold mb-4">Services</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a href="/feasability-study">Feasibility Study</a></li>
-                        <li><a href="/test-drive">Test Drive</a></li>
+                        <li><a onClick={() => window.location.href = '/feasability-study'} className="cursor-pointer">Feasibility Study</a></li>
+                        <li><a onClick={() => window.location.href = '/test-drive'} className="cursor-pointer">Test Drive</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold mb-4">Company</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
+                        <li><a onClick={() => window.location.href = '/about'} className="cursor-pointer">About Us</a></li>
+                        <li><a onClick={() => window.location.href = '/contact'} className="cursor-pointer">Contact</a></li>
+                        <li><a onClick={() => window.location.href = '/terms-and-conditions'} className="cursor-pointer">Terms and Conditions</a></li>
                     </ul>
                 </div>
             </div>

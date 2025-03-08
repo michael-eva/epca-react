@@ -74,70 +74,81 @@ export default function FiniteCarCarousel() {
     }
   }, [api])
 
-  // Completely prevent browser back/forward navigation
+  // Modify the navigation prevention to only work when interacting with the carousel
   useEffect(() => {
-    // This is a more aggressive approach to prevent browser navigation gestures
-    
-    // 1. Push initial state and handle history changes
-    const pushHistoryState = () => {
-      if (window.history && window.history.pushState) {
-        window.history.pushState({ noBackPlease: true }, '', window.location.href);
+    // Only prevent navigation when actually interacting with the carousel
+    const carouselElement = carouselRef.current;
+    if (!carouselElement) return;
+
+    let isInteractingWithCarousel = false;
+
+    const handleCarouselInteractionStart = () => {
+      isInteractingWithCarousel = true;
+    };
+
+    const handleCarouselInteractionEnd = () => {
+      isInteractingWithCarousel = false;
+    };
+
+    // Modified popstate handler that only prevents navigation during carousel interaction
+    const handlePopState = (e) => {
+      if (isInteractingWithCarousel) {
+        // Only prevent navigation if actively interacting with carousel
+        e.preventDefault();
+        if (window.history && window.history.pushState) {
+          window.history.pushState({ noBackPlease: true }, '', window.location.href);
+        }
+        
+        // If we can navigate back in our carousel, do that instead
+        if (api && current > 1) {
+          api.scrollPrev();
+        }
       }
     };
-    
-    // Push initial state
-    pushHistoryState();
-    
-    // 2. Set up global event listeners
+
+    // Modified touch handler that only prevents default when near carousel edges
     const preventBackNavigation = (e) => {
-      // We're only concerned with events near our carousel
-      if (carouselRef.current && 
-          (e.target === carouselRef.current || carouselRef.current.contains(e.target))) {
-        // Always prevent default for horizontal swipes near edges
+      if (!isInteractingWithCarousel) return;
+
+      // Only process if touch is on or near the carousel
+      if (carouselElement.contains(e.target)) {
         if (e.touches && e.touches.length > 0) {
           const touchX = e.touches[0].clientX;
-          const viewportWidth = window.innerWidth;
-          
-          // If touch is within edge zones (first 15% or last 15% of screen width)
-          if (touchX < viewportWidth * 0.15 || touchX > viewportWidth * 0.85) {
+          const carouselRect = carouselElement.getBoundingClientRect();
+          const edgeThreshold = 50; // pixels from edge to consider as edge zone
+
+          // Only prevent default if touch is near the edges of the carousel
+          if (touchX < carouselRect.left + edgeThreshold || 
+              touchX > carouselRect.right - edgeThreshold) {
             e.preventDefault();
-            e.stopPropagation();
           }
         }
       }
     };
-    
-    // Handle pop state (back button) globally
-    const handlePopState = () => {
-      // Push state again to effectively cancel the back
-      pushHistoryState();
-      
-      // If we can navigate back in our carousel, do that instead
-      if (api && current > 1) {
-        api.scrollPrev();
-      }
-    };
-    
-    // Add global listeners
+
+    // Add interaction listeners to the carousel
+    carouselElement.addEventListener('mousedown', handleCarouselInteractionStart);
+    carouselElement.addEventListener('touchstart', handleCarouselInteractionStart);
+    document.addEventListener('mouseup', handleCarouselInteractionEnd);
+    document.addEventListener('touchend', handleCarouselInteractionEnd);
+
+    // Add navigation prevention listeners
     window.addEventListener('popstate', handlePopState);
-    document.addEventListener('touchstart', preventBackNavigation, { passive: false, capture: true });
-    
-    // Check for specific browser conditions and add extra protection
-    if (navigator.userAgent.includes('Safari') || navigator.userAgent.includes('iPad') || 
-        navigator.userAgent.includes('iPhone')) {
-      // Additional handling for Safari's back-forward cache
-      document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false, capture: true });
-    }
-    
+    document.addEventListener('touchstart', preventBackNavigation, { 
+      passive: false, 
+      capture: true 
+    });
+
+    // Cleanup
     return () => {
+      carouselElement.removeEventListener('mousedown', handleCarouselInteractionStart);
+      carouselElement.removeEventListener('touchstart', handleCarouselInteractionStart);
+      document.removeEventListener('mouseup', handleCarouselInteractionEnd);
+      document.removeEventListener('touchend', handleCarouselInteractionEnd);
       window.removeEventListener('popstate', handlePopState);
       document.removeEventListener('touchstart', preventBackNavigation, { capture: true });
-      if (navigator.userAgent.includes('Safari') || navigator.userAgent.includes('iPad') || 
-          navigator.userAgent.includes('iPhone')) {
-        document.removeEventListener('gesturestart', (e) => e.preventDefault(), { capture: true });
-      }
     };
-  }, [current, api]);
+  }, [api, current]);
 
   // Handle wheel events directly in the component
   const handleWheel = useCallback((e) => {
@@ -157,10 +168,10 @@ export default function FiniteCarCarousel() {
     
     // Calculate how much to scroll based on the input delta
     // EXTREMELY reduced sensitivity
-    const scrollMultiplier = 0.0001; // Drastically reduced for extremely slow scrolling
+    const scrollMultiplier = 0.1; // Reduced by 10x for ultra-slow scrolling
     
     // Add constraints to prevent moving more than one slide at a time
-    const maxScrollPerEvent = 0.001; // Extremely reduced for very slow movement
+    const maxScrollPerEvent = 0.1; // Reduced by 10x for ultra-slow movement
     
     // Calculate the raw scroll amount
     let scrollAmount = e.deltaX * scrollMultiplier;
@@ -186,18 +197,20 @@ export default function FiniteCarCarousel() {
       // Only scroll if the accumulated delta is significant enough
       deltaXRef.current += e.deltaX;
       
-      // Keep the threshold low for responsiveness
-      const SLIDE_THRESHOLD = 20;
+      // Set different thresholds for mobile and desktop
+      // Use window.innerWidth to detect device type
+      const isMobile = window.innerWidth < 768; // Common breakpoint for mobile devices
+      const SLIDE_THRESHOLD = isMobile ? 20 : 80; // 20 for mobile, 80 for desktop
       
       if (Math.abs(deltaXRef.current) > SLIDE_THRESHOLD) {
         // FIX: Prevent scrolling to first or last slide (indices 0 and totalSlides-1)
         if (deltaXRef.current > 0 && currentIndex < totalSlides - 2) {
           // Extremely long duration
-          api.scrollNext({ duration: 3000 }); // Significantly increased for extremely slow animation
+          api.scrollNext({ duration: 5000 }); // Increased from 3000 to 5000 ms for even slower animation
           deltaXRef.current = 0; // Reset after action
         } else if (deltaXRef.current < 0 && currentIndex > 1) {
           // Extremely long duration
-          api.scrollPrev({ duration: 3000 }); // Significantly increased for extremely slow animation
+          api.scrollPrev({ duration: 5000 }); // Increased from 3000 to 5000 ms for even slower animation
           deltaXRef.current = 0; // Reset after action
         } else {
           // Reset the delta if we're at the boundaries
@@ -466,61 +479,19 @@ export default function FiniteCarCarousel() {
   }, [handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd, 
       handleGestureStart, handleGestureChange, handleGestureEnd, api, current, carouselItems.length]);
 
-  // Global event handler to completely block browser back gesture
+  // Remove or modify the global event handler that blocks all browser gestures
   useEffect(() => {
-    // Function to block all browser back/forward gestures
-    const blockBrowserGestures = (e) => {
-      // Only process horizontal gestures
-      if (e.touches && e.touches.length > 0) {
-        const touchX = e.touches[0].clientX;
-        const viewportWidth = window.innerWidth;
-        
-        // If touch is near the edge (first or last 20% of screen)
-        if (touchX < viewportWidth * 0.2 || touchX > viewportWidth * 0.8) {
-          e.preventDefault();
-          return false;
-        }
-      }
-    };
-    
-    // This needs to be added to the document level to catch all touch events
-    // Use capture phase to intercept events before they reach elements
-    document.addEventListener('touchstart', blockBrowserGestures, { 
-      passive: false, 
-      capture: true // This is critical - must use capture phase
-    });
-    
-    document.addEventListener('touchmove', blockBrowserGestures, { 
-      passive: false, 
-      capture: true 
-    });
-    
-    return () => {
-      document.removeEventListener('touchstart', blockBrowserGestures, { capture: true });
-      document.removeEventListener('touchmove', blockBrowserGestures, { capture: true });
-    };
-  }, []);
+    // Only add touch-action CSS to the carousel itself
+    if (typeof document === 'undefined' || !carouselRef.current) return;
 
-  // Add extra protection specifically for browser swipe gestures
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-
-    // Create a style element
     const styleElement = document.createElement('style');
     styleElement.innerHTML = `
-      html, body {
-        overscroll-behavior-x: none;
+      .carousel-container {
+        touch-action: pan-y pinch-zoom;
         overflow-x: hidden;
-      }
-      
-      @media (pointer: coarse) {
-        html, body, #__next, main {
-          touch-action: pan-y pinch-zoom;
-        }
       }
     `;
     
-    // Add to document head
     document.head.appendChild(styleElement);
     
     return () => {

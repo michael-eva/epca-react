@@ -11,7 +11,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
         {/* Model 3 */}
         <div className="flex flex-col items-center text-center">
           <img 
-            src="placeholder.svg" 
+            src="/placeholder.svg" 
             alt="E-777 Mining Truck" 
             className="w-full h-auto mb-4"
           />
@@ -25,7 +25,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
         {/* Model Y */}
         <div className="flex flex-col items-center text-center">
           <img 
-            src="placeholder.svg" 
+            src="/placeholder.svg" 
             alt="E-785 Mining Truck" 
             className="w-full h-auto mb-4"
           />
@@ -38,7 +38,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
         {/* Cybertruck */}
         <div className="flex flex-col items-center text-center">
           <img 
-            src="placeholder.svg" 
+            src="/placeholder.svg" 
             alt="E-993 Loader" 
             className="w-full h-auto mb-4"
           />

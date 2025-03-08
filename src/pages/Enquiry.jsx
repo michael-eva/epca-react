@@ -3,6 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 
 const Enquiry = () => {
     const [searchParams] = useSearchParams();
@@ -70,6 +77,10 @@ const Enquiry = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSelectChange = (value) => {
+        setFormData(prev => ({ ...prev, subject: value }));
     };
 
     const handleSubmit = async (e) => {
@@ -147,23 +158,34 @@ const Enquiry = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
-                    {/* Subject Selection */}
+                    {/* Subject Selection - Replace with shadcn Select */}
                     <div>
                         <p className="mb-2 font-medium">Enquiry Subject</p>
-                        <select
-                            id="subject"
-                            name="subject"
+                        <Select
                             value={formData.subject}
-                            onChange={handleChange}
-                            className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
-                            required
+                            onValueChange={handleSelectChange}
                         >
-                            {subjectOptions.map((option) => (
-                                <option key={option} value={option}>
-                                    {option}
-                                </option>
-                            ))}
-                        </select>
+                            <SelectTrigger 
+                                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3 h-[46px] shadow-sm"
+                            >
+                                <SelectValue placeholder="Please select a subject" />
+                            </SelectTrigger>
+                            <SelectContent 
+                                className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
+                                position="popper"
+                                sideOffset={5}
+                            >
+                                {subjectOptions.map((option) => (
+                                    <SelectItem 
+                                        key={option} 
+                                        value={option}
+                                        className="hover:bg-gray-100 focus:bg-gray-100 py-2"
+                                    >
+                                        {option}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
 
                     {/* Message */}
@@ -236,19 +258,29 @@ const Enquiry = () => {
                                         required
                                     />
                                     <div className="absolute inset-y-0 left-0 flex items-center">
-                                        <select 
-                                            className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent"
+                                        <Select
                                             value={formData.dialCode}
-                                            onChange={(e) => setFormData(prev => ({ ...prev, dialCode: e.target.value }))}
+                                            onValueChange={(value) => setFormData(prev => ({ ...prev, dialCode: value }))}
                                         >
-                                            <option value="+61">AU +61</option>
-                                            <option value="+1">US/CA +1</option>
-                                            <option value="+44">UK +44</option>
-                                            <option value="+49">DE +49</option>
-                                            <option value="+81">JP +81</option>
-                                            <option value="+86">CN +86</option>
-                                            <option value="+91">IN +91</option>
-                                        </select>
+                                            <SelectTrigger 
+                                                className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent w-[122px]"
+                                            >
+                                                <SelectValue placeholder="Code" />
+                                            </SelectTrigger>
+                                            <SelectContent 
+                                                className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
+                                                position="popper"
+                                                sideOffset={5}
+                                            >
+                                                <SelectItem value="+61">AU +61</SelectItem>
+                                                <SelectItem value="+1">US/CA +1</SelectItem>
+                                                <SelectItem value="+44">UK +44</SelectItem>
+                                                <SelectItem value="+49">DE +49</SelectItem>
+                                                <SelectItem value="+81">JP +81</SelectItem>
+                                                <SelectItem value="+86">CN +86</SelectItem>
+                                                <SelectItem value="+91">IN +91</SelectItem>
+                                            </SelectContent>
+                                        </Select>
                                     </div>
                                 </div>
                             </div>

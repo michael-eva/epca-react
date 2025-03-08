@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import VehicleCard from '../components/VehicleCard.jsx';
 import Footer from '../components/Footer.jsx';
+import { toast } from 'react-hot-toast';
 const Home = () => {
   // State for testimonials
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
   // State for number animation
   const [numbers, setNumbers] = useState({
     carbon: 0,
@@ -96,6 +98,32 @@ const Home = () => {
     setCurrentTestimonialIndex(index);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+  console.log(email);
+    try {
+      const response = await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'no-cors',
+        body: JSON.stringify({formData: {email: email}, joinMailingList: true})
+      });
+  
+      // With no-cors mode, we'll assume success if no error is thrown
+      toast.success('You\'re in the loop!');
+      // Reset form
+      setEmail('');
+    } catch (error) {
+      console.error('Error submitting configuration:', error);
+      toast.error('Failed to submit enquiry. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
     <Navbar />
@@ -118,8 +146,8 @@ const Home = () => {
             <p className="text-2xl">Leading the transition to battery-electric mining solutions.</p>
           </div>
           <div className="mt-auto mb-20 flex space-x-4 justify-center items-center">
-            <a href="/product-info/E-777D" className="text-sm md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
-            <a href="/product-enquiry/E-777D" className="text-sm md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+            <a href="/product-info/E-777D" className="text-xs md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
+            <a href="/product-enquiry/E-777D" className="text-xs md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
           </div>
         </div>
       </section>
@@ -157,9 +185,9 @@ const Home = () => {
             </div>
         </div>
     </section>
-    <section className="py-20 bg-black text-white">
+    <section className="py-20 bg-black text-white" id="machines">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-4">Vehicles</h2>
+            <h2 className="text-4xl font-bold mb-4">Machines</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <VehicleCard 
@@ -377,9 +405,31 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-6">Get Updates</h2>
             <p className="text-base text-gray-600 text-center mb-10">Join the Electric Mining Revolution</p>
-            <form className="flex justify-center gap-3.5">
-                <input type="email" className="px-4 py-3 border border-gray-300 rounded-full" placeholder="Your Email Address"/>
-                <button type="submit" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors">Submit</button>
+            <form className="flex flex-col sm:flex-row justify-center gap-3.5 max-w-md mx-auto" onSubmit={handleSubmit}>
+                <input 
+                    type="email" 
+                    className="px-4 py-3 border border-gray-300 rounded-md w-full" 
+                    placeholder="Your Email Address" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <button 
+                    type="submit" 
+                    disabled={loading}
+                    className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium uppercase tracking-wide transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                    {loading ? (
+                        <>
+                            <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Submitting...
+                        </>
+                    ) : (
+                        'Submit'
+                    )}
+                </button>
             </form>
         </div>
     </section>

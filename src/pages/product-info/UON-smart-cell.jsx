@@ -101,10 +101,6 @@ const UONSmartCell = () => {
             <div className="max-w-3xl text-white">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">UON SMART™ CELL: High-Speed DC Charging for Heavy Mining Equipment</h1>
               <p className="text-xl md:text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
-              {/* <div className="flex space-x-4">
-                <a href="/product-enquiry/UON-smart-cell" className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
-                <a href="#overview" className="px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
-              </div> */}
             </div>
           </div>
         </section>
@@ -148,41 +144,10 @@ const UONSmartCell = () => {
               <img 
                 src="/placeholder.svg" 
                 alt="UON SMART CELL interface on tablet" 
-                className="w-full rounded-lg shadow-lg h-[1344px] md:h-[756px]"
+                className="w-full rounded-lg shadow-lg max-h-[1344px] md:max-h-[756px]"
               />
             </div>
             
-            {/* <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-4 gap-4 border-b border-gray-200">
-                <button className="text-center py-4 border-b-2 border-black font-medium">
-                  Navigate
-                </button>
-                <button className="text-center py-4 text-gray-500 hover:text-gray-700">
-                  Plug In
-                </button>
-                <button className="text-center py-4 text-gray-500 hover:text-gray-700">
-                  Relax
-                </button>
-                <button className="text-center py-4 text-gray-500 hover:text-gray-700">
-                  Monitor
-                </button>
-              </div>
-              
-              <div className="grid grid-cols-4 gap-8 pt-8">
-                <div className="text-center">
-                  <p className="text-sm text-gray-800 mb-2">Enter a destination and Trip Planner calculates your route.</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-gray-500 mb-2">Charge automatically – no need to swipe a credit card.</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-gray-500 mb-2">Once charging, stretch your legs, make a plan.</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-gray-500 mb-2">View your charge status in real time on your mobile app.</p>
-                </div>
-              </div>
-            </div> */}
                     <section id="features-section" className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8">
@@ -227,7 +192,7 @@ const UONSmartCell = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
               </p>
               <div className="mt-auto">
-                <a href="#enquiry" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                <a href="/enquiry?subject=uon" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">
                   Find out more
                 </a>
               </div>

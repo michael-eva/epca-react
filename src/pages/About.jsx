@@ -6,10 +6,11 @@ import { Timeline } from "../components/Timeline";
 
 export default function About() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <>
+    <Navbar />
+    <div className="text-gray-800 leading-relaxed overflow-x-hidden">
       
-      <section className="h-screen flex items-center relative bg-gray-100">
+      <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         <video 
           className="absolute inset-0 w-full h-full object-cover"
@@ -42,48 +43,52 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-black text-white px-36 pt-20">
-        <div>
+      <section className="bg-black text-white px-4 md:px-8 lg:px-36 pt-20">
+        <div className="max-w-[1920px] mx-auto">
           <img 
             src="/placeholder.svg" 
             alt="EPCA Factory" 
-            className="w-full h-[600px] object-cover rounded-lg"
+            className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
         </div>
-        <div className="max-w-7xl px-4 py-16">
-          <div className=" flex">
-            <h2 className=" text-2xl font-bold mb-6 w-1/3">Company Mission & Values</h2>
-            <p className="text-sm w-2/3">
+        <div className="max-w-[1920px] mx-auto px-0 sm:px-4 py-8 md:py-16">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12">
+            <h2 className="text-xl md:text-2xl font-bold md:w-1/3">Company Mission & Values</h2>
+            <p className="text-sm md:text-base md:w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-black text-white px-36">
-        <div>
+      <section className="bg-black text-white px-4 md:px-8 lg:px-36">
+        <div className="max-w-[1920px] mx-auto">
           <img 
             src="/placeholder.svg" 
             alt="EPCA Team" 
-            className="w-full h-[600px] object-cover rounded-lg"
+            className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
         </div>
-        <div className="max-w-7xl px-4 py-16">
-          <div className=" flex">
-            <h2 className="text-2xl font-bold mb-6 w-1/3">Meet the Team </h2>
-            <p className="text-sm w-2/3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div className="max-w-[1920px] mx-auto px-0 sm:px-4 py-8 md:py-16">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12">
+            <h2 className="text-xl md:text-2xl font-bold md:w-1/3">Meet the Team</h2>
+            <p className="text-sm md:text-base md:w-2/3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-black text-white px-36 py-24">
-          <div className="space-y-24">
+      <section className="bg-black text-white px-4 md:px-8 lg:px-36 py-12 md:py-24">
+        <div className="max-w-[1920px] mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Our Journey</h2>
+          <div className="max-w-5xl mx-auto">
             <Timeline />
           </div>
+        </div>
       </section>
       <Footer />
     </div>
+    </>
   );
 } 

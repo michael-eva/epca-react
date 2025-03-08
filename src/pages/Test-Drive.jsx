@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { toast } from 'react-hot-toast';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
+
 const TestDrive = () => {
   const [isLoading, setIsLoading] = useState(false);
   
@@ -41,6 +49,11 @@ const TestDrive = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
+  };
+
+  // Add a handler for select changes
+  const handleSelectChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -168,24 +181,31 @@ const TestDrive = () => {
               </div>
               <div>
                 <label htmlFor="time" className="mb-2 font-medium block">Time</label>
-                <select 
-                  id="time"
-                  name="time"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                <Select
                   value={formData.time}
-                  onChange={handleInputChange}
-                  required
+                  onValueChange={(value) => handleSelectChange('time', value)}
+                  defaultValue={getDefaultTime()}
                 >
-                  <option value="">Select a time</option>
-                  <option value="09:00">9:00 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="13:00">1:00 PM</option>
-                  <option value="14:00">2:00 PM</option>
-                  <option value="15:00">3:00 PM</option>
-                  <option value="16:00">4:00 PM</option>
-                </select>
+<SelectTrigger 
+  className="h-[46px] !bg-gray-100 border !border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+>
+                    <SelectValue placeholder="Select a time" />
+                  </SelectTrigger>
+                  <SelectContent 
+                    className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
+                    position="popper"
+                    sideOffset={5}
+                  >
+                    <SelectItem value="09:00">9:00 AM</SelectItem>
+                    <SelectItem value="10:00">10:00 AM</SelectItem>
+                    <SelectItem value="11:00">11:00 AM</SelectItem>
+                    <SelectItem value="12:00">12:00 PM</SelectItem>
+                    <SelectItem value="13:00">1:00 PM</SelectItem>
+                    <SelectItem value="14:00">2:00 PM</SelectItem>
+                    <SelectItem value="15:00">3:00 PM</SelectItem>
+                    <SelectItem value="16:00">4:00 PM</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
           </section>
@@ -246,47 +266,55 @@ const TestDrive = () => {
                     placeholder="412 345 678"
                   />
                   <div className="absolute inset-y-0 left-0 flex items-center">
-                    <select 
-                      id="countryCode"
-                      name="countryCode"
+                    <Select
                       value={formData.countryCode}
-                      onChange={handleInputChange}
-                      className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent"
+                      onValueChange={(value) => handleSelectChange('countryCode', value)}
                     >
-                      <option value="+61">AU +61</option>
-                      <option value="+372">EE +372</option>
-                      <option value="+20">EG +20</option>
-                      <option value="+291">ER +291</option>
-                      <option value="+34">ES +34</option>
-                      <option value="+251">ET +251</option>
-                      <option value="+358">FI +358</option>
-                      <option value="+679">FJ +679</option>
-                      <option value="+691">FM +691</option>
-                      <option value="+298">FO +298</option>
-                      <option value="+33">FR +33</option>
-                      <option value="+1">US/CA +1</option>
-                      <option value="+44">UK +44</option>
-                      <option value="+49">DE +49</option>
-                      <option value="+81">JP +81</option>
-                      <option value="+86">CN +86</option>
-                      <option value="+91">IN +91</option>
-                      <option value="+7">RU +7</option>
-                      <option value="+55">BR +55</option>
-                      <option value="+52">MX +52</option>
-                      <option value="+82">KR +82</option>
-                      <option value="+39">IT +39</option>
-                      <option value="+31">NL +31</option>
-                      <option value="+90">TR +90</option>
-                      <option value="+966">SA +966</option>
-                      <option value="+65">SG +65</option>
-                      <option value="+64">NZ +64</option>
-                      <option value="+27">ZA +27</option>
-                      <option value="+971">AE +971</option>
-                      <option value="+60">MY +60</option>
-                      <option value="+66">TH +66</option>
-                      <option value="+62">ID +62</option>
-                      <option value="+63">PH +63</option>
-                    </select>
+                      <SelectTrigger 
+                        className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent w-[122px]"
+                      >
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent 
+                        className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
+                        position="popper"
+                        sideOffset={5}
+                      >
+                        <SelectItem value="+61">AU +61</SelectItem>
+                        <SelectItem value="+372">EE +372</SelectItem>
+                        <SelectItem value="+20">EG +20</SelectItem>
+                        <SelectItem value="+291">ER +291</SelectItem>
+                        <SelectItem value="+34">ES +34</SelectItem>
+                        <SelectItem value="+251">ET +251</SelectItem>
+                        <SelectItem value="+358">FI +358</SelectItem>
+                        <SelectItem value="+679">FJ +679</SelectItem>
+                        <SelectItem value="+691">FM +691</SelectItem>
+                        <SelectItem value="+298">FO +298</SelectItem>
+                        <SelectItem value="+33">FR +33</SelectItem>
+                        <SelectItem value="+1">US/CA +1</SelectItem>
+                        <SelectItem value="+44">UK +44</SelectItem>
+                        <SelectItem value="+49">DE +49</SelectItem>
+                        <SelectItem value="+81">JP +81</SelectItem>
+                        <SelectItem value="+86">CN +86</SelectItem>
+                        <SelectItem value="+91">IN +91</SelectItem>
+                        <SelectItem value="+7">RU +7</SelectItem>
+                        <SelectItem value="+55">BR +55</SelectItem>
+                        <SelectItem value="+52">MX +52</SelectItem>
+                        <SelectItem value="+82">KR +82</SelectItem>
+                        <SelectItem value="+39">IT +39</SelectItem>
+                        <SelectItem value="+31">NL +31</SelectItem>
+                        <SelectItem value="+90">TR +90</SelectItem>
+                        <SelectItem value="+966">SA +966</SelectItem>
+                        <SelectItem value="+65">SG +65</SelectItem>
+                        <SelectItem value="+64">NZ +64</SelectItem>
+                        <SelectItem value="+27">ZA +27</SelectItem>
+                        <SelectItem value="+971">AE +971</SelectItem>
+                        <SelectItem value="+60">MY +60</SelectItem>
+                        <SelectItem value="+66">TH +66</SelectItem>
+                        <SelectItem value="+62">ID +62</SelectItem>
+                        <SelectItem value="+63">PH +63</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
               </div>

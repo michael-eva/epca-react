@@ -24,9 +24,9 @@ const VehicleCard = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
       </div>
       
-      {/* Only render vehicle info overlay if there is vehicle info */}
+      {/* Only render vehicle info overlay for desktop */}
       {hasVehicleInfo && (
-        <div className="absolute inset-0 bg-black/80 flex flex-col justify-between p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+        <div className="absolute inset-0 bg-black/80 flex flex-col justify-between p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden md:flex">
           <div className="text-white space-y-4 overflow-y-auto max-h-[calc(100%-80px)]">
             <h4 className="text-2xl font-medium border-b border-white/20 pb-2">{title} Details</h4>
             {Object.entries(vehicleInfo).map(([key, value]) => (
@@ -37,7 +37,7 @@ const VehicleCard = ({
             ))}
           </div>
           
-          <div className="mt-4 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+          <div className="mt-4 transform md:translate-y-8 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-100">
             {buttonAction ? (
               <button 
                 onClick={buttonAction}
@@ -63,23 +63,14 @@ const VehicleCard = ({
           <p className="text-4xl font-light text-white mb-6 transition-colors duration-300">{subtitle}</p>
         </div>
 
-        {/* Only show this button when not hovering or when there's no vehicle info */}
-        <div className={`mt-auto ${hasVehicleInfo ? 'group-hover:opacity-0' : ''} transition-opacity duration-300`}>
-          {buttonAction ? (
-            <button 
-              onClick={buttonAction}
-              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
-            >
-              {buttonText}
-            </button>
-          ) : (
-            <a 
-              href={buttonLink} 
-              className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
-            >
-              {buttonText}
-            </a>
-          )}
+        {/* Show button always on mobile, only when not hovering on desktop */}
+        <div className={`mt-auto ${hasVehicleInfo ? 'md:group-hover:opacity-0' : ''} transition-opacity duration-300`}>
+          <a 
+            href={buttonLink} 
+            className="block w-full py-4 bg-white hover:bg-[#00b359] hover:text-white text-black rounded-md text-center font-medium transition-all duration-300 hover:shadow-md"
+          >
+            {buttonText}
+          </a>
         </div>
       </div>
     </div>
