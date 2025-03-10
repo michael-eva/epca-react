@@ -40,10 +40,10 @@ const Enquiry = () => {
         'Other',
     ], []); // Empty dependency array since this array never changes
 
+    
     useEffect(() => {
         // Check if subject is provided in URL params
         const subjectParam = searchParams.get('subject');
-
         if (subjectParam) {
             // Case-insensitive mapping of URL parameters to full subject options
             const subjectMapping = {
@@ -72,7 +72,7 @@ const Enquiry = () => {
             // Default to first option if no subject param is provided
             setFormData(prev => ({ ...prev, subject: subjectOptions[0] }));
         }
-    }, [searchParams]); // Remove subjectOptions from dependency array
+    }, [formData.subject]); // Remove subjectOptions from dependency array
 
     const handleChange = (e) => {
         const { name, value } = e.target;
