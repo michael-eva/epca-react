@@ -84,6 +84,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Our Journey</h2>
           <div className="max-w-5xl mx-auto">
             <Timeline />
+            
           </div>
         </div>
       </section>
