@@ -12,15 +12,15 @@ const Contact = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-3xl font-bold mb-2">CONTACT US</h1>
-            <p className="text-gray-400">lorem.ipsum.com.au</p>
+            <p className="text-gray-400">epca.net.au</p>
           </div>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-16 gap-y-12">
             {/* Customer Care Centre */}
             <div className="space-y-4">
-              <h2 className="text-xl font-medium">Customer Care Centre</h2>
-              <p className="text-gray-300">customercare@lorem.ipsum.com.au</p>
-              <p>1300 000 AUTO <span className="text-blue-400">(1300 000 000)</span></p>
+              <h2 className="text-xl font-medium">First Point of Contact</h2>
+              <p className="text-gray-300">clayton.franklin@epca.net.au</p>
+              <p>0427 086 301 <span className="text-blue-400">(+61 427 086 301)</span></p>
               <button onClick={() => window.location.href = '/enquiry?subject=general'} className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
                 CONTACT US
               </button>
@@ -29,13 +29,12 @@ const Contact = () => {
             {/* Open Hours */}
             <div className="space-y-4">
               <h2 className="text-xl font-medium">Open Hours</h2>
-              <p>Monday to Friday 9am to 5pm AEST</p>
-              <p>Saturday 8am to 4pm AEST</p>
+              <p>Monday to Friday 6am to 6pm AWST</p>
               <p>Closed public holidays</p>
               <p className="text-sm">
-                Experience and Service Centre hours can be found on the{' '}
+                {/* Experience and Service Centre hours can be found on the{' '}
                 <Link to="#" className="text-blue-400 hover:underline">Experience Centre</Link> and{' '}
-                <Link to="#" className="text-blue-400 hover:underline">Service & Warranty</Link> pages.
+                <Link to="#" className="text-blue-400 hover:underline">Service & Warranty</Link> pages. */}
               </p>
             </div>
 
@@ -43,15 +42,15 @@ const Contact = () => {
             <div className="space-y-4">
               <div>
                 <h2 className="text-xl font-medium">Company Name</h2>
-                <p>LOREM IPSUM GROUP PTY LTD</p>
+                <p>ELECTRIC POWER CONVERSIONS AUSTRALIA PTY LTD</p>
               </div>
               <div>
                 <h2 className="text-xl font-medium">ABN</h2>
-                <p>00 000 000 000</p>
+                <p>32 668 121 962</p>
               </div>
               <div>
                 <h2 className="text-xl font-medium">ACN</h2>
-                <p>000 000 000</p>
+                <p>668 121 962</p>
               </div>
             </div>
           </div>

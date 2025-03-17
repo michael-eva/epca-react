@@ -19,7 +19,7 @@ export default function About() {
           muted 
           playsInline
         >
-          <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
+          <source src="AboutUsVideo.mp4" type="video/mp4" />
         </video>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
@@ -64,7 +64,7 @@ export default function About() {
       <section className="bg-black text-white px-4 md:px-8 lg:px-36">
         <div className="max-w-[1920px] mx-auto">
           <img 
-            src="/Team.JPG" 
+            src="/Team2.JPG" 
             alt="EPCA Team" 
             className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
