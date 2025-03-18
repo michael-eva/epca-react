@@ -19,7 +19,7 @@ export default function About() {
           muted 
           playsInline
         >
-          <source src="AboutUsVideo.mp4" type="video/mp4" />
+          <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
         </video>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
