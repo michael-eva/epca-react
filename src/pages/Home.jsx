@@ -129,7 +129,7 @@ const Home = () => {
     <Navbar />
     <div className="text-gray-800 leading-relaxed overflow-x-hidden">
       {/* Hero Section */}
-      <section className="h-screen flex items-center relative bg-gray-100">
+      <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         <video 
           className="absolute inset-0 w-full h-full object-cover"
