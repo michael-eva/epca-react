@@ -191,7 +191,7 @@ const E777D = () => {
         <section className="h-screen flex items-center relative bg-gray-100">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="https://www.epca.net.au/wp-content/uploads/2024/06/dji_fly_20240518_130104_0086_1716029621038_photo-2.jpeg"
+            src="/truck2.png"
             className="absolute inset-0 w-full h-full object-cover"
             alt="E-777D Mining Truck"
           />
@@ -236,7 +236,7 @@ const E777D = () => {
             <div className="relative mb-16 h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/placeholder.svg"
+                  src="/truck3.jpeg"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-cover rounded-lg"
                   loading="lazy"
@@ -259,7 +259,7 @@ const E777D = () => {
             <div className="relative mb-16 h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/placeholder.svg"
+                  src="/truck8.JPG"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-cover rounded-lg"
                   loading="lazy"
@@ -400,7 +400,7 @@ const E777D = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://www.epca.net.au/wp-content/uploads/2024/06/dji_fly_20240518_130104_0086_1716029621038_photo-2.jpeg" 
+              src="/truck4.jpg" 
               alt="Mining truck background" 
               className="w-full h-full object-cover"
             />

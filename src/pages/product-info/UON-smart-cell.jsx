@@ -36,6 +36,7 @@ const UONSmartCell = () => {
   }, []);
 
   // Key features data
+  
   const features = [
     {
       icon: (
@@ -44,7 +45,7 @@ const UONSmartCell = () => {
         </svg>
       ),
       title: "Ultra-Fast Charging",
-      description: "50-minute full charge for heavy mining equipment, minimizing downtime and maximizing productivity."
+      description: "50-minute full charge for heavy mining equipment, minimising downtime and maximising productivity."
     },
     {
       icon: (
@@ -99,7 +100,7 @@ const UONSmartCell = () => {
           </video>
           <div className="max-w-7xl mx-auto px-4 relative z-20">
             <div className="max-w-3xl text-white">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">UON SMART™ CELL: High-Speed DC Charging for Heavy Mining Equipment</h1>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">High-Speed DC Charging for Heavy Mining Equipment</h1>
               <p className="text-xl md:text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
             </div>
           </div>
@@ -108,13 +109,13 @@ const UONSmartCell = () => {
         <section className="bg-white">
           <div className="flex flex-col md:flex-row">
             <div className="order-2 md:order-1 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
-              <h3 className="text-sm font-medium text-gray-500 mb-2">Heading</h3>
-              <h2 className="text-3xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
+              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
+              <h2 className="text-3xl font-bold mb-4">EPCA Charging Infrastructure</h2>
               <p className="text-gray-600 text-sm mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              The EPCA High-Power DC Charger is a fast-charging solution designed to support battery-electric mining equipment in demanding environments.
               </p>
               <p className="text-gray-600 text-sm mb-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              It provides high-efficiency power delivery to reduce downtime and maintain fleet productivity. 
               </p>
               <div className="mt-auto">
                 <a href="#enquiry" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">
@@ -124,7 +125,7 @@ const UONSmartCell = () => {
             </div>
             <div className="order-1 md:order-2 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/placeholder.svg" 
+                src="/UON3.jpg" 
                 alt="UON SMART CELL deployment map" 
                 className="w-full h-full object-cover"
               />
@@ -136,13 +137,13 @@ const UONSmartCell = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h3 className="text-sm font-medium text-gray-500 mb-2">Heading</h3>
-              <h2 className="text-3xl font-bold">Lorem ipsum dolor sit amet</h2>
+              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
+              <h2 className="text-3xl font-bold">An Advanced Fast-Charging Solution</h2>
             </div>
             
             <div className="relative mb-12">
               <img 
-                src="/placeholder.svg" 
+                src="/UON2.JPG" 
                 alt="UON SMART CELL interface on tablet" 
                 className="w-full rounded-lg shadow-lg max-h-[1344px] md:max-h-[756px]"
               />
@@ -177,14 +178,14 @@ const UONSmartCell = () => {
           <div className="flex flex-col md:flex-row">
             <div className="order-1 md:order-1 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/placeholder.svg" 
+                src="/UON5.jpg" 
                 alt="UON SMART CELL installation" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="order-2 md:order-2 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
-              <h3 className="text-sm font-medium text-gray-500 mb-2">Heading</h3>
-              <h2 className="text-3xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
+              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
+              <h2 className="text-3xl font-bold mb-4">Key Features</h2>
               <p className="text-gray-600 text-sm mb-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
                 </p>
@@ -206,7 +207,7 @@ const UONSmartCell = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/placeholder.svg" 
+              src="/UON4.jpg" 
               alt="Mining site background" 
               className="w-full h-full object-cover"
             />

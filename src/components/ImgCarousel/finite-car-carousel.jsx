@@ -29,25 +29,25 @@ export default function FiniteCarCarousel() {
       description: "",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
+      image: "/truck9.png",
       title: "Even Quieter",
       description:
         "An updated wheel and tyre package offers a smoother driving experience. Redesigned body castings reduce parts from 70 to 1 for fewer gaps. All to create a whisper-quiet ride.",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
+      image: "/truck7.png",
       title: "More Efficient",
       description:
         "Redesigned to improve aerodynamics and reduce energy consumption for extended range and better performance.",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
+      image: "/truck10.jpeg",
       title: "Advanced Safety",
       description:
         "State-of-the-art safety features with enhanced structural integrity and intelligent driver assistance systems.",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
+      image: "/screen.JPG",
       title: "Premium Interior",
       description:
         "Luxurious cabin with sustainable materials, advanced climate control, and intuitive technology integration.",

@@ -37,9 +37,9 @@ const Home = () => {
 
   const animateNumbers = () => {
     const targets = {
-      carbon: 100,
-      footprint: 54,
-      efficiency: 30
+      carbon: 2021,
+      footprint: 1447,
+      efficiency: 95
     };
 
     Object.entries(targets).forEach(([key, target]) => {
@@ -146,7 +146,7 @@ const Home = () => {
             <p className="text-2xl">Leading the transition to battery-electric mining solutions.</p>
           </div>
           <div className="mt-auto mb-20 flex space-x-4 justify-center items-center">
-            <a href="/product-info/E-777D" className="text-xs md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Learn More</a>
+            <a href="/product-info/E-777D" className="text-xs md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Explore Our Fleet</a>
             <a href="/product-enquiry/E-777D" className="text-xs md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
           </div>
         </div>
@@ -169,7 +169,7 @@ const Home = () => {
                     <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10<span className="text-4xl md:text-5xl">hr</span></div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        10-hour runtime, 15% more power
+                        10-hour Runtime, 15% More Power
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -188,40 +188,41 @@ const Home = () => {
     <section className="py-20 bg-black text-white" id="machines">
         <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold mb-4">Machines</h2>
+            <p className="text-2xl mb-8">Built for the Toughest Mining Conditions</p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <VehicleCard 
-                    imageSrc="/placeholder.svg"
+                    imageSrc="/truck1.jpeg"
                     altText="E-777 Mining Truck"
-                    title="E-777D"
-                    subtitle="Subtitle"
+                    title="E-777 Off-Highway Truck"
+                    subtitle="Available"
                     buttonText="View More"
                     buttonLink="/product-info/E-777D"
-                    vehicleInfo={{
-                        sample: "Sample",
-                        sample1: "Sample",
-                        sample2: "Sample",
-                        sample3: "Sample",
-                        sample4: "Sample",
-                        sample5: "Sample",
-                        sample6: "Sample",
-                      }}
+                    // vehicleInfo={{
+                    //     sample: "Sample",
+                    //     sample1: "Sample",
+                    //     sample2: "Sample",
+                    //     sample3: "Sample",
+                    //     sample4: "Sample",
+                    //     sample5: "Sample",
+                    //     sample6: "Sample",
+                    //   }}
                 />
 
                 <VehicleCard 
-                    imageSrc="/placeholder.svg"
+                    imageSrc="/785edited2.jpg"
                     altText="E-785 Mining Truck"
-                    title="E-785"
-                    subtitle="Subtitle"
+                    title="E-785 Off-Highway Truck"
+                    subtitle="Coming Soon"
                     buttonText="Express Interest"
                     buttonLink="/enquiry?subject=E-785"
                 />
 
                 <VehicleCard 
-                    imageSrc="/placeholder.svg"
+                    imageSrc="/993edited2.png"
                     altText="E-993 Loader"
-                    title="E-993"
-                    subtitle="Subtitle"
+                    title="E-993 Wheel Loader"
+                    subtitle="Coming Soon"
                     buttonText="Express Interest"
                     buttonLink="/enquiry?subject=E-993"
                 />
@@ -237,7 +238,7 @@ const Home = () => {
                 >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
                     <img 
-                        src="/placeholder.svg" 
+                        src="UON_Charger.png" 
                         alt="UON SMART CELL Charging Station" 
                         className="w-full h-full object-cover"
                     />
@@ -253,9 +254,8 @@ const Home = () => {
                     </div>
                     
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Revolutionary charging infrastructure designed specifically for heavy mining equipment. 
-                        Achieve full charge in <span className="font-semibold text-[#00CC66]">under 2 hours</span> with our proprietary fast-charging technology, 
-                        minimizing downtime and maximizing productivity.
+                        Engineered for efficiency, UON’s advanced charging solution delivers a full charge 
+                        in <span className="font-semibold text-[#00CC66]">under 2 hours</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                     </p>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -273,7 +273,7 @@ const Home = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                 </svg>
                             </div>
-                            <span className="font-medium text-gray-800">Remote Monitoring</span>
+                            <span className="font-medium text-gray-800">Modular and Scalable</span>
                         </div>
                         <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                             <div className="text-[#00CC66] mb-2">
@@ -301,35 +301,35 @@ const Home = () => {
 
     <section className="py-20 bg-gray-100 impact-section">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Sustainable Mining Impact</h2>
+            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry’s Green Transition</h2>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>
                     <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
-                        {numbers.carbon}%
+                        {numbers.carbon}
                     </div>
                     <p className="text-gray-600 text-lg max-w-xs mx-auto">
-                        CO₂ Reduction compared to traditional mining equipment
+                        Perth-based Engineering Team
                     </p>
                 </div>
 
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Reduced footprint</div>
                     <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
-                        {numbers.footprint}%
+                        {numbers.footprint}t
                     </div>
                     <p className="text-gray-600 text-lg max-w-xs mx-auto">
-                        Reduced haulage costs through electric vehicle efficiency
+                        Each electric truck removes 1,447 tonnes of CO₂ per year.
                     </p>
                 </div>
 
                 <div className="text-center">
-                    <div className="inline-block border rounded px-4 py-1 mb-8">Efficiency</div>
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Energy Savings</div>
                     <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
                         {numbers.efficiency}%
                     </div>
                     <p className="text-gray-600 text-lg max-w-xs mx-auto">
-                        Increased operational efficiency in mining operations
+                         Electric motors achieves up to 95% efficiency compared to diesel engines.
                     </p>
                 </div>
             </div>
@@ -404,7 +404,7 @@ const Home = () => {
     <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-6">Get Updates</h2>
-            <p className="text-base text-gray-600 text-center mb-10">Join the Electric Mining Revolution</p>
+            <p className="text-base text-gray-600 text-center mb-10">Join the Future of Mining Today</p>
             <form className="flex flex-col sm:flex-row justify-center gap-3.5 max-w-md mx-auto" onSubmit={handleSubmit}>
                 <input 
                     type="email" 

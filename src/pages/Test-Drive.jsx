@@ -156,12 +156,12 @@ const TestDrive = () => {
             {/* Static Map Image */}
             <div className="w-full mb-8">
               <img 
-                src="/hazelmere-map.png" 
+                src="/map.png" 
                 alt="Map showing EPCA Hazelmere location" 
                 className="w-full h-auto rounded-lg shadow-md"
               />
               <p className="text-sm text-gray-500 mt-2 text-center">
-                Electric Power Conversions Australia - Hazelmere, Perth
+                EPCA Testing Field - Bakers Hill
               </p>
             </div>
             

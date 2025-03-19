@@ -64,7 +64,7 @@ export default function About() {
       <section className="bg-black text-white px-4 md:px-8 lg:px-36">
         <div className="max-w-[1920px] mx-auto">
           <img 
-            src="/Team.JPG" 
+            src="/Team2.JPG" 
             alt="EPCA Team" 
             className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
