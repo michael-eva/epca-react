@@ -358,7 +358,48 @@ export default function TCOCalculator() {
             </Card>
           </div>
         </div>
-
+        <Card className="p-4">
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="operating-hours">Annual Operating Hours (hrs)</Label>
+                <div className="flex items-center gap-2">
+                  <Slider
+                    id="operating-hours"
+                    min={1000}
+                    max={8760}
+                    step={100}
+                    value={[operatingHours]}
+                    onValueChange={(value) => setOperatingHours(value[0])}
+                  />
+                  <Input
+                    type="number"
+                    value={operatingHours}
+                    onChange={(e) => setOperatingHours(Number(e.target.value))}
+                    className="max-w-20"
+                  />
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="analysis-period">Analysis Period (Years)</Label>
+                <div className="flex items-center gap-2">
+                  <Slider
+                    id="analysis-period"
+                    min={1}
+                    max={20}
+                    step={1}
+                    value={[years]}
+                    onValueChange={(value) => setYears(value[0])}
+                  />
+                  <Input
+                    type="number"
+                    value={years}
+                    onChange={(e) => setYears(Number(e.target.value))}
+                    className="max-w-20"
+                  />
+                </div>
+              </div>
+            </div>
+          </Card>
         {/* Bottom section with cards */}
         <div className="space-y-4">
           {/* Top row of cards */}

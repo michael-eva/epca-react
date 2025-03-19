@@ -18,8 +18,10 @@ export default function About() {
           loop 
           muted 
           playsInline
+          poster="/video-poster.jpg" 
+          preload="metadata"
         >
-          <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
+          <source src="https://d19kz0rwf2xrwq.cloudfront.net/assets/about-us-vid.mp4" type="video/mp4" />
         </video>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">

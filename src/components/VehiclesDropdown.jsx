@@ -8,7 +8,6 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
       onMouseLeave={() => setShowVehicles(false)}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 p-8">
-        {/* Model 3 */}
         <div className="flex flex-col items-center text-center">
           <img 
             src="/E777_EnquiryPage.png" 
@@ -22,12 +21,11 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
           </div>
         </div>
 
-        {/* Model Y */}
         <div className="flex flex-col items-center text-center">
           <img 
             src="/785edited.jpeg" 
             alt="E-785 Mining Truck" 
-            className="w-full h-auto mb-4"
+            className="w-[330px] h-auto mb-4"
           />
           <h3 className="text-xl mb-2 text-gray-900">E-785 Mining Truck</h3>
           <div className="flex gap-4">
@@ -35,7 +33,6 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
           </div>
         </div>
 
-        {/* Cybertruck */}
         <div className="flex flex-col items-center text-center">
           <img 
             src="/993editedv1.jpeg" 

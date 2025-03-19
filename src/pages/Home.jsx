@@ -137,8 +137,10 @@ const Home = () => {
           loop 
           muted 
           playsInline
+          poster="/video-poster.jpg" 
+          preload="metadata"
         >
-          <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
+          <source src="https://d19kz0rwf2xrwq.cloudfront.net/assets/home-vid.mp4" type="video/mp4" />
         </video>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
@@ -254,7 +256,7 @@ const Home = () => {
                     </div>
                     
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Engineered for efficiency, UON’s advanced charging solution delivers a full charge 
+                        Engineered for efficiency, UON's advanced charging solution delivers a full charge 
                         in <span className="font-semibold text-[#00CC66]">under 2 hours</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                     </p>
                     
@@ -301,7 +303,7 @@ const Home = () => {
 
     <section className="py-20 bg-gray-100 impact-section">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry’s Green Transition</h2>
+            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry's Green Transition</h2>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>
