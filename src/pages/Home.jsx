@@ -137,7 +137,6 @@ const Home = () => {
           loop 
           muted 
           playsInline
-          poster="/video-poster.jpg" 
           preload="metadata"
         >
           <source src="https://d19kz0rwf2xrwq.cloudfront.net/assets/home-vid.mp4" type="video/mp4" />

@@ -18,7 +18,6 @@ export default function About() {
           loop 
           muted 
           playsInline
-          poster="/video-poster.jpg" 
           preload="metadata"
         >
           <source src="https://d19kz0rwf2xrwq.cloudfront.net/assets/about-us-vid.mp4" type="video/mp4" />
