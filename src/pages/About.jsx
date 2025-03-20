@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { HiGlobeAlt } from "react-icons/hi";
 import { Timeline } from "../components/Timeline";
-
+import HLSPlayer from "../components/HlsPlayer";
 
 export default function About() {
   return (
@@ -12,16 +12,9 @@ export default function About() {
       
       <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>
-        <video 
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          preload="metadata"
-        >
-          <source src="https://d19kz0rwf2xrwq.cloudfront.net/assets/about-us-vid.mp4" type="video/mp4" />
-        </video>
+        <div className='absolute inset-0 w-full h-full object-cover'>
+            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/assets/home-vid.m3u8" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
             <h1 className="text-6xl font-bold leading-tight mb-6">We are EPCA</h1>
