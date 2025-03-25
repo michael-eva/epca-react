@@ -66,19 +66,19 @@ const Home = () => {
   // Testimonial data
   const testimonials = [
     {
-      name: "John Smith",
-      role: "Operations Director, Global Mining Corp",
-      text: "EPCA's E-777 has transformed our mining operations. We've seen significant cost savings and our sustainability targets are now within reach."
+        name: "Jason Gore",
+        role: "COO, Winyama Contracting Group",
+        text: "Seeing the E-777D up close gave us real confidence in electric retrofit technology. The fact that it's quieter, cheaper to run, and still delivers on power makes it a no-brainer for where the industry is heading."
     },
     {
-      name: "Sarah Johnson",
-      role: "CEO, Mining Solutions Ltd",
-      text: "The transition to electric vehicles was seamless with EPCA's support. The performance and reliability have exceeded our expectations."
+        name: "David Martin",
+        role: "Project Manager, Karlayura Group",
+        text: "The fuel savings are a big advantage, but what really stands out is the driving experience. It's quieter, smoother, and way more responsive than a diesel truck. You feel the torque straight away when you put your foot down."
     },
     {
-      name: "Michael Chen",
-      role: "Sustainability Director, EcoMine",
-      text: "The UON SMART CELL charging infrastructure has revolutionized our operations. Charging times are minimal, and uptime is maximized."
+        name: "Joshua Smith",
+        role: "Maintenance and Workshop Manager, EMJC",
+        text: "Driving the E-777D was a big change, in a good way. It's quieter and smoother. The torque is instant, so it pulls strong even on steep grades. No gear shifts, no exhaust fumes, just get in and go."
     }
   ];
 
@@ -160,10 +160,10 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10<span className="text-4xl md:text-5xl">hr</span></div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">13<span className="text-4xl md:text-5xl">-Year</span></div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
-                        <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        10-hour Runtime, 15% More Power
+                        <span className="font-semibold text-gray-700">Extended Lifecycle</span> &ndash; 
+                        Maximise Your Fleet’s Value
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -181,7 +181,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
     </section>
     <section className="py-20 bg-black text-white" id="machines">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-4">Machines</h2>
+            <h2 className="text-4xl font-bold mb-4">Our Machines</h2>
             <p className="text-2xl mb-8">Built for the Toughest Mining Conditions</p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -242,14 +242,14 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 <div className="lg:w-1/2">
                     <div className="relative">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">UON SMART™ CELL:</span>
-                            <br />High-Speed DC Charging
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">High-Speed Charger:</span>
+                            <br />Mining Charging Solution
                         </h2>
                     </div>
                     
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Engineered for efficiency, UON's advanced charging solution delivers a full charge 
-                        in <span className="font-semibold text-[#00CC66]">under 2 hours</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                        Engineered for efficiency, the fast charging solution for mining delivers a full charge 
+                        in <span className="font-semibold text-[#00CC66]">in 50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                     </p>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -275,7 +275,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <span className="font-medium text-gray-800">Off-Grid Ready</span>
+                            <span className="font-medium text-gray-800">Micro-Grid Ready</span>
                         </div>
                     </div>
                     
@@ -295,7 +295,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
 
     <section className="py-20 bg-gray-100 impact-section">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry's Green Transition</h2>
+            <h2 className="text-4xl font-bold text-center mb-16">Australia’s First Battery-Electric Retrofitted Mining Truck</h2>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>
@@ -318,7 +318,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 </div>
 
                 <div className="text-center">
-                    <div className="inline-block border rounded px-4 py-1 mb-8">Energy Savings</div>
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Efficiency</div>
                     <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
                         {numbers.efficiency}%
                     </div>

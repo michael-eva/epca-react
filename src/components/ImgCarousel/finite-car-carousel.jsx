@@ -32,25 +32,25 @@ export default function FiniteCarCarousel() {
       image: "/truck9.png",
       title: "Even Quieter",
       description:
-        "An updated wheel and tyre package offers a smoother driving experience. Redesigned body castings reduce parts from 70 to 1 for fewer gaps. All to create a whisper-quiet ride.",
+        "Reduce noise pollution and improve site conditions. With no diesel engine, the truck operates 10x quieter, enhancing worker safety and communication in mining environments.",
     },
     {
       image: "/truck7.png",
-      title: "More Efficient",
+      title: "Increased Productivity",
       description:
-        "Redesigned to improve aerodynamics and reduce energy consumption for extended range and better performance.",
+        "The EPCA battery-electric mining truck increases productivity by delivering instant torque, allowing for faster acceleration and improved performance on inclines. Unlike diesel engines that require ramp-up time, the electric drivetrain provides immediate power, optimizing haul cycles and reducing delays.",
     },
     {
       image: "/truck10.jpeg",
-      title: "Advanced Safety",
+      title: "Simplified Maintenance",
       description:
-        "State-of-the-art safety features with enhanced structural integrity and intelligent driver assistance systems.",
+        "Retrofitting a diesel truck to battery-electric significantly reduces maintenance complexity and costs. The electric drivetrain has fewer moving parts, reducing wear and tear while extending service intervals.",
     },
     {
       image: "/screen.JPG",
-      title: "Premium Interior",
+      title: "In-Cab Display",
       description:
-        "Luxurious cabin with sustainable materials, advanced climate control, and intuitive technology integration.",
+        "The E-777D features an additional touchscreen in the cab that gives operators clear, real-time data on battery status, power use, and system performance. It’s a simple, user-friendly interface that helps drivers stay informed and in control.",
     },
     {
       image: null,

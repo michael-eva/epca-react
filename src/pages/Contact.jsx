@@ -19,8 +19,10 @@ const Contact = () => {
             {/* Customer Care Centre */}
             <div className="space-y-4">
               <h2 className="text-xl font-medium">First Point of Contact</h2>
-              <p className="text-gray-300">clayton.franklin@epca.net.au</p>
-              <p>0427 086 301 <span className="text-blue-400">(+61 427 086 301)</span></p>
+              <p className="text-gray-600">
+                  <a href="mailto:clayton.franklin@epca.net.au" className="text-white hover:underline">clayton.franklin@epca.net.au</a>
+                  </p>
+              <p className="text-white-400">+61 427 086 301</p>
               <button onClick={() => window.location.href = '/enquiry?subject=general'} className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
                 CONTACT US
               </button>
@@ -58,10 +60,10 @@ const Contact = () => {
           {/* Newsletter Signup */}
           <div className="max-w-4xl mx-auto mt-16 text-center">
           <div className="flex space-x-4 justify-center">
-                        <a href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" className="text-gray-400 hover:text-white">
+                        <a href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <LinkedInIcon />
                         </a>
-                        <a href="https://www.youtube.com/@EPCA_" className="text-gray-400 hover:text-white">
+                        <a href="https://www.youtube.com/@EPCA_" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <YouTubeIcon />
                         </a>
                     </div>

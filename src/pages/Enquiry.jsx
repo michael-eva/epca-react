@@ -28,10 +28,10 @@ const Enquiry = () => {
     // Move subjectOptions outside of component or use useMemo
     const subjectOptions = React.useMemo(() => [
         'Please select a subject',
-        'E-785 Loading Truck',
+        'E-785 Mining Truck',
         'E-777D Mining Truck',
         'E-993 Loader',
-        'UON SMART™ CELL',
+        'DC Charger',
         'General Enquiry',
         'Sales Question',
         'Service Request',
@@ -47,11 +47,11 @@ const Enquiry = () => {
         if (subjectParam) {
             // Case-insensitive mapping of URL parameters to full subject options
             const subjectMapping = {
-                'e-785': 'E-785 Loading Truck',
+                'e-785': 'E-785 Mining Truck',
                 'e-777d': 'E-777D Mining Truck',
                 'e-993': 'E-993 Loader',
-                'UON-smart-cell': 'UON SMART™ CELL',
-                'uon': 'UON SMART™ CELL',
+                'UON-smart-cell': 'DC Charger',
+                'uon': 'DC Charger',
                 'general': 'General Enquiry',
             };
 

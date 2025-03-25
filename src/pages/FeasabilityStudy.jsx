@@ -100,7 +100,7 @@ export default function FeasabilityStudy() {
                     <section className="mb-16">
                         <h2 className="text-2xl font-medium mb-6">Request a Feasibility Study</h2>
                         <p className="mb-6 text-gray-600">
-                            Let our experts analyze your fleet and provide a comprehensive study on converting to electric vehicles. We'll assess costs, benefits, and implementation strategies tailored to your needs.
+                        Our team will evaluate your haul routes, duty cycles, charging options, and site conditions to determine if a retrofit solution like the E-777D makes sense for your fleet.
                         </p>
 
                         {/* Important Notes */}
@@ -109,20 +109,20 @@ export default function FeasabilityStudy() {
                             <ul className="space-y-2 text-gray-700">
                                 <li className="flex items-start">
                                     <span className="text-[#00CC66] mr-2">•</span>
-                                    <span>Detailed cost analysis and ROI projections</span>
+                                    <span>Total Cost of Ownership</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-[#00CC66] mr-2">•</span>
-                                    <span>Infrastructure requirements assessment</span>
+                                    <span>Runtime based on Client's data</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-[#00CC66] mr-2">•</span>
-                                    <span>Environmental impact evaluation</span>
+                                    <span>Requirement for Charging infrastructure</span>
                                 </li>
-                                <li className="flex items-start">
+                                {/* <li className="flex items-start">
                                     <span className="text-[#00CC66] mr-2">•</span>
                                     <span>Implementation timeline and recommendations</span>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </section>
@@ -139,7 +139,7 @@ export default function FeasabilityStudy() {
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
                                     value={formData.fleetSize}
                                     onChange={handleInputChange}
-                                    placeholder="Number of vehicles"
+                                    placeholder="Number of machines"
                                 />
                             </div>
                             <div>
@@ -149,7 +149,7 @@ export default function FeasabilityStudy() {
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
                                     value={formData.vehicleTypes}
                                     onChange={handleInputChange}
-                                    placeholder="Describe your current fleet vehicles (types, models, etc.)"
+                                    placeholder="Describe your current fleet (types, models, fuel consumption)"
                                     rows={4}
                                 />
                             </div>
@@ -290,9 +290,9 @@ export default function FeasabilityStudy() {
 
                     {/* Test Drive Link */}
                     <div className="mb-8 bg-gray-50 p-6 rounded-lg">
-                        <h3 className="text-lg font-medium mb-3">Interested in testing our vehicles?</h3>
+                        <h3 className="text-lg font-medium mb-3">Interested in testing our truck?</h3>
                         <p className="mb-4 text-gray-600">
-                            Schedule a test drive of our E-777D to experience the future of electric vehicles firsthand.
+                            Schedule a test drive of our E-777D to experience the future of electric mining truck firsthand.
                         </p>
                         <Link 
                             to="/test-drive"
@@ -317,7 +317,7 @@ export default function FeasabilityStudy() {
                                 Submitting...
                             </>
                         ) : (
-                            'Request Feasibility Study'
+                            'Submit Request for Feasibility Study'
                         )}
                     </button>
                 </form>

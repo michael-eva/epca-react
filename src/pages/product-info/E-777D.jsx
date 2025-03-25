@@ -117,22 +117,22 @@ const E777D = () => {
   // Stats for the benefits section
   const benefits = [
     {
-      value: "100",
-      unit: "%",
-      title: "Carbon Zero",
-      description: "Retrofitting Technology"
-    },
-    {
       value: "10",
       unit: "hr",
-      title: "Superior Performance",
-      description: "10-hour runtime, 15% more power"
+      title: "World's Best Runtime",
+      description: "Fully Battery-Powered"
     },
     {
-      value: "54",
+      value: "50",
+      unit: "min",
+      title: "Fast Charging",
+      description: "Minimise the Impact on Productivity"
+    },
+    {
+      value: "23",
       unit: "%",
-      title: "Cost Savings",
-      description: "54% reduction in haulage costs"
+      title: "More Powerful",
+      description: "More Power, Higher Instant Torque"
     }
   ];
 
@@ -161,7 +161,7 @@ const E777D = () => {
         </svg>
       ),
       title: "Battery System",
-      description: "Advanced lithium-ion battery system delivering 10.5 hours of operational runtime with 50-minute ultra-fast charging capability."
+      description: "Advanced lithium-ion battery system for extended range and runtime. Built to withstand the toughest mining conditions while delivering consistent, high-performance output."
     },
     {
       icon: (
@@ -169,8 +169,8 @@ const E777D = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
         </svg>
       ),
-      title: "Powertrain",
-      description: "Durable, high-efficiency electric motors delivering 840 kW of power and 16,500 Nm of torque, optimized for mining operations."
+      title: "Electric Powertrain",
+      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 23% more power even in the toughest mining conditions."
     },
     {
       icon: (
@@ -179,7 +179,7 @@ const E777D = () => {
         </svg>
       ),
       title: "Data & Analytics",
-      description: "Comprehensive real-time monitoring system providing valuable insights for operational efficiency, predictive maintenance, and performance optimization."
+      description: "The E-777D collects over 3,000 real-time data points from the powertrain, continuously streaming this information to a cloud-based historian platform."
     }
   ];
 
@@ -197,7 +197,7 @@ const E777D = () => {
           />
           <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
             <div className="max-w-2xl text-white mt-32">
-              <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Ton Battery-Electric Mining Truck</h1>
+              <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Tonne Battery-Electric</h1>
               <p className="text-2xl mb-10">Built for tough mining conditions with zero emissions.</p>
             </div>
             <div className="mt-auto mb-20 flex space-x-4 justify-center">
@@ -245,9 +245,10 @@ const E777D = () => {
             </div>
             
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
-              <h2 className="text-5xl font-bold mb-6">Lorem ipsum dolor sit amet</h2>
+              <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
               <p className="text-xl text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                The E-777D is EPCA’s first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
+                With up to 10 hours of runtime, a 50-minute fast charge, and 23% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
           </div>
@@ -268,9 +269,10 @@ const E777D = () => {
             </div>
             
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
-              <h2 className="text-5xl font-bold mb-6">Lorem ipsum dolor sit amet</h2>
+              <h2 className="text-5xl font-bold mb-6">A Smarter Way to Electrify Your Fleet</h2>
               <p className="text-xl text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Retrofitting with EPCA means transforming an existing diesel truck into a battery-electric machine, without starting from scratch. The E-777D keeps around 80% of its original structure, including the chassis, cab, and suspension, while replacing the diesel engine and transmission with a high-efficiency electric powertrain.
+              For mining operators, this approach is practical and cost-effective. It extends the life of trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of buying a brand-new electric truck. It’s a straightforward upgrade with long-term operational benefits. 
               </p>
             </div>
           </div>
@@ -309,16 +311,16 @@ const E777D = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Payload Capacity</p>
                     <p className="text-xl">100 tonnes</p>
-                    <p className="text-gray-400 text-sm mt-1">Industry-leading capacity for electric mining trucks</p>
+                    <p className="text-gray-400 text-sm mt-1"></p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Power Output</p>
-                    <p className="text-xl">840 kW</p>
+                    <p className="text-xl">850 kW</p>
                     <p className="text-gray-400 text-sm mt-1">23% increase over equivalent diesel models</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Maximum Torque</p>
-                    <p className="text-xl">16,500 Nm</p>
+                    <p className="text-xl">5200 Nm</p>
                     <p className="text-gray-400 text-sm mt-1">Instant torque at all speeds</p>
                   </div>
                 </div>
@@ -331,17 +333,17 @@ const E777D = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Battery Type</p>
                     <p className="text-xl">Lithium-ion</p>
-                    <p className="text-gray-400 text-sm mt-1">Advanced cell chemistry optimized for mining applications</p>
+                    <p className="text-gray-400 text-sm mt-1">Advanced cell chemistry optimised for energy density</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Battery Capacity</p>
-                    <p className="text-xl">950 kWh</p>
+                    <p className="text-xl">1100 kWh</p>
                     <p className="text-gray-400 text-sm mt-1">High-density energy storage</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Charging Time</p>
                     <p className="text-xl">50 minutes</p>
-                    <p className="text-gray-400 text-sm mt-1">With UON SMART™ CELL high-speed charging</p>
+                    <p className="text-gray-400 text-sm mt-1">With high-speed charging infrastructure</p>
                   </div>
                 </div>
               </div>
@@ -352,7 +354,7 @@ const E777D = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <p className="text-gray-400 text-sm">Runtime</p>
-                    <p className="text-xl">Up to 10.5 hours</p>
+                    <p className="text-xl">10 hours</p>
                     <p className="text-gray-400 text-sm mt-1">Based on standard mining cycle testing</p>
                   </div>
                   <div>
@@ -362,7 +364,7 @@ const E777D = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Gradeability</p>
-                    <p className="text-xl">12%</p>
+                    <p className="text-xl">Up to 20%</p>
                     <p className="text-gray-400 text-sm mt-1">At full load</p>
                   </div>
                 </div>
