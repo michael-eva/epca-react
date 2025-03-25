@@ -26,8 +26,8 @@ const TestDrive = () => {
   
   const location = {
     id: 1,
-    name: 'EPCA Hazelmere',
-    address: '123 Lakes Road, Hazelmere, Perth WA 6055'
+    name: 'EPCA Testing Site',
+    address: 'Refractory Road, Bakers Hill WA 6562'
   };
 
   // Add form data state with default date and time
@@ -118,7 +118,7 @@ const TestDrive = () => {
           <section className="mb-16">
             <h2 className="text-2xl font-medium mb-6">Schedule a Test Drive</h2>
             <p className="mb-6 text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Experience the E-777D in real conditions. We offer test drives for companies interested in seeing how our battery-electric truck performs on site.
             </p>
             
             {/* Important Notes */}
@@ -137,16 +137,16 @@ const TestDrive = () => {
                   <span className="text-[#00CC66] mr-2">•</span>
                   <span>Companies must cover flights & accommodation</span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <span className="text-[#00CC66] mr-2">•</span>
                   <span className="font-medium">Cost: $6,730 USD per test drive</span>
-                </li>
+                </li> */}
               </ul>
             </div>
             
             {/* Location Display */}
             <div className="mb-8">
-              <p className="mb-2 font-medium">Showroom Location</p>
+              <p className="mb-2 font-medium">Mine Site Location</p>
               <div className="rounded-lg p-4 border-[#00CC66] border-2 mb-4">
                 <p className="font-medium">{location.name}</p>
                 <p className="text-sm text-gray-600">{location.address}</p>
@@ -157,7 +157,7 @@ const TestDrive = () => {
             <div className="w-full mb-8">
               <img 
                 src="/map.png" 
-                alt="Map showing EPCA Hazelmere location" 
+                alt="Map showing the mine site location" 
                 className="w-full h-auto rounded-lg shadow-md"
               />
               <p className="text-sm text-gray-500 mt-2 text-center">

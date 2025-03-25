@@ -55,7 +55,7 @@ export default function TermsAndConditions() {
             <Navbar mode="dark" />
             <div className="min-h-screen bg-white">
                 {/* Hero Section */}
-                <div className="bg-gray-100 py-16">
+                <div className="relative h-[40vh] bg-gray-100 flex items-center justify-center">
                     <div className="max-w-4xl mx-auto px-4">
                         <h1 className="text-4xl font-bold text-center mb-4">
                             Terms and Conditions

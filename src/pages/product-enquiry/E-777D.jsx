@@ -93,9 +93,9 @@ const handleSubmit = async (e) => {
   }
 };
   const specs = [
-    { value: '100', unit: 't', label: 'Lorem\nIpsum' },
-    { value: '54', unit: '%', label: 'Lorem\nIpsum' },
-    { value: '10', unit: 'hr', label: 'Lorem\nIpsum' }
+    { value: '100', unit: 't', label: 'Payload' },
+    { value: '50', unit: 'min', label: 'Charging' },
+    { value: '8', unit: 'hr', label: 'Runtime' }
   ];
   return (
     <TooltipProvider>
@@ -128,7 +128,7 @@ const handleSubmit = async (e) => {
         <div className="w-full md:w-1/3 bg-white overflow-y-auto h-[50vh] md:h-screen">
           <div className="p-12 pt-24">
             <h1 className="text-4xl font-medium mb-4 text-center">E-777D</h1>
-            <p className="text-gray-600 text-center mb-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <p className="text-gray-600 text-center mb-16">EPCA’s 100-tonne full battery-electric mining truck</p>
             
             <KeySpecs specs={specs} />
 
@@ -148,7 +148,7 @@ const handleSubmit = async (e) => {
                     <h3 className={`text-xl font-medium ${formData.selectedRuntime === 'standard' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
                       Standard Runtime
                     </h3>
-                    <p className="text-gray-600 mt-2">7 hours</p>
+                    <p className="text-gray-600 mt-2">8 hours</p>
                   </button>
                   <button 
                     type="button" 
@@ -164,7 +164,7 @@ const handleSubmit = async (e) => {
                 </div>
               </div>
 
-              {/* Performance Package */}
+              {/* Performance Package
               <div className="space-y-6">
                 <h2 className="text-2xl font-medium mb-6 relative">
                   Performance Package
@@ -185,7 +185,7 @@ const handleSubmit = async (e) => {
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Optimizes power distribution for improved efficiency and performance</p>
+                          <p>Optimises power distribution for improved efficiency and performance</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -211,7 +211,7 @@ const handleSubmit = async (e) => {
                     </div>
                   </label>
                 </div>
-              </div>
+              </div> */}
 
               {/* Options */}
               <div className="space-y-6">
@@ -232,7 +232,7 @@ const handleSubmit = async (e) => {
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Real-time monitoring and diagnostics of battery health and performance</p>
+                          <p>Real-time insight into battery health, performance, and system status</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -252,13 +252,13 @@ const handleSubmit = async (e) => {
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Advanced tire monitoring and management system</p>
+                          <p>Automatically limits speed based on tyre load, temperature, and pressure</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
                   </label>
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
-                    <span className="text-lg group-hover:text-[#00CC66]">Remote Control</span>
+                    <span className="text-lg group-hover:text-[#00CC66]">Remote Operation (Driverless)</span>
                     <div className="flex items-center gap-3">
                       <input 
                         type="checkbox" 
@@ -272,13 +272,13 @@ const handleSubmit = async (e) => {
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Remote operation capabilities for enhanced safety and convenience</p>
+                          <p>Secure remote access for diagnostics, updates, and troubleshooting</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
                   </label>
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
-                    <span className="text-lg group-hover:text-[#00CC66]">Extended Warranty</span>
+                    <span className="text-lg group-hover:text-[#00CC66]">Extended Warranty (5-Years)</span>
                     <div className="flex items-center gap-3">
                       <input 
                         type="checkbox" 
@@ -292,7 +292,7 @@ const handleSubmit = async (e) => {
                           <button type="button" className="text-gray-400 hover:text-[#00CC66] text-lg">ⓘ</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Additional warranty coverage beyond the standard period</p>
+                          <p>Additional warranty coverage beyond the  1-Year standard period</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -416,13 +416,13 @@ const handleSubmit = async (e) => {
               </button>
             </form>
 
-            {/* Additional Information */}
+            {/* Additional Information
             <div className="mt-16 pt-16 border-t border-gray-200">
               <div className="text-sm text-gray-600">
                 <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -12,6 +12,8 @@ import FeasabilityStudy from './pages/FeasabilityStudy'
 import About from './pages/About'
 import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms-and-Conditions'
+import PressReleases from './pages/PressReleases'
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +30,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/pressreleases" element={<PressReleases />} />
       </Routes>
     </BrowserRouter>
   )

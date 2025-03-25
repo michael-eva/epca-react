@@ -11,10 +11,10 @@ export default function Footer() {
                     </div>
                     <p className="text-base text-gray-400 mb-4">Leading the transition to zero-emission mining operations with innovative battery-electric solutions.</p>
                     <div className="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" className="text-gray-400 hover:text-white">
+                        <a href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <LinkedInIcon />
                         </a>
-                        <a href="https://www.youtube.com/@EPCA_" className="text-gray-400 hover:text-white">
+                        <a href="https://www.youtube.com/@EPCA_" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <YouTubeIcon />
                         </a>
                     </div>
@@ -25,7 +25,7 @@ export default function Footer() {
                         <li><a onClick={() => window.location.href = '/product-info/E-777D'} className="cursor-pointer">E-777D Mining Truck</a></li>
                         <li><a onClick={() => window.location.href = '/enquiry?subject=E-785'} className="cursor-pointer">E-785 Mining Truck</a></li>
                         <li><a onClick={() => window.location.href = '/enquiry?subject=E-993'} className="cursor-pointer">E-993 Loader</a></li>
-                        <li><a onClick={() => window.location.href = '/product-info/UON-smart-cell'} className="cursor-pointer">UON SMART™ CELL</a></li>
+                        <li><a onClick={() => window.location.href = '/product-info/UON-smart-cell'} className="cursor-pointer">Charging</a></li>
                     </ul>
                 </div>
                 <div>
@@ -41,6 +41,7 @@ export default function Footer() {
                         <li><a onClick={() => window.location.href = '/about'} className="cursor-pointer">About Us</a></li>
                         <li><a onClick={() => window.location.href = '/contact'} className="cursor-pointer">Contact</a></li>
                         <li><a onClick={() => window.location.href = '/terms-and-conditions'} className="cursor-pointer">Terms and Conditions</a></li>
+                        <li><a onClick={() => window.location.href = '/pressreleases'} className="cursor-pointer">Press Releases</a></li>
                     </ul>
                 </div>
             </div>

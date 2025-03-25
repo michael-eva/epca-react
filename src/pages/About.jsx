@@ -22,16 +22,16 @@ export default function About() {
           </div>
           <div className="mt-auto mb-8 flex space-x-4 justify-evenly   items-center text-white">
             <div>
-              <div className="text-md font-bold">Placeholder</div>  
-              <div className="text-sm">Lorem Ipsum</div>
+              <div className="text-md font-bold">2021</div>  
+              <div className="text-sm">Founded</div>
             </div>
             <div className="flex flex-col items-center gap-1">
               <div className="text-md font-bold"><HiGlobeAlt className="w-6 h-6" /></div>
-              <div className="text-sm">Lorem Ipsum</div>
+              <div className="text-sm">One Vision</div>
             </div>
             <div>
-              <div className="text-md font-bold">Placeholder</div>
-              <div className="text-sm">Lorem Ipsum</div>
+              <div className="text-md font-bold">Aboriginal-owned</div>
+              <div className="text-sm">Proudly Australian</div>
             </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export default function About() {
       <section className="bg-black text-white px-4 md:px-8 lg:px-36 pt-20">
         <div className="max-w-[1920px] mx-auto">
           <img 
-            src="/placeholder.svg" 
+            src="/truck11.png" 
             alt="EPCA Factory" 
             className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
@@ -49,7 +49,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <h2 className="text-xl md:text-2xl font-bold md:w-1/3">Company Mission & Values</h2>
             <p className="text-sm md:text-base md:w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            To lead Australia in the electrification of mining equipment, building local capability in clean technology and supporting the industry's shift toward sustainable, efficient, and low-carbon operations. We want to make electric mining equipment accessible, scalable, and reliable, starting with retrofits, and shaping the future of heavy industry.
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <h2 className="text-xl md:text-2xl font-bold md:w-1/3">Meet the Team</h2>
             <p className="text-sm md:text-base md:w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            EPCA is a proudly Aboriginal-owned company specialising in retrofitting diesel-powered mining haulage trucks into Zero Emission Vehicles (ZEVs). Led by Clayton Franklin, a Wunumara man from Cloncurry, Queensland, EPCA is at the forefront of transforming the mining industry's approach to sustainability and carbon reduction.
             </p>
           </div>
         </div>

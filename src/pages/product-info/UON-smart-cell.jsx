@@ -62,8 +62,8 @@ const UONSmartCell = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
         </svg>
       ),
-      title: "Data Integration",
-      description: "Smart monitoring and analytics provide real-time insights into charging performance, usage patterns, and maintenance needs."
+      title: "Grid or Solar",
+      description: "Works with existing grid power or integrates with solar for flexible."
     }
   ];
 
@@ -100,7 +100,7 @@ const UONSmartCell = () => {
           </video>
           <div className="max-w-7xl mx-auto px-4 relative z-20">
             <div className="max-w-3xl text-white">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">High-Speed DC Charging for Heavy Mining Equipment</h1>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">EV Fast Charging Solution</h1>
               <p className="text-xl md:text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
             </div>
           </div>
@@ -110,12 +110,12 @@ const UONSmartCell = () => {
           <div className="flex flex-col md:flex-row">
             <div className="order-2 md:order-1 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
               <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
-              <h2 className="text-3xl font-bold mb-4">EPCA Charging Infrastructure</h2>
+              <h2 className="text-3xl font-bold mb-4">Built for Tough Mining Environments</h2>
               <p className="text-gray-600 text-sm mb-4">
-              The EPCA High-Power DC Charger is a fast-charging solution designed to support battery-electric mining equipment in demanding environments.
+              EPCA’s charging infrastructure is a flexible solution designed to withstand harsh mining conditions.
               </p>
               <p className="text-gray-600 text-sm mb-6">
-              It provides high-efficiency power delivery to reduce downtime and maintain fleet productivity. 
+              It can be deployed anywhere and supports rapid charging for any mining truck 24/7 in only 50min, ensuring seamless operation and minimal downtime. 
               </p>
               <div className="mt-auto">
                 <a href="#enquiry" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">
@@ -125,7 +125,7 @@ const UONSmartCell = () => {
             </div>
             <div className="order-1 md:order-2 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON3.jpg" 
+                src="/UON6.jpg" 
                 alt="UON SMART CELL deployment map" 
                 className="w-full h-full object-cover"
               />
@@ -138,7 +138,7 @@ const UONSmartCell = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
               <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
-              <h2 className="text-3xl font-bold">An Advanced Fast-Charging Solution</h2>
+              <h2 className="text-3xl font-bold">Plug In, Charge and Go</h2>
             </div>
             
             <div className="relative mb-12">
@@ -185,12 +185,12 @@ const UONSmartCell = () => {
             </div>
             <div className="order-2 md:order-2 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
               <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
-              <h2 className="text-3xl font-bold mb-4">Key Features</h2>
+              <h2 className="text-3xl font-bold mb-4">High-Power, Smart Energy Management</h2>
               <p className="text-gray-600 text-sm mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              With the highest power output available, the system maximises fleet productivity by reducing charging times, allowing battery-electric trucks to operate continuously and efficiently. 
                 </p>
                 <p className="text-gray-600 text-sm mb-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+                Its smart energy management system enables real-time monitoring and control to optimise charging cycles and power usage and improve both sustainability and performance.
               </p>
               <div className="mt-auto">
                 <a href="/enquiry?subject=uon" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">
@@ -207,7 +207,7 @@ const UONSmartCell = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/UON4.jpg" 
+              src="/uon7.png" 
               alt="Mining site background" 
               className="w-full h-full object-cover"
             />
@@ -217,7 +217,7 @@ const UONSmartCell = () => {
           <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">Ready to Electrify Your Mining Operations?</h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              Contact us today to learn how the UON SMART™ CELL can transform your mining fleet.
+            Contact us today to learn how EPCA’s charging solutions can transform your mining fleet.
             </p>
             <a 
               onClick={() => window.location.href = '/enquiry?subject=uon'} 
