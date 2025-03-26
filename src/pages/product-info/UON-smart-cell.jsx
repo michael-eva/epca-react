@@ -87,25 +87,23 @@ const UONSmartCell = () => {
       <Navbar />
       <div className="text-gray-800 leading-relaxed overflow-x-hidden">
         {/* Hero Section */}
-        <section className="h-screen flex items-center relative bg-black">
-          <div className="absolute inset-0 bg-black/30 z-10"></div>
-          <video 
-            className="absolute inset-0 w-full h-full object-cover opacity-70"
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-          >
-            <source src="https://www.epca.net.au/wp-content/uploads/2024/06/For-website.mp4" type="video/mp4" />
-          </video>
-          <div className="max-w-7xl mx-auto px-4 relative z-20">
-            <div className="max-w-3xl text-white">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">EV Fast Charging Solution</h1>
-              <p className="text-xl md:text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
+        <section className="h-screen flex items-center relative bg-gray-100">
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <img 
+            src="/UON6.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Charging Solution"
+          />
+          <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
+            <div className="max-w-2xl text-white mt-32">
+              <h1 className="text-6xl font-bold leading-tight mb-6">EV Fast Charging Solution</h1>
+              <p className="text-2xl mb-10">Fast, reliable, and built for off-grid mining sites.</p>
+            </div>
+            <div className="mt-auto mb-20 flex space-x-4 justify-center">
+              <a href="/enquiry?subject=uon" className="text-sm md:text-base   px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
             </div>
           </div>
         </section>
-
         <section className="bg-white">
           <div className="flex flex-col md:flex-row">
             <div className="order-2 md:order-1 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
