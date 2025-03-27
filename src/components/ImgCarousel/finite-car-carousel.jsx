@@ -47,7 +47,9 @@ export default function FiniteCarCarousel() {
 
   // Track touch start position for swipe detection
   const touchStartXRef = useRef(0)
+  const touchStartYRef = useRef(0) // Add this to track Y position at start
   const isTouchingRef = useRef(false)
+  const isHorizontalSwipeRef = useRef(false) // To detect horizontal swipe intention
   
   // Update current index when carousel changes
   useEffect(() => {
@@ -83,45 +85,67 @@ export default function FiniteCarCarousel() {
     const handleTouchStart = (e) => {
       isTouchingRef.current = true
       touchStartXRef.current = e.touches[0].clientX
+      touchStartYRef.current = e.touches[0].clientY // Store initial Y position
+      isHorizontalSwipeRef.current = false // Reset horizontal swipe detection
+    }
+    
+    const handleTouchMove = (e) => {
+      if (!isTouchingRef.current) return
+      
+      const touchCurrentX = e.touches[0].clientX
+      const touchCurrentY = e.touches[0].clientY
+      const deltaX = touchStartXRef.current - touchCurrentX
+      const deltaY = touchStartYRef.current - touchCurrentY
+      
+      // Only if we haven't determined direction yet
+      if (!isHorizontalSwipeRef.current) {
+        // Determine if this is primarily a horizontal swipe (with some threshold)
+        // This check only happens once per touch sequence to lock in the direction
+        if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+          isHorizontalSwipeRef.current = true
+        }
+      }
+      
+      // Only prevent default (stopping vertical scroll) if we've determined 
+      // this is clearly a horizontal swipe attempt
+      if (isHorizontalSwipeRef.current) {
+        e.preventDefault()
+      }
     }
     
     const handleTouchEnd = (e) => {
       if (!isTouchingRef.current) return
       
-      const touchEndX = e.changedTouches[0].clientX
-      const deltaX = touchStartXRef.current - touchEndX
-      
-      // Detect swipe based on speed and distance
-      const SWIPE_THRESHOLD = 50
-      const timeDelta = e.timeStamp - e.target._touchStartTime
-      const velocity = Math.abs(deltaX) / timeDelta
-      
-      // Fast swipe detection (high velocity OR sufficient distance)
-      if ((velocity > 0.5 || Math.abs(deltaX) > SWIPE_THRESHOLD)) {
-        if (deltaX > 0 && current < carouselItems.length - 2) {
-          // Swipe left -> next slide
-          api.scrollNext()
-        } else if (deltaX < 0 && current > 1) {
-          // Swipe right -> previous slide
-          api.scrollPrev()
+      // Only process swipe if we detected horizontal movement
+      if (isHorizontalSwipeRef.current) {
+        const touchEndX = e.changedTouches[0].clientX
+        const deltaX = touchStartXRef.current - touchEndX
+        
+        // Detect swipe based on distance
+        const SWIPE_THRESHOLD = 50
+        
+        if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+          if (deltaX > 0 && current < carouselItems.length - 2) {
+            api.scrollNext()
+          } else if (deltaX < 0 && current > 1) {
+            api.scrollPrev()
+          }
         }
       }
       
+      // Reset flags
       isTouchingRef.current = false
+      isHorizontalSwipeRef.current = false
     }
     
-    // Track touch start time for velocity calculation
-    const handleTouchCapture = (e) => {
-      e.target._touchStartTime = e.timeStamp
-    }
-    
-    element.addEventListener('touchstart', handleTouchCapture, { capture: true })
     element.addEventListener('touchstart', handleTouchStart, { passive: true })
+    // Use passive: false only for touchmove, as we only conditionally call preventDefault()
+    element.addEventListener('touchmove', handleTouchMove, { passive: false }) 
     element.addEventListener('touchend', handleTouchEnd, { passive: true })
     
     return () => {
-      element.removeEventListener('touchstart', handleTouchCapture, { capture: true })
       element.removeEventListener('touchstart', handleTouchStart)
+      element.removeEventListener('touchmove', handleTouchMove)
       element.removeEventListener('touchend', handleTouchEnd)
     }
   }, [api, current, carouselItems])
@@ -179,14 +203,13 @@ export default function FiniteCarCarousel() {
           bounds: { min: 1, max: carouselItems.length - 2 }
         }}
       >
-        <CarouselContent className="touch-pan-x">
+        <CarouselContent>
           {carouselItems.map((item, index) => (
             <CarouselItem 
               key={index} 
               className={cn(
                 "md:basis-full lg:basis-[90%]",
-                index === 0 || index === carouselItems.length - 1 ? "invisible" : "",
-                "touch-pan-x" // Allow horizontal pan gestures
+                index === 0 || index === carouselItems.length - 1 ? "invisible" : ""
               )}
             >
               <div className="relative h-[300px] md:h-[500px] w-full overflow-hidden rounded-lg">
