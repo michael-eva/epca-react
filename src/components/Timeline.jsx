@@ -10,7 +10,7 @@ export const timelineData = [
       description: "Starts design and retrofit of a 100t CAT 777D"
     },
     {
-      date: "June 2024",
+      date: "May 2024",
       // title: "Major Milestone 3",
       description: "The completed EPCA E-777D is unveiled at The Electric Mine Conference in Perth."
     }

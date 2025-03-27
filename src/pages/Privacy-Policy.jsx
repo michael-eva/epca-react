@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 export default function PrivacyPolicy() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
             <Navbar mode="dark" />
@@ -41,7 +45,7 @@ export default function PrivacyPolicy() {
                                             { term: "Account", definition: "means a unique account created for You to access our Service or parts of our Service." },
                                             { term: "Company", definition: "(referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Electric Power Conversions Australia (EPCA), WA 6101." },
                                             { term: "Cookies", definition: "are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses." },
-                                            { term: "Country", definition: "refers to: Western Australia, Australia" },
+                                            { term: "Country", definition: "refers to: Australia" },
                                             { term: "Device", definition: "means any device that can access the Service such as a computer, a cellphone or a digital tablet." },
                                             { term: "Personal Data", definition: "is any information that relates to an identified or identifiable individual." },
                                             { term: "Service", definition: "refers to the Website." },
@@ -137,24 +141,24 @@ export default function PrivacyPolicy() {
                                     <ul className="space-y-6">
                                         <li>
                                             <span className="font-medium text-gray-900">Necessary / Essential Cookies</span>
-                                            <p className="text-sm text-gray-600 mt-1">Type: Session Cookies</p>
-                                            <p className="text-sm text-gray-600">Administered by: Us</p>
+                                            <p className="text-gray-600 mt-2">Type: Session Cookies</p>
+                                            <p className="text-gray-600">Administered by: Us</p>
                                             <p className="text-gray-600 mt-2">
                                                 These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
                                             </p>
                                         </li>
                                         <li>
                                             <span className="font-medium text-gray-900">Cookies Policy / Notice Acceptance Cookies</span>
-                                            <p className="text-sm text-gray-600 mt-1">Type: Persistent Cookies</p>
-                                            <p className="text-sm text-gray-600">Administered by: Us</p>
+                                            <p className="text-gray-600 mt-1">Type: Persistent Cookies</p>
+                                            <p className="text-gray-600">Administered by: Us</p>
                                             <p className="text-gray-600 mt-2">
                                                 These Cookies identify if users have accepted the use of cookies on the Website.
                                             </p>
                                         </li>
                                         <li>
                                             <span className="font-medium text-gray-900">Functionality Cookies</span>
-                                            <p className="text-sm text-gray-600 mt-1">Type: Persistent Cookies</p>
-                                            <p className="text-sm text-gray-600">Administered by: Us</p>
+                                            <p className="text-gray-600 mt-1">Type: Persistent Cookies</p>
+                                            <p className="text-gray-600">Administered by: Us</p>
                                             <p className="text-gray-600 mt-2">
                                                 These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.
                                             </p>
@@ -278,11 +282,11 @@ export default function PrivacyPolicy() {
                             <div className="bg-gray-50 border-l-4 border-[#00CC66] p-6 rounded-lg">
                                 <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
                                 <p className="text-gray-600 mb-2">
-                                    If you have any questions about this Privacy Policy, You can contact us:
+                                    If you have any questions about this Privacy Policy, you can email us at <a href="mailto:clayton.franklin@epca.net.au" className="text-[#00CC66] hover:underline">clayton.franklin@epca.net.au.</a>
                                 </p>
-                                <p className="text-gray-600">
+                                {/* <p className="text-gray-600">
                                     By email: <a href="mailto:clayton.franklin@epca.net.au" className="text-[#00CC66] hover:underline">clayton.franklin@epca.net.au</a>
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     </div>
