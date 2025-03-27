@@ -123,7 +123,7 @@ const UONSmartCell = () => {
             </div>
             <div className="order-1 md:order-2 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON6.jpg" 
+                src="/UON10.jpeg" 
                 alt="UON SMART CELL deployment map" 
                 className="w-full h-full object-cover"
               />

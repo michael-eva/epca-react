@@ -136,7 +136,7 @@ const handleSubmit = async (e) => {
               {/* Runtime Selection */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-medium mb-6 relative">
-                  Runtime Configuration
+                  1. Runtime Configuration
                 </h2>
                 <div className="grid grid-cols-1 gap-4">
                   <button 
@@ -215,7 +215,7 @@ const handleSubmit = async (e) => {
 
               {/* Options */}
               <div className="space-y-6">
-                <h2 className="text-2xl font-medium mb-6">Additional Options</h2>
+                <h2 className="text-2xl font-medium mb-6">2. Additional Options</h2>
                 <div className="space-y-4">
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Battery Diagnostics and System Monitoring™</span>
@@ -302,7 +302,7 @@ const handleSubmit = async (e) => {
 
               {/* Charging */}
               <div className="space-y-6">
-                <h2 className="text-2xl font-medium mb-6">Charging</h2>
+                <h2 className="text-2xl font-medium mb-6">3. Charging</h2>
                 <div className="space-y-4">
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Include Charging Solution</span>
@@ -329,7 +329,7 @@ const handleSubmit = async (e) => {
 
               {/* Training */}
               <div className="space-y-6">
-                <h2 className="text-2xl font-medium mb-6">Training Programs</h2>
+                <h2 className="text-2xl font-medium mb-6">4. Training Programs</h2>
                 <div className="space-y-4">
                   <label className="flex items-center justify-between p-6 border-2 border-gray-200 rounded-xl hover:border-[#00CC66] hover:shadow-lg transition-all cursor-pointer group">
                     <span className="text-lg group-hover:text-[#00CC66]">Operator Training</span>

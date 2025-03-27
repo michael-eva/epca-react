@@ -148,7 +148,7 @@ const Enquiry = () => {
                         </li>
                         <li className="flex items-start">
                             <span className="text-[#00CC66] mr-2">•</span>
-                            <span>For urgent matters, please call our customer service line</span>
+                            <span>For urgent matters, please contact us directly</span>
                         </li>
                         <li className="flex items-start">
                             <span className="text-[#00CC66] mr-2">•</span>

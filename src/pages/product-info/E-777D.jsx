@@ -248,7 +248,7 @@ const E777D = () => {
               <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
               <p className="text-xl text-gray-600">
                 The E-777D is EPCA’s first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
-                With up to 10 hours of runtime, a 50-minute fast charge, and 23% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
+                With 8 hours of runtime, a 50-minute fast charge, and 23% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
           </div>
@@ -271,8 +271,8 @@ const E777D = () => {
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
               <h2 className="text-5xl font-bold mb-6">A Smarter Way to Electrify Your Fleet</h2>
               <p className="text-xl text-gray-600">
-              Retrofitting with EPCA means transforming an existing diesel truck into a battery-electric machine, without starting from scratch. The E-777D keeps around 80% of its original structure, including the chassis, cab, and suspension, while replacing the diesel engine and transmission with a high-efficiency electric powertrain.
-              For mining operators, this approach is practical and cost-effective. It extends the life of trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of buying a brand-new electric truck. It’s a straightforward upgrade with long-term operational benefits. 
+              Retrofit with EPCA by transforming diesel truck into a battery-electric. The E-777D keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
+              We extends the life of existing trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of replacing an entire fleet. It’s a smart upgrade with long-term operational benefits. 
               </p>
             </div>
           </div>
@@ -354,7 +354,7 @@ const E777D = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <p className="text-gray-400 text-sm">Runtime</p>
-                    <p className="text-xl">10 hours</p>
+                    <p className="text-xl">8 hours</p>
                     <p className="text-gray-400 text-sm mt-1">Based on standard mining cycle testing</p>
                   </div>
                   <div>
@@ -386,8 +386,8 @@ const E777D = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Warranty</p>
-                    <p className="text-xl">5 years / 15,000 hours</p>
-                    <p className="text-gray-400 text-sm mt-1">Extended warranty options available</p>
+                    <p className="text-xl">1 year / 6,000 hours</p>
+                    <p className="text-gray-400 text-sm mt-1">5-Years extended warranty options available</p>
                   </div>
                 </div>
               </div>

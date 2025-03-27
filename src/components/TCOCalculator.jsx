@@ -327,7 +327,7 @@ export default function TCOCalculator() {
                         <Slider
                           id="electric-purchase"
                           min={1}
-                          max={4}
+                          max={10}
                           step={0.1}
                           value={[electricPurchaseCost / 1000000]}
                           onValueChange={(value) => setElectricPurchaseCost(value[0] * 1000000)}
