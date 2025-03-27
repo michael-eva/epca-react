@@ -13,7 +13,7 @@ export default function About() {
       <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         <div className='absolute inset-0 w-full h-full object-cover'>
-            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/assets/about-us-vid-hls.m3u8" />
+            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/videos/about-us-vid-hls.m3u8" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
@@ -37,7 +37,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-black text-white px-4 md:px-8 lg:px-36 pt-20">
+      <section className="bg-black text-white px-2 md:px-8 lg:px-36 pt-20">
         <div className="max-w-[1920px] mx-auto">
           <img 
             src="/truck11.png" 
@@ -55,12 +55,12 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-black text-white px-4 md:px-8 lg:px-36">
+      <section className="bg-black text-white px-2 md:px-8 lg:px-36">
         <div className="max-w-[1920px] mx-auto">
           <img 
             src="/Team2.JPG" 
             alt="EPCA Team" 
-            className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+            className="w-full h-[180px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
           />
         </div>
         <div className="max-w-[1920px] mx-auto px-0 sm:px-4 py-8 md:py-16">

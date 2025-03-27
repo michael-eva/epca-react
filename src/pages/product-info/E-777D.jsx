@@ -233,12 +233,12 @@ const E777D = () => {
         {/* Redesigned Section */}
         <section className="py-20 bg-white md:px-10">
           <div className="mx-auto md:px-4 flex flex-col">
-            <div className="relative mb-16 h-[576px] flex justify-center">
+          <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/truck3.jpeg"
                   alt="E-777D Mining Truck" 
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover md:rounded-lg"
                   loading="lazy"
                 />
               </div>
@@ -247,7 +247,7 @@ const E777D = () => {
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
               <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
               <p className="text-xl text-gray-600">
-                The E-777D is EPCA’s first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
+                The E-777D is EPCA's first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
                 With 8 hours of runtime, a 50-minute fast charge, and 23% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
@@ -256,23 +256,23 @@ const E777D = () => {
 
         <FiniteCarCarousel />
         <section className="py-20 bg-white md:px-10">
-          <div className="mx-auto md:px-4 flex flex-col">
-            <div className="relative mb-16 h-[576px] flex justify-center">
+        <div className="mx-auto md:px-4 flex flex-col">
+          <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/truck8.JPG"
                   alt="E-777D Mining Truck" 
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-contain md:object-cover md:rounded-lg"
                   loading="lazy"
                 />
               </div>
             </div>
             
-            <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
-              <h2 className="text-5xl font-bold mb-6">A Smarter Way to Electrify Your Fleet</h2>
-              <p className="text-xl text-gray-600">
-              Retrofit with EPCA by transforming diesel truck into a battery-electric. The E-777D keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
-              We extends the life of existing trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of replacing an entire fleet. It’s a smart upgrade with long-term operational benefits. 
+            <div className="w-full max-w-[2464px] mx-auto px-4 md:px-20">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">A Smarter Way to Electrify Your Fleet</h2>
+              <p className="text-lg md:text-xl text-gray-600">
+                Retrofit with EPCA by transforming diesel truck into a battery-electric. The E-777D keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
+                We extends the life of existing trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of replacing an entire fleet. It's a smart upgrade with long-term operational benefits. 
               </p>
             </div>
           </div>

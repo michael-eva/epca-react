@@ -121,11 +121,11 @@ const UONSmartCell = () => {
                 </a>
               </div>
             </div>
-            <div className="order-1 md:order-2 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
+            <div className="order-1 md:order-2 w-full h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
                 src="/UON10.jpeg" 
                 alt="UON SMART CELL deployment map" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
             </div>
           </div>
@@ -174,11 +174,11 @@ const UONSmartCell = () => {
         </section>
         <section className="bg-white">
           <div className="flex flex-col md:flex-row">
-            <div className="order-1 md:order-1 w-full bg-gray-100 h-[300px] md:h-[1388px] flex items-center justify-center">
+            <div className="order-1 md:order-1 w-fullh-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
                 src="/UON5.jpg" 
                 alt="UON SMART CELL installation" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
             </div>
             <div className="order-2 md:order-2 w-full max-w-[416px] p-6 md:p-12 flex flex-col">

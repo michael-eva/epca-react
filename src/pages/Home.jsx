@@ -40,7 +40,7 @@ const Home = () => {
     const targets = {
       carbon: 2021,
       footprint: 1447,
-      efficiency: 95
+      efficiency: 90
     };
 
     Object.entries(targets).forEach(([key, target]) => {
@@ -132,12 +132,12 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
       <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>   
         <div className='absolute inset-0 w-full h-full object-cover'>
-            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/assets/home-vid-hls.m3u8" />
+            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/videos/home-vid-hls.m3u8" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
             <h1 className="text-6xl font-bold leading-tight mb-6">Powering the Future of Mining</h1>
-            <p className="text-2xl">Leading the transition to battery-electric mining solutions.</p>
+            <p className="text-2xl">Leading the way in zero-emissions mining equipment conversions worldwide.</p>
           </div>
           <div className="mt-auto mb-20 flex space-x-4 justify-center items-center">
             <a href="/product-info/E-777D" className="text-xs md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Explore Our Fleet</a>
@@ -160,10 +160,10 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">13<span className="text-4xl md:text-5xl">-Year</span></div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
-                        <span className="font-semibold text-gray-700">Extended Lifecycle</span> &ndash; 
-                        Maximise Your Fleet’s Value
+                        <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
+                        10-Hour Runtime, 15% More Power
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -181,32 +181,23 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
     </section>
     <section className="py-20 bg-black text-white" id="machines">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-4">Our Machines</h2>
+            <h2 className="text-4xl font-bold mb-4">Machines</h2>
             <p className="text-2xl mb-8">Built for the Toughest Mining Conditions</p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <VehicleCard 
                     imageSrc="/truck1.jpeg"
                     altText="E-777 Mining Truck"
-                    title="E-777 Off-Highway Truck"
+                    title="100t E-777 Mining Truck "
                     subtitle="Available"
                     buttonText="View More"
                     buttonLink="/product-info/E-777D"
-                    // vehicleInfo={{
-                    //     sample: "Sample",
-                    //     sample1: "Sample",
-                    //     sample2: "Sample",
-                    //     sample3: "Sample",
-                    //     sample4: "Sample",
-                    //     sample5: "Sample",
-                    //     sample6: "Sample",
-                    //   }}
                 />
 
                 <VehicleCard 
                     imageSrc="/785edited2.jpg"
                     altText="E-785 Mining Truck"
-                    title="E-785 Off-Highway Truck"
+                    title="150t E-785 Mining Truck "
                     subtitle="Coming Soon"
                     buttonText="Express Interest"
                     buttonLink="/enquiry?subject=E-785"
@@ -215,7 +206,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 <VehicleCard 
                     imageSrc="/993edited2.png"
                     altText="E-993 Loader"
-                    title="E-993 Wheel Loader"
+                    title="150t E-993 Loader"
                     subtitle="Coming Soon"
                     buttonText="Express Interest"
                     buttonLink="/enquiry?subject=E-993"
@@ -234,7 +225,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                     <img 
                         src="UON_Charger.png" 
                         alt="UON SMART CELL Charging Station" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                     <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
@@ -242,14 +233,14 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 <div className="lg:w-1/2">
                     <div className="relative">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">High-Speed Charger:</span>
-                            <br />Mining Charging Solution
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">UON SMART CELL:</span>
+                            <br />High-Speed Charging Solution
                         </h2>
                     </div>
                     
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                         Engineered for efficiency, the fast charging solution for mining delivers a full charge 
-                        in <span className="font-semibold text-[#00CC66]">in 50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                        in <span className="font-semibold text-[#00CC66]">in under 2 hours</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                     </p>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -275,7 +266,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <span className="font-medium text-gray-800">Micro-Grid Ready</span>
+                            <span className="font-medium text-gray-800">Off-Grid Ready</span>
                         </div>
                     </div>
                     
@@ -295,7 +286,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
 
     <section className="py-20 bg-gray-100 impact-section">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Australia’s First Battery-Electric Retrofitted Mining Truck</h2>
+            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry’s Green Transition</h2>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>
@@ -318,12 +309,12 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 </div>
 
                 <div className="text-center">
-                    <div className="inline-block border rounded px-4 py-1 mb-8">Efficiency</div>
+                    <div className="inline-block border rounded px-4 py-1 mb-8">Energy Savings</div>
                     <div className="text-[80px] md:text-[120px] leading-none font-light mb-6">
                         {numbers.efficiency}%
                     </div>
                     <p className="text-gray-600 text-lg max-w-xs mx-auto">
-                         Electric motors achieves up to 95% efficiency compared to diesel engines.
+                    Electric Trucks achieve up to 90% efficiency compared to diesel trucks.
                     </p>
                 </div>
             </div>
