@@ -216,7 +216,7 @@ export default function FiniteCarCarousel() {
                 <img
                   src={item.image || "images/placeholder.webp"}
                   alt={item.title}
-                  className="object-fill w-full h-[300px] md:h-[580px]"
+                  className="object-cover w-full h-[300px] md:h-[580px]"
                   loading={index === 1 ? "eager" : "lazy"}
                   draggable="false" // Prevent image dragging from interfering
                 />
