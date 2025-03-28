@@ -243,7 +243,7 @@ const E777D = () => {
         {/* Redesigned Section */}
         <section className="py-20 bg-white md:px-10">
           <div className="mx-auto md:px-4 flex flex-col">
-          <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
+          <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] lg:h-[776px] xl:h-[990px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/images/truck3.webp"
@@ -267,7 +267,7 @@ const E777D = () => {
         <FiniteCarCarousel />
         <section className="py-20 bg-white md:px-10">
         <div className="mx-auto md:px-4 flex flex-col">
-          <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
+          <div className="relative mb-8 md:mb-16h-[300px] md:h-[576px] lg:h-[776px] xl:h-[990px]  flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/images/truck8.webp"

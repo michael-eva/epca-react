@@ -13,11 +13,33 @@ import {
 
 const Enquiry = () => {
     const [searchParams] = useSearchParams();
+    
+    // Get initial subject from URL params
+    const getInitialSubject = () => {
+        const subjectParam = searchParams.get('subject');
+        if (!subjectParam) return 'Please select a subject';
+        
+        const subjectMapping = {
+            'e-785': 'E-785 Mining Truck',
+            'e-777d': 'E-777D Mining Truck',
+            'e-993': 'E-993 Loader',
+            'UON-smart-cell': 'DC Charger',
+            'uon': 'DC Charger',
+            'general': 'General Enquiry',
+        };
+
+        const normalizedParam = subjectParam.toLowerCase();
+        const mappedSubject = subjectMapping[normalizedParam];
+
+        if (mappedSubject) return mappedSubject;
+        return 'Please select a subject';
+    };
+
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
         phone: '',
-        subject: '',
+        subject: getInitialSubject(), // Initialize with URL param if present
         message: '',
         companyName: '',
         updates: true,
@@ -39,40 +61,6 @@ const Enquiry = () => {
         'Financing Options',
         'Other',
     ], []); // Empty dependency array since this array never changes
-
-    
-    useEffect(() => {
-        // Check if subject is provided in URL params
-        const subjectParam = searchParams.get('subject');
-        if (subjectParam) {
-            // Case-insensitive mapping of URL parameters to full subject options
-            const subjectMapping = {
-                'e-785': 'E-785 Mining Truck',
-                'e-777d': 'E-777D Mining Truck',
-                'e-993': 'E-993 Loader',
-                'UON-smart-cell': 'DC Charger',
-                'uon': 'DC Charger',
-                'general': 'General Enquiry',
-            };
-
-            // Try to find a match in our mapping
-            const normalizedParam = subjectParam.toLowerCase();
-            const mappedSubject = subjectMapping[normalizedParam];
-
-            if (mappedSubject && subjectOptions.includes(mappedSubject)) {
-                setFormData(prev => ({ ...prev, subject: mappedSubject }));
-            } else if (subjectOptions.includes(subjectParam)) {
-                // Direct match with the options list
-                setFormData(prev => ({ ...prev, subject: subjectParam }));
-            } else {
-                // Default to first option if no valid subject is provided
-                setFormData(prev => ({ ...prev, subject: subjectOptions[0] }));
-            }
-        } else {
-            // Default to first option if no subject param is provided
-            setFormData(prev => ({ ...prev, subject: subjectOptions[0] }));
-        }
-    }, [formData.subject]); // Remove subjectOptions from dependency array
 
     const handleChange = (e) => {
         const { name, value } = e.target;

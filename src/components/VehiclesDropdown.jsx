@@ -1,11 +1,11 @@
-const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
+const VehiclesDropdown = ({ showVehicles, onMouseEnter, onMouseLeave }) => {
   return (
     <div 
       className={`fixed left-0 right-0 bg-white shadow-md transition-all duration-300 ease-out transform z-40
         ${showVehicles ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}
       style={{ top: '72px' }}
-      onMouseEnter={() => setShowVehicles(true)}
-      onMouseLeave={() => setShowVehicles(false)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 p-8">
         <div className="flex flex-col items-center text-center">
@@ -49,4 +49,4 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
   );
 };
 
-export default VehiclesDropdown; 
+export default VehiclesDropdown;

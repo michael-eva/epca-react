@@ -47,9 +47,9 @@ export default function FiniteCarCarousel() {
 
   // Track touch start position for swipe detection
   const touchStartXRef = useRef(0)
-  const touchStartYRef = useRef(0) // Add this to track Y position at start
+  const touchStartYRef = useRef(0)
   const isTouchingRef = useRef(false)
-  const isHorizontalSwipeRef = useRef(false) // To detect horizontal swipe intention
+  const isHorizontalSwipeRef = useRef(false)
   
   // Update current index when carousel changes
   useEffect(() => {
@@ -85,8 +85,8 @@ export default function FiniteCarCarousel() {
     const handleTouchStart = (e) => {
       isTouchingRef.current = true
       touchStartXRef.current = e.touches[0].clientX
-      touchStartYRef.current = e.touches[0].clientY // Store initial Y position
-      isHorizontalSwipeRef.current = false // Reset horizontal swipe detection
+      touchStartYRef.current = e.touches[0].clientY
+      isHorizontalSwipeRef.current = false
     }
     
     const handleTouchMove = (e) => {
@@ -97,17 +97,12 @@ export default function FiniteCarCarousel() {
       const deltaX = touchStartXRef.current - touchCurrentX
       const deltaY = touchStartYRef.current - touchCurrentY
       
-      // Only if we haven't determined direction yet
       if (!isHorizontalSwipeRef.current) {
-        // Determine if this is primarily a horizontal swipe (with some threshold)
-        // This check only happens once per touch sequence to lock in the direction
         if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
           isHorizontalSwipeRef.current = true
         }
       }
       
-      // Only prevent default (stopping vertical scroll) if we've determined 
-      // this is clearly a horizontal swipe attempt
       if (isHorizontalSwipeRef.current) {
         e.preventDefault()
       }
@@ -116,12 +111,10 @@ export default function FiniteCarCarousel() {
     const handleTouchEnd = (e) => {
       if (!isTouchingRef.current) return
       
-      // Only process swipe if we detected horizontal movement
       if (isHorizontalSwipeRef.current) {
         const touchEndX = e.changedTouches[0].clientX
         const deltaX = touchStartXRef.current - touchEndX
         
-        // Detect swipe based on distance
         const SWIPE_THRESHOLD = 50
         
         if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
@@ -133,13 +126,11 @@ export default function FiniteCarCarousel() {
         }
       }
       
-      // Reset flags
       isTouchingRef.current = false
       isHorizontalSwipeRef.current = false
     }
     
     element.addEventListener('touchstart', handleTouchStart, { passive: true })
-    // Use passive: false only for touchmove, as we only conditionally call preventDefault()
     element.addEventListener('touchmove', handleTouchMove, { passive: false }) 
     element.addEventListener('touchend', handleTouchEnd, { passive: true })
     
@@ -152,14 +143,14 @@ export default function FiniteCarCarousel() {
 
   return (
     <div 
-      className="relative w-full" 
+      className="relative w-full overflow-hidden" 
       ref={carouselRef}
     >
       {/* Left arrow - only show when not at start */}
       {current > 1 && (
         <button
           onClick={() => api?.scrollPrev()}
-          className="absolute left-4 top-1/4 md:top-1/2  -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all"
+          className="absolute left-4 top-1/4 md:top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -182,9 +173,9 @@ export default function FiniteCarCarousel() {
         className="w-full cursor-grab active:cursor-grabbing"
         opts={{
           align: "center",
-          containScroll: "keepSnaps",
+          containScroll: "trimSnaps",
           slidesToScroll: 1,
-          startIndex: 1, // Start at first real slide
+          startIndex: 1,
           draggable: true, 
           dragFree: false,
           loop: false,
@@ -193,32 +184,33 @@ export default function FiniteCarCarousel() {
           threshold: 10,
           skipSnaps: false,
           rubberband: true,
-          inViewThreshold: 0,
+          inViewThreshold: 0.1,
           breakpoints: {
             '(max-width: 768px)': {
-              threshold: 5,
+              inViewThreshold: 0,
+              containScroll: "keepSnaps",
             }
           },
-          // Set bounds to prevent sliding to the empty slides
           bounds: { min: 1, max: carouselItems.length - 2 }
         }}
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-0">
           {carouselItems.map((item, index) => (
             <CarouselItem 
               key={index} 
               className={cn(
-                "md:basis-full lg:basis-[90%]",
+                "pl-0 pr-0 transition-opacity",
+                "md:basis-full lg:basis-[85%] xl:basis-[80%] 2xl:basis-[75% mx-2",
                 index === 0 || index === carouselItems.length - 1 ? "invisible" : ""
               )}
             >
-              <div className="relative h-[300px] md:h-[500px] w-full overflow-hidden rounded-lg">
+              <div className="relative w-full overflow-hidden rounded-lg">
                 <img
-                  src={item.image || "images/placeholder.webp"}
+                  src={item.image || "/images/placeholder.webp"}
                   alt={item.title}
-                  className="object-cover w-full h-[300px] md:h-[580px]"
+                  className="object-cover w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]"
                   loading={index === 1 ? "eager" : "lazy"}
-                  draggable="false" // Prevent image dragging from interfering
+                  draggable="false"
                 />
               </div>
               <div className="p-6 pb-12">

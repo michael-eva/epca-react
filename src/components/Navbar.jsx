@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import VehiclesDropdown from './VehiclesDropdown';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,7 +6,23 @@ const Navbar = ({ mode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showVehicles, setShowVehicles] = useState(false);
+  const closeTimeoutRef = useRef(null);
+  
+  const handleShowVehicles = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setShowVehicles(true);
+  };
+
+  const handleHideVehicles = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setShowVehicles(false);
+    }, 500);
+  };
   const navigate = useNavigate();
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,19 +30,21 @@ const Navbar = ({ mode }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
   }, []);
 
   const toggleMobileMenu = (isOpen) => {
     setIsMobileMenuOpen(isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
     
-    // Reset any conflicting states
     if (isOpen) {
       setShowVehicles(false);
     }
     
-    // Force layout recalculation when opening the menu
     if (isOpen) {
       setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
@@ -38,11 +56,20 @@ const Navbar = ({ mode }) => {
     e.preventDefault();
     toggleMobileMenu(false);
     navigate('/#machines');
-    // Force scroll after a small delay to ensure navigation is complete
     setTimeout(() => {
       const element = document.getElementById('machines');
       element?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
+  };
+
+  // Show the dropdown when mouse enters the menu item
+  const handleMenuMouseEnter = () => {
+    handleShowVehicles();
+  };
+
+  // Handle mouse leave from the menu item
+  const handleMenuMouseLeave = () => {
+    handleHideVehicles();
   };
 
   return (
@@ -66,7 +93,6 @@ const Navbar = ({ mode }) => {
             />
           </a>
           
-          {/* Hamburger menu button */}
           <button 
             className={`md:hidden focus:outline-none transition-colors duration-300 relative ${showVehicles ? 'text-black' : 'text-white'}`}
             onClick={() => toggleMobileMenu(true)}
@@ -77,12 +103,11 @@ const Navbar = ({ mode }) => {
             </svg>
           </button>
 
-          {/* Navigation links */}
           <ul className="hidden md:flex md:space-x-8 items-center">
             <li>
               <div 
-                onMouseEnter={() => setShowVehicles(true)}
-                onMouseLeave={() => setShowVehicles(false)}
+                onMouseEnter={handleMenuMouseEnter}
+                onMouseLeave={handleMenuMouseLeave}
                 className="relative h-full group"
               >
                 <span className={`font-medium transition-colors duration-300 cursor-pointer border-b-2 border-transparent group-hover:border-current pb-1
@@ -93,7 +118,6 @@ const Navbar = ({ mode }) => {
                   Machines
                 </span>
                 
-                {/* Extended hover area that overlaps both navbar and dropdown */}
                 <div className="absolute h-6 -bottom-6 left-0 right-0 bg-transparent z-50" />
               </div>
             </li>
@@ -115,7 +139,6 @@ const Navbar = ({ mode }) => {
             </li>
           </ul>
 
-          {/* Mobile menu */}
           {isMobileMenuOpen && (
             <div className="fixed top-0 left-0 right-0 bottom-0 w-screen h-screen bg-black/95 backdrop-blur-sm z-[102] overflow-auto">
               <div className="flex flex-col items-center justify-center min-h-screen w-full">
@@ -148,7 +171,11 @@ const Navbar = ({ mode }) => {
         </div>
       </header>
 
-      <VehiclesDropdown showVehicles={showVehicles} setShowVehicles={setShowVehicles} />
+      <VehiclesDropdown 
+        showVehicles={showVehicles} 
+        onMouseEnter={handleShowVehicles}
+        onMouseLeave={handleHideVehicles}
+      />
     </>
   );
 };
