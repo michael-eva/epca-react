@@ -67,20 +67,6 @@ const UONSmartCell = () => {
     }
   ];
 
-  // Technical specifications
-  const specifications = [
-    { spec: "Charging Power", value: "350 kW", notes: "Maximum DC fast charging output" },
-    { spec: "Charging Time", value: "50 minutes", notes: "For full charge of E-777D mining truck" },
-    { spec: "Input Voltage", value: "380-480V AC", notes: "Three-phase power input" },
-    { spec: "Output Voltage", value: "200-1000V DC", notes: "Adjustable for different equipment" },
-    { spec: "Efficiency", value: "95%", notes: "High-efficiency power conversion" },
-    { spec: "Operating Temperature", value: "-40°C to +55°C", notes: "Designed for extreme mining environments" },
-    { spec: "Connectivity", value: "4G/LTE, Wi-Fi, Ethernet", notes: "Multiple communication options" },
-    { spec: "Dimensions", value: "2.2m × 1.5m × 2.5m", notes: "Compact footprint for site installation" },
-    { spec: "Protection Rating", value: "IP65", notes: "Dust-tight and protected against water jets" },
-    { spec: "Certification", value: "IEC, UL, CE", notes: "Compliant with international standards" },
-    { spec: "Warranty", value: "5 years", notes: "Extended warranty options available" }
-  ];
 
   return (
     <>
@@ -90,7 +76,7 @@ const UONSmartCell = () => {
         <section className="h-screen flex items-center relative bg-gray-100">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="/UON6.jpg"
+            src="/UON6.webp"
             className="absolute inset-0 w-full h-full object-cover"
             alt="Charging Solution"
           />
@@ -123,7 +109,7 @@ const UONSmartCell = () => {
             </div>
             <div className="order-1 md:order-2 w-full h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON10.jpeg" 
+                src="/UON10.webp" 
                 alt="UON SMART CELL deployment map" 
                 className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
@@ -141,7 +127,7 @@ const UONSmartCell = () => {
             
             <div className="relative mb-12">
               <img 
-                src="/UON2.JPG" 
+                src="/UON2.webp" 
                 alt="UON SMART CELL interface on tablet" 
                 className="w-full rounded-lg shadow-lg max-h-[1344px] md:max-h-[756px]"
               />
@@ -176,7 +162,7 @@ const UONSmartCell = () => {
           <div className="flex flex-col md:flex-row">
             <div className="order-1 md:order-1 w-fullh-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON5.jpg" 
+                src="/UON5.webp" 
                 alt="UON SMART CELL installation" 
                 className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
@@ -205,7 +191,7 @@ const UONSmartCell = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/uon7.png" 
+              src="/uon7.webp" 
               alt="Mining site background" 
               className="w-full h-full object-cover"
             />

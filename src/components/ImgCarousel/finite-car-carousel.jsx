@@ -15,25 +15,25 @@ export default function FiniteCarCarousel() {
       description: "",
     },
     {
-      image: "/truck9.png",
+      image: "/truck9.webp",
       title: "Significantly Quieter",
       description:
         "The electric truck operates 10x quieter, enhancing worker safety and communication in mining environments. Reduce noise pollution and improve site conditions.",
     },
     {
-      image: "/truck7.png",
+      image: "/truck7.webp",
       title: "Superior Power",
       description:
         "The EPCA truck delivers instant torque allowing for faster acceleration and improved performance. The drivetrain provides immediate power, optimising haul cycles and reducing delays.",
     },
     {
-      image: "/truck10.jpeg",
+      image: "/truck10.webp",
       title: "Simplified Maintenance",
       description:
         "Retrofitting a diesel truck to battery-electric significantly reduces maintenance complexity and costs. The electric drivetrain has fewer moving parts, resulting in considerable reduction in wear and tear and service requirements.",
     },
     {
-      image: "/screen.JPG",
+      image: "/screen.webp",
       title: "Technology Upgrades",
       description:
         "The E-777D features advanced technology upgrades that includes the electric motors, high-capacity batteries and data systems.",

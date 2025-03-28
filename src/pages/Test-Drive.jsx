@@ -156,7 +156,7 @@ const TestDrive = () => {
             {/* Static Map Image */}
             <div className="w-full mb-8">
               <img 
-                src="/map.png" 
+                src="/map.webp" 
                 alt="Map showing the mine site location" 
                 className="w-full h-auto rounded-lg shadow-md"
               />
