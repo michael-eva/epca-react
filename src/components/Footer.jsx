@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="grid md:grid-cols-4 gap-8">
                 <div>
                     <div className="mb-4">
-                        <img src="/epca-logo.png" alt="EPCA Logo" className="h-12" />
+                        <img src="/images/epca-logo.png" alt="EPCA Logo" className="h-12" />
                     </div>
                     <p className="text-base text-gray-400 mb-4">Leading the transition to zero-emission mining operations with innovative battery-electric solutions.</p>
                     <div className="flex space-x-4">
