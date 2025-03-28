@@ -107,7 +107,7 @@ const handleSubmit = async (e) => {
             <div className="relative h-full">
               {/* Carousel container */}
               <div className="h-full" id="imageCarousel">
-                <img src="/E777_EnquiryPage.png" alt="E-777 Front View" className="w-full h-full object-contain" />
+                <img src="/images/E777_EnquiryPage.webp" alt="E-777 Front View" className="w-full h-full object-contain" />
               </div>
               {/* Navigation arrows */}
               {/* <button className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-md p-2">
