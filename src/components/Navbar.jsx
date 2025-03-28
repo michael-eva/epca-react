@@ -58,7 +58,7 @@ const Navbar = ({ mode }) => {
             className={`transition-colors duration-300 relative ${showVehicles ? 'text-black' : 'text-white'}`}
           >
             <img 
-              src="/epca-logo.png" 
+              src="/images/epca-logo.png" 
               alt="EPCA Logo" 
               className="h-12 w-auto cursor-pointer"
               fetchPriority="high"

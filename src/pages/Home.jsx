@@ -163,7 +163,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                     <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        10-Hour Runtime, 15% More Power
+                        10-Hour Runtime, 10% More Power
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -186,7 +186,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <VehicleCard 
-                    imageSrc="/truck1.webp"
+                    imageSrc="images/truck1.webp"
                     altText="E-777 Mining Truck"
                     title="100t E-777 Mining Truck "
                     subtitle="Available"
@@ -195,7 +195,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 />
 
                 <VehicleCard 
-                    imageSrc="/785edited2.webp"
+                    imageSrc="images/785edited2.webp"
                     altText="E-785 Mining Truck"
                     title="150t E-785 Mining Truck "
                     subtitle="Coming Soon"
@@ -204,7 +204,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 />
 
                 <VehicleCard 
-                    imageSrc="/993edited2.webp"
+                    imageSrc="images/993edited2.webp"
                     altText="E-993 Loader"
                     title="150t E-993 Loader"
                     subtitle="Coming Soon"
@@ -223,7 +223,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
                     <img 
-                        src="UON_Charger.webp" 
+                        src="images/UON_Charger.webp" 
                         alt="UON SMART CELL Charging Station" 
                         className="w-full h-full object-contain"
                     />

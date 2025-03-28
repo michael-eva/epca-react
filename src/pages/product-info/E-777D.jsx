@@ -191,7 +191,7 @@ const E777D = () => {
         <section className="h-screen flex items-center relative bg-gray-100">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="/truck2.webp"
+            src="/images/truck2.webp"
             className="absolute inset-0 w-full h-full object-cover"
             alt="E-777D Mining Truck"
           />
@@ -206,29 +206,39 @@ const E777D = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className=" py-20 mt-10">
+        <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-0">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="relative text-center px-6 md:px-8 group">
-                  <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">
-                    {benefit.value}<span className="text-4xl md:text-5xl">{benefit.unit}</span>
-                  </div>
-                  <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
-                    <span className="font-semibold text-gray-700">{benefit.title}</span> &ndash; {benefit.description}
-                  </p>
-                  {index < benefits.length - 1 && (
-                    <>
-                      <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
-                      <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
-                    </>
-                  )}
+                <div className="relative text-center px-6 md:px-8 group">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">100<span className="text-4xl md:text-5xl">%</span></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">100% Carbon Zero</span> &ndash; 
+                        Retrofitting Technology
+                    </p>
+                    <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
+                    <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
                 </div>
-              ))}
+                
+                <div className="relative text-center px-6 md:px-8 group">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10hr</div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
+                        10-Hour Runtime, 10% More Power
+                    </p>
+                    <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
+                    <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
+                </div>
+                
+                <div className="text-center px-6 md:px-8">
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">54<span className="text-4xl md:text-5xl">%</span></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
+                        <span className="font-semibold text-gray-700">Cost Savings</span> &ndash; 
+                        54% reduction in haulage costs
+                    </p>
+                </div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
         {/* Redesigned Section */}
         <section className="py-20 bg-white md:px-10">
@@ -236,7 +246,7 @@ const E777D = () => {
           <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/truck3.webp"
+                  src="/images/truck3.webp"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-cover md:rounded-lg"
                   loading="lazy"
@@ -260,7 +270,7 @@ const E777D = () => {
           <div className="relative mb-8 md:mb-16 h-[300px] md:h-[576px] flex justify-center">
               <div className="w-full max-w-[2464px]">
                 <img 
-                  src="/truck8.webp"
+                  src="/images/truck8.webp"
                   alt="E-777D Mining Truck" 
                   className="w-full h-full object-contain md:object-cover md:rounded-lg"
                   loading="lazy"
@@ -402,7 +412,7 @@ const E777D = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/truck4.webp" 
+              src="/images/truck4.webp" 
               alt="Mining truck background" 
               className="w-full h-full object-cover"
             />

@@ -76,7 +76,7 @@ const UONSmartCell = () => {
         <section className="h-screen flex items-center relative bg-gray-100">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="/UON6.webp"
+            src="/images/UON6.webp"
             className="absolute inset-0 w-full h-full object-cover"
             alt="Charging Solution"
           />
@@ -109,7 +109,7 @@ const UONSmartCell = () => {
             </div>
             <div className="order-1 md:order-2 w-full h-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON10.webp" 
+                src="/images/UON10.webp" 
                 alt="UON SMART CELL deployment map" 
                 className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
@@ -127,7 +127,7 @@ const UONSmartCell = () => {
             
             <div className="relative mb-12">
               <img 
-                src="/UON2.webp" 
+                src="/images/UON2.webp" 
                 alt="UON SMART CELL interface on tablet" 
                 className="w-full rounded-lg shadow-lg max-h-[1344px] md:max-h-[756px]"
               />
@@ -162,7 +162,7 @@ const UONSmartCell = () => {
           <div className="flex flex-col md:flex-row">
             <div className="order-1 md:order-1 w-fullh-[300px] md:h-[1388px] flex items-center justify-center">
               <img 
-                src="/UON5.webp" 
+                src="/images/UON5.webp" 
                 alt="UON SMART CELL installation" 
                 className="w-full h-full object-contain md:object-cover md:rounded-lg"
               />
@@ -191,7 +191,7 @@ const UONSmartCell = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/uon7.webp" 
+              src="/images/uon7.webp" 
               alt="Mining site background" 
               className="w-full h-full object-cover"
             />

@@ -10,7 +10,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
       <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 p-8">
         <div className="flex flex-col items-center text-center">
           <img 
-            src="/E777_EnquiryPage.webp" 
+            src="/images/E777_EnquiryPage.webp" 
             alt="E-777 Mining Truck" 
             className="w-full h-auto mb-4"
           />
@@ -23,7 +23,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
 
         <div className="flex flex-col items-center text-center">
           <img 
-            src="/785edited.webp" 
+            src="/images/785edited.webp" 
             alt="E-785 Mining Truck" 
             className="w-[330px] h-auto mb-4"
           />
@@ -35,7 +35,7 @@ const VehiclesDropdown = ({ showVehicles, setShowVehicles }) => {
 
         <div className="flex flex-col items-center text-center">
           <img 
-            src="/993editedv1.webp" 
+            src="/images/993editedv1.webp" 
             alt="E-993 Loader" 
             className="w-full h-auto mb-4"
           />
