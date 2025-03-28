@@ -117,7 +117,7 @@ const E777D = () => {
   // Stats for the benefits section
   const benefits = [
     {
-      value: "10",
+      value: "8",
       unit: "hr",
       title: "World's Best Runtime",
       description: "Fully Battery-Powered"
@@ -129,7 +129,7 @@ const E777D = () => {
       description: "Minimise the Impact on Productivity"
     },
     {
-      value: "23",
+      value: "14",
       unit: "%",
       title: "More Powerful",
       description: "More Power, Higher Instant Torque"
@@ -140,11 +140,11 @@ const E777D = () => {
   const specifications = [
     { spec: "Payload Capacity", value: "100 tonnes", notes: "Industry-leading capacity for electric mining trucks" },
     { spec: "Battery Type", value: "Lithium-ion", notes: "Advanced cell chemistry optimized for mining applications" },
-    { spec: "Battery Capacity", value: "950 kWh", notes: "High-density energy storage" },
-    { spec: "Runtime", value: "Up to 10.5 hours", notes: "Based on standard mining cycle testing" },
+    { spec: "Battery Capacity", value: "1100 kWh", notes: "High-density energy storage" },
+    { spec: "Runtime", value: "Up to 8 hours", notes: "Based on standard mining cycle testing" },
     { spec: "Charging Time", value: "50 minutes", notes: "With UON SMART™ CELL high-speed charging" },
-    { spec: "Power Output", value: "840 kW", notes: "23% increase over equivalent diesel models" },
-    { spec: "Maximum Torque", value: "16,500 Nm", notes: "Instant torque at all speeds" },
+    { spec: "Power Output", value: "850 kW", notes: "14% increase over equivalent diesel models" },
+    { spec: "Maximum Torque", value: "5400 Nm", notes: "Instant torque at all speeds" },
     { spec: "Maximum Speed", value: "65 km/h", notes: "Safety-limited for mining applications" },
     { spec: "Gradeability", value: "12%", notes: "At full load" },
     { spec: "Operational Cost Reduction", value: "54%", notes: "Compared to equivalent diesel trucks" },
@@ -170,7 +170,7 @@ const E777D = () => {
         </svg>
       ),
       title: "Electric Powertrain",
-      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 23% more power even in the toughest mining conditions."
+      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 14% more power even in the toughest mining conditions."
     },
     {
       icon: (
@@ -220,10 +220,10 @@ const E777D = () => {
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10hr</div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">8hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        10-Hour Runtime, 10% More Power
+                        8-Hour Runtime, 14% More Power
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -258,7 +258,7 @@ const E777D = () => {
               <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
               <p className="text-xl text-gray-600">
                 The E-777D is EPCA's first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
-                With 8 hours of runtime, a 50-minute fast charge, and 23% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
+                With 8 hours of runtime, a 50-minute fast charge, and 14% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
           </div>
@@ -326,11 +326,11 @@ const E777D = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Power Output</p>
                     <p className="text-xl">850 kW</p>
-                    <p className="text-gray-400 text-sm mt-1">23% increase over equivalent diesel models</p>
+                    <p className="text-gray-400 text-sm mt-1">14% increase over equivalent diesel models</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Maximum Torque</p>
-                    <p className="text-xl">5200 Nm</p>
+                    <p className="text-xl">5400 Nm</p>
                     <p className="text-gray-400 text-sm mt-1">Instant torque at all speeds</p>
                   </div>
                 </div>
