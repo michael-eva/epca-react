@@ -29,6 +29,10 @@ const HLSPlayer = ({ src, autoPlay = true, muted = true, loop = true, controls =
           });
           
           hls.on(Hls.Events.ERROR, (event, data) => {
+            console.error('HLS Error:', data);
+            console.error('Error details:', data.details);
+            if (data.response) console.error('Error response:', data.response);
+            
             if (data.fatal) {
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
