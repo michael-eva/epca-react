@@ -5,6 +5,19 @@ import Footer from '../components/Footer.jsx';
 import { toast } from 'react-hot-toast';
 import HLSPlayer from '../components/HlsPlayer.jsx';
 const Home = () => {
+    // For carousel
+    const chargerImages = [
+        "images/EPCACharger.webp",
+        "images/UON_Charger.webp"
+      ];
+      const [currentChargerImageIndex, setCurrentChargerImageIndex] = useState(0);
+      
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentChargerImageIndex(prevIndex => (prevIndex + 1) % chargerImages.length);
+        }, 8000); // Change image every 8 seconds
+        return () => clearInterval(interval);
+      }, []);
   // State for testimonials
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [email, setEmail] = useState('');
@@ -35,6 +48,14 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
+  
+  const nextChargerImage = () => {
+    setCurrentChargerImageIndex((prevIndex) => (prevIndex + 1) % chargerImages.length);
+  };
+  
+  const prevChargerImage = () => {
+    setCurrentChargerImageIndex((prevIndex) => (prevIndex - 1 + chargerImages.length) % chargerImages.length);
+  };
 
   const animateNumbers = () => {
     const targets = {
@@ -218,29 +239,47 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
     <section className="py-20 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-12 items-center">
-                <div className="lg:w-1/2 h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 relative group cursor-pointer"
-                onClick={() => window.location.href = '/product-info/UON-smart-cell'}
-                >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
-                    <img 
-                        src="images/UON_Charger.webp" 
-                        alt="UON SMART CELL Charging Station" 
-                        className="w-full h-full object-contain"
-                    />
-                    <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="lg:w-1/2">
+                    <div className="h-[600px] rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] transition-transform duration-300 relative group cursor-pointer">
+                        <div className="relative w-full h-full">
+                            <img 
+                                src={chargerImages[currentChargerImageIndex]} 
+                                alt="UON SMART CELL Charging Station" 
+                                className="w-full h-full object-contain"
+                                onClick={() => window.location.href = '/product-info/UON-smart-cell'}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex justify-center mt-4">
+                        <button 
+                            className="mx-2 bg-white p-2 rounded-full shadow-lg transition-transform duration-200 hover:scale-120"
+                            onClick={(e) => { e.stopPropagation(); prevChargerImage(); }}
+                        >
+                            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button 
+                            className="mx-2 bg-white p-2 rounded-full shadow-lg transition-transform duration-200 hover:scale-120"
+                            onClick={(e) => { e.stopPropagation(); nextChargerImage(); }}
+                        >
+                            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                
                 <div className="lg:w-1/2">
                     <div className="relative">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">UON SMART CELL:</span>
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">DC Charger:</span>
                             <br />High-Speed Charging Solution
                         </h2>
                     </div>
                     
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                         Engineered for efficiency, the fast charging solution for mining delivers a full charge 
-                        in <span className="font-semibold text-[#00CC66]">in under 2 hours</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                        in <span className="font-semibold text-[#00CC66]">50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                     </p>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -286,7 +325,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
 
     <section className="py-20 bg-gray-100 impact-section">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry’s Green Transition</h2>
+            <h2 className="text-4xl font-bold text-center mb-16">Leading the Mining Industry's Green Transition</h2>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                     <div className="inline-block border rounded px-4 py-1 mb-8">Founded</div>

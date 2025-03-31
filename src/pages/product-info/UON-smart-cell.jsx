@@ -191,7 +191,7 @@ const UONSmartCell = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/uon7.webp" 
+              src="/images/ChargerOnSite1.webp" 
               alt="Mining site background" 
               className="w-full h-full object-cover"
             />
