@@ -40,7 +40,7 @@ export default function Footer() {
                     <ul className="text-base text-gray-400">
                         <li><a onClick={() => window.location.href = '/about'} className="cursor-pointer">About Us</a></li>
                         <li><a onClick={() => window.location.href = '/contact'} className="cursor-pointer">Contact</a></li>
-                        <li><a onClick={() => window.location.href = '/terms-and-conditions'} className="cursor-pointer">Terms and Conditions</a></li>
+                        <li><a onClick={() => window.location.href = '/terms'} className="cursor-pointer">Terms and Conditions</a></li>
                         <li><a onClick={() => window.location.href = '/pressreleases'} className="cursor-pointer">Press Releases</a></li>
                     </ul>
                 </div>

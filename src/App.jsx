@@ -29,7 +29,7 @@ function App() {
         <Route path="/feasability-study" element={<FeasabilityStudy />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/pressreleases" element={<PressReleases />} />
       </Routes>
     </BrowserRouter>
