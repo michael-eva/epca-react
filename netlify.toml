@@ -1,13 +1,13 @@
 # Make sure the video proxy rule comes BEFORE the SPA redirect
 [[redirects]]
-  from = "/video-proxy/*"
-  to = "https://d19kz0rwf2xrwq.cloudfront.net/:splat"
-  status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = "*"}
+from = "/video-proxy/*"
+to = "https://d19kz0rwf2xrwq.cloudfront.net/:splat"
+status = 200
+force = true
+headers = { Access-Control-Allow-Origin = "*" }
 
 # This should be AFTER the video proxy rule
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
