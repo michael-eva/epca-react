@@ -153,7 +153,7 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
       <section className="h-screen flex items-center relative bg-black">
         <div className="absolute inset-0 bg-black/30 z-10"></div>   
         <div className='absolute inset-0 w-full h-full object-cover'>
-            <HLSPlayer src="/video-proxy/videos/home-vid-hls.m3u8" />
+            <HLSPlayer src="https://d19kz0rwf2xrwq.cloudfront.net/videos/home-vid-hls.m3u8" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
           <div className="max-w-2xl text-white mt-32">
