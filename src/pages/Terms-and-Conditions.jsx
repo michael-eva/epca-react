@@ -10,18 +10,19 @@ export default function TermsAndConditions() {
             links: [
                 {
                     title: "Terms and Conditions for the Sale of Goods and Services by EPCA",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA-SALES-OF-GOODS.pdf"
-                },
-                {
-                    title: "Terms and Conditions for the Purchase of Goods and Services by EPCA",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA+Purchase+of+Goods+and+Services.pdf"
+                    href: "/terms/Sale_of_Goods"
                 },
                 {
                     title: "Terms and Conditions for BDSM Software Subscription(s) and Additional Services",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA+BDSM+Terms+and+Conditions.pdf"
+                    href: "/Terms/BDSM_Subscription"
                 },
                 {
-                    title: "BDSM Software End User Agreement",
+                    title: "Terms and Conditions for the Purchase of Goods and Services by EPCA [PDF]",
+                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA+Purchase+of+Goods+and+Services.pdf"
+                },
+                
+                {
+                    title: "BDSM Software End User Agreement [PDF]",
                     href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/BDSM+Software+End+User+Agreement.pdf"
                 }
             ]
@@ -35,7 +36,7 @@ export default function TermsAndConditions() {
                 },
                 {
                     title: "Data Governance Statement",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/Data+Governance+Statement+Policy.pdf"
+                    href: "/Terms/Data_Governance"
                 }
             ]
         },
@@ -44,7 +45,7 @@ export default function TermsAndConditions() {
             links: [
                 {
                     title: "EPCA's Supplier Code of Conduct",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA+Supplier+Code+of+Conduct.pdf"
+                    href: "/Terms/CodeOfConduct"
                 }
             ]
         }

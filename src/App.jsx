@@ -13,6 +13,11 @@ import About from './pages/About'
 import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms-and-Conditions'
 import PressReleases from './pages/PressReleases'
+import BDSMSubscription from './pages/Terms/BDSM_Subscription'
+import SaleOfGoods from './pages/Terms/Sale_of_Goods.jsx'
+import DataGovernance from './pages/Terms/Data_Governance.jsx'
+import CodeOfConduct from './pages/Terms/CodeOfConduct.jsx'
+
 
 function App() {
   return (
@@ -31,6 +36,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/pressreleases" element={<PressReleases />} />
+        <Route path="/terms/bdsm_subscription" element={<BDSMSubscription />} />
+        <Route path="/terms/Sale_of_Goods" element={<SaleOfGoods />} />
+        <Route path="/terms/Data_Governance" element={<DataGovernance />} />
+        <Route path="/terms/CodeOfConduct" element={<CodeOfConduct />} />
       </Routes>
     </BrowserRouter>
   )
