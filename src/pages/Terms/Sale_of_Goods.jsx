@@ -17,6 +17,17 @@ export default function SaleOfGoods() {
                     </h1>
                     <p className="text-gray-500 text-center mb-16">Last updated: November 18, 2022</p>
 
+                    <div className="flex justify-center mb-8">
+                        <a 
+                            href="https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+SALES+OF+GOODS+-+PUBLISHED.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-gray-50 hover:bg-gray-200 text-gray-600 font-medium py-2 px-6 rounded-md border border-gray-300 transition-colors duration-200"
+                        >
+                            Download PDF
+                        </a>
+                    </div>
+
                     {/* Section 1: General */}
                     <section className="mb-12">
                         <h2 className="text-2xl font-bold mb-6">1. GENERAL</h2>

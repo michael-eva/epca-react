@@ -333,6 +333,11 @@ const E777D = () => {
                     <p className="text-xl">5400 Nm</p>
                     <p className="text-gray-400 text-sm mt-1">Instant torque at all speeds</p>
                   </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Noise Level</p>
+                    <p className="text-xl">67 dB (A)</p>
+                    <p className="text-gray-400 text-sm mt-1">10x times quieter than equivalent diesel model</p>
+                  </div>
                 </div>
               </div>
               

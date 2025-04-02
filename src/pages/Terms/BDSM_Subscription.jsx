@@ -15,6 +15,17 @@ export default function BDSMSubscription() {
                     <h1 className="text-4xl font-medium text-center mb-8">Terms and Conditions for BDSM Software Subscription(s) and Additional Services</h1>
                     <p className="text-gray-500 text-center mb-16">Last updated: November 18, 2022</p>
 
+                    <div className="flex justify-center mb-8">
+                        <a 
+                            href="https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+BDSM+TERMS+AND+CONDITIONS+-+PUBLISHED.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-gray-50 hover:bg-gray-200 text-gray-600 font-medium py-2 px-6 rounded-md border border-gray-300 transition-colors duration-200"
+                        >
+                            Download PDF
+                        </a>
+                    </div>
+
                     {/* Definitions and Order of Precedence */}
                     <div className="mb-12">
                         <h2 className="text-2xl font-bold mb-6">1. Definitions and Order of Precedence</h2>

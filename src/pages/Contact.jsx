@@ -38,7 +38,12 @@ const Contact = () => {
                 <Link to="#" className="text-blue-400 hover:underline">Experience Centre</Link> and{' '}
                 <Link to="#" className="text-blue-400 hover:underline">Service & Warranty</Link> pages. */}
               </p>
+              <div>
+                <h2 className="text-xl font-medium">Address</h2>
+                <p>3 Central Ave, Hazelmere 6055, Western Australia</p>
+              </div>
             </div>
+            
 
             {/* Company Details */}
             <div className="space-y-4">
@@ -46,6 +51,7 @@ const Contact = () => {
                 <h2 className="text-xl font-medium">Company Name</h2>
                 <p>ELECTRIC POWER CONVERSIONS AUSTRALIA PTY LTD</p>
               </div>
+              
               <div>
                 <h2 className="text-xl font-medium">ABN</h2>
                 <p>32 668 121 962</p>

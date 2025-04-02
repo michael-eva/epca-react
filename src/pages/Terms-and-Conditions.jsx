@@ -18,12 +18,12 @@ export default function TermsAndConditions() {
                 },
                 {
                     title: "Terms and Conditions for the Purchase of Goods and Services by EPCA [PDF]",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/EPCA+Purchase+of+Goods+and+Services.pdf"
+                    href: "https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+PURCHASE+OF+GOODS+AND+SERVICES.pdf"
                 },
                 
                 {
                     title: "BDSM Software End User Agreement [PDF]",
-                    href: "https://epca.s3.us-east-2.amazonaws.com/terms-and-conditions/BDSM+Software+End+User+Agreement.pdf"
+                    href: "https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/BDSM+Software+End+User+Agreement+-+PUBLISHED.pdf"
                 }
             ]
         },

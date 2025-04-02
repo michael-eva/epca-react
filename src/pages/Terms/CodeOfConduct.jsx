@@ -13,6 +13,16 @@ export default function CodeOfConduct() {
             <div className="min-h-screen bg-white">
                 <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
                     <h1 className="text-4xl font-medium text-center mb-8">EPCA SUPPLIER CODE OF CONDUCT</h1>
+                    <div className="flex justify-center mb-8">
+                        <a 
+                            href="https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+SUPPLIER+CODE+OF+CONDUCT.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-gray-50 hover:bg-gray-200 text-gray-600 font-medium py-2 px-6 rounded-md border border-gray-300 transition-colors duration-200"
+                        >
+                            Download PDF
+                        </a>
+                    </div>
                     
                     <div className="mb-12">
                         <p className="text-gray-600 mb-6">EPCA is committed to upholding the highest ethical business practices and behaviours, delivering quality and excellence in everything we do, and building a safe, productive and enjoyable workplace for all associated with the EPCA supply chain. EPCA recognises that purchasing decisions based on cost alone can have a detrimental social, economic and environmental impact. The Supplier Code of Conduct is built on EPCA's values and sets out expectations and standards for all suppliers.</p>
