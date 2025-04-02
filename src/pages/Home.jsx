@@ -181,10 +181,10 @@ await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aw
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">10hr</div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">8hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        10-Hour Runtime, 10% More Power
+                        8-Hour Runtime, 14% More Power
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
