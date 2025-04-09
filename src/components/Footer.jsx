@@ -46,7 +46,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="mt-8 text-center text-base text-gray-400">
-                <p className="mb-4">EPCA is 100% Aboriginal-owned. We acknowledge Aboriginal Peoples as the Traditional Owners of Australia. We respect the significance of the Traditional Owner's connection to Country, Language, Family and Community, and we pay our respects to them and the multiple, adaptive, and diverse Aboriginal cultures that exist throughout Australia. Electric Power Conversions Australia respects all past, present, and future Elders.</p>
+                <p className="mb-4">EPCA is a majority Aboriginal-owned company. We acknowledge Aboriginal Peoples as the Traditional Owners of Australia. We respect the significance of the Traditional Owner's connection to Country, Language, Family and Community, and we pay our respects to them and the multiple, adaptive, and diverse Aboriginal cultures that exist throughout Australia. Electric Power Conversions Australia respects all past, present, and future Elders.</p>
                 <p>&copy; 2025 EPCA. All rights reserved.</p>
             </div>
         </div>
