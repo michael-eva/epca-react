@@ -289,8 +289,9 @@ const E777D = () => {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-[2428px] mx-auto px-4">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-16">Key Features</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="bg-gray-50 p-8 rounded-lg">
@@ -319,24 +320,18 @@ const E777D = () => {
                 <h3 className="text-2xl font-medium mb-8">Performance</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
-                    <p className="text-gray-400 text-sm">Payload Capacity</p>
+                    <h4 className="text-gray-400 text-sm">Payload Capacity</h4>
                     <p className="text-xl">100 tonnes</p>
-                    <p className="text-gray-400 text-sm mt-1"></p>
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Power Output</p>
+                    <h4 className="text-gray-400 text-sm">Power Output</h4>
                     <p className="text-xl">850 kW</p>
                     <p className="text-gray-400 text-sm mt-1">14% increase over equivalent diesel models</p>
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Maximum Torque</p>
+                    <h4 className="text-gray-400 text-sm">Maximum Torque</h4>
                     <p className="text-xl">5400 Nm</p>
                     <p className="text-gray-400 text-sm mt-1">Instant torque at all speeds</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Noise Level</p>
-                    <p className="text-xl">67 dB (A)</p>
-                    <p className="text-gray-400 text-sm mt-1">10x times quieter than equivalent diesel model</p>
                   </div>
                 </div>
               </div>

@@ -93,10 +93,9 @@ const UONSmartCell = () => {
         <section className="bg-white">
           <div className="flex flex-col md:flex-row">
             <div className="order-2 md:order-1 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
-              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
               <h2 className="text-3xl font-bold mb-4">Built for Tough Mining Environments</h2>
               <p className="text-gray-600 text-sm mb-4">
-              EPCA’s charging infrastructure is a flexible solution designed to withstand harsh mining conditions.
+              EPCA's charging infrastructure is a flexible solution designed to withstand harsh mining conditions.
               </p>
               <p className="text-gray-600 text-sm mb-6">
               It can be deployed anywhere and supports rapid charging for any mining truck 24/7 in only 50min, ensuring seamless operation and minimal downtime. 
@@ -121,7 +120,6 @@ const UONSmartCell = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
               <h2 className="text-3xl font-bold">Plug In, Charge and Go</h2>
             </div>
             
@@ -168,7 +166,6 @@ const UONSmartCell = () => {
               />
             </div>
             <div className="order-2 md:order-2 w-full max-w-[416px] p-6 md:p-12 flex flex-col">
-              <h3 className="text-sm font-medium text-gray-500 mb-2"></h3>
               <h2 className="text-3xl font-bold mb-4">High-Power, Smart Energy Management</h2>
               <p className="text-gray-600 text-sm mb-4">
               With the highest power output available, the system maximises fleet productivity by reducing charging times, allowing battery-electric trucks to operate continuously and efficiently. 
@@ -201,7 +198,7 @@ const UONSmartCell = () => {
           <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">Ready to Electrify Your Mining Operations?</h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-            Contact us today to learn how EPCA’s charging solutions can transform your mining fleet.
+            Contact us today to learn how EPCA's charging solutions can transform your mining fleet.
             </p>
             <a 
               onClick={() => window.location.href = '/enquiry?subject=uon'} 
