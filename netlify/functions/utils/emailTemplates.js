@@ -145,6 +145,31 @@ export const generateEmailTemplate = (formData, formType) => {
           </div>
         </div>
       `
+    },
+
+    careerApplication: {
+      subject: 'New Career Application - EPCA',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background-color: #00CC66; color: white; padding: 20px; text-align: center;">
+            <h1>New Career Application</h1>
+            <p>Received on ${timestamp}</p>
+          </div>
+          
+          <div style="padding: 20px; background-color: #f9f9f9;">
+            <h2>Applicant Information</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px; font-weight: bold;">Full Name:</td><td style="padding: 8px;">${formData.fullName}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;">${formData.email}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${formData.phone || 'Not provided'}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Field of Interest:</td><td style="padding: 8px;">${formData.fieldOfInterest || 'Not specified'}</td></tr>
+            </table>
+            
+            <h2 style="margin-top: 16px;">About the Applicant</h2>
+            <div style="white-space: pre-wrap; padding: 8px; background: #fff; border: 1px solid #eee; border-radius: 6px;">${formData.aboutYou || 'No additional information provided.'}</div>
+          </div>
+        </div>
+      `
     }
   };
 

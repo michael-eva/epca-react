@@ -7,8 +7,10 @@ const Navbar = ({ mode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showVehicles, setShowVehicles] = useState(false);
   const [showServices, setShowServices] = useState(false);
+  const [showAboutUs, setShowAboutUs] = useState(false);
   const closeTimeoutRef = useRef(null);
   const servicesTimeoutRef = useRef(null);
+  const aboutUsTimeoutRef = useRef(null);
   
   const handleShowVehicles = () => {
     if (closeTimeoutRef.current) {
@@ -35,7 +37,21 @@ const Navbar = ({ mode }) => {
   const handleHideServices = () => {
     servicesTimeoutRef.current = setTimeout(() => {
       setShowServices(false);
-    }, 500);
+    }, 100);
+  };
+
+  const handleShowAboutUs = () => {
+    if (aboutUsTimeoutRef.current) {
+      clearTimeout(aboutUsTimeoutRef.current);
+      aboutUsTimeoutRef.current = null;
+    }
+    setShowAboutUs(true);
+  };
+
+  const handleHideAboutUs = () => {
+    aboutUsTimeoutRef.current = setTimeout(() => {
+      setShowAboutUs(false);
+    }, 100);
   };
   const navigate = useNavigate();
   const timeoutRef = useRef(null);
@@ -51,6 +67,7 @@ const Navbar = ({ mode }) => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
       if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+      if (aboutUsTimeoutRef.current) clearTimeout(aboutUsTimeoutRef.current);
     };
   }, []);
 
@@ -160,8 +177,29 @@ const Navbar = ({ mode }) => {
                 )}
               </div>
             </li>
-            <li><a href="/about" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' ? 'text-gray-800' : 'text-white'}`}>About Us</a></li>
-            <li><a href="/contact" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' ? 'text-gray-800' : 'text-white'}`}>Contact</a></li>
+            <li>
+              <div 
+                onMouseEnter={handleShowAboutUs}
+                onMouseLeave={handleHideAboutUs}
+                className="relative h-full group"
+              >
+                <span className={`font-medium transition-colors duration-300 cursor-pointer border-b-2 border-transparent group-hover:border-current pb-1
+                  ${showVehicles ? 'text-black hover:text-gray-600' : 
+                    mode === 'dark' ? 'text-gray-800' : 
+                    'text-white'} 
+                  ${!mode === 'dark' && isScrolled && !showVehicles ? 'hover:text-white/80' : 'hover:text-blue-200'}`}>
+                  About Us
+                </span>
+                {showAboutUs && (
+                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-md py-2 mt-2 z-50">
+                    <a href="/about" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Our Team</a>
+                    <a href="/pressreleases" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">News & Media</a>
+                    <a href="/careers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Careers</a>
+                    <a href="/contact" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+                  </div>
+                )}
+              </div>
+            </li>
             <li>
               <a 
                 href="/enquiry" 
@@ -202,8 +240,19 @@ const Navbar = ({ mode }) => {
                       )}
                     </div>
                   </li>
-                  <li><a href="/about" className="text-2xl font-medium text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>About Us</a></li>
-                  <li><a href="/contact" className="text-2xl font-medium text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Contact</a></li>
+                  <li>
+                    <div className="text-2xl font-medium text-white">
+                      <span className="cursor-pointer hover:text-blue-200 transition-colors" onClick={() => setShowAboutUs(!showAboutUs)}>About Us</span>
+                      {showAboutUs && (
+                        <div className="mt-2 space-y-2">
+                          <a href="/about" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Our Team</a>
+                          <a href="/press-releases" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>News & Media</a>
+                          <a href="/careers" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Careers</a>
+                          <a href="/contact" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Contact Us</a>
+                        </div>
+                      )}
+                    </div>
+                  </li>
                   <li><a href="/enquiry" className="text-2xl font-medium text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Enquiry</a></li>
                 </ul>
                 <button 

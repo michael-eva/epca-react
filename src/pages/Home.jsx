@@ -24,6 +24,7 @@ const Home = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showInvestModal, setShowInvestModal] = useState(false);
   // State for number animation
   const [numbers, setNumbers] = useState({
     carbon: 0,
@@ -50,6 +51,11 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setShowInvestModal(true), 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
   
   const nextChargerImage = () => {
     setCurrentChargerImageIndex((prevIndex) => (prevIndex + 1) % chargerImages.length);
@@ -182,6 +188,11 @@ const Home = () => {
       />
       <Navbar />
       <div className="text-gray-800 leading-relaxed overflow-x-hidden">
+        {/* {showInvestModal && (
+          <div className="fixed inset-0 z-[999] flex items-center justify-center">
+            ...
+          </div>
+        )} */}
         {/* Hero Section */}
         <section className="h-screen flex items-center relative bg-black">
           <div className="absolute inset-0 bg-black/30 z-10"></div>   
@@ -216,10 +227,10 @@ const Home = () => {
               </div>
               
               <div className="relative text-center px-6 md:px-8 group">
-                <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">8hr</div>
+                <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">12hr</div>
                 <h3 className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                   <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                  8-Hour Runtime, 14% More Power
+                  12-Hour Shift with Opportune Charging
                 </h3>
                 <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                 <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -316,7 +327,7 @@ const Home = () => {
                 
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Engineered for efficiency, the fast charging solution for mining delivers a full charge 
-                  in <span className="font-semibold text-[#00CC66]">50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                  in <span className="font-semibold text-[#00CC66]">30 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">

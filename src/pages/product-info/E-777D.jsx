@@ -169,8 +169,8 @@ const E777D = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
         </svg>
       ),
-      title: "Electric Powertrain",
-      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 14% more power even in the toughest mining conditions."
+      title: "Powertrain",
+      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 46% more power even in the toughest mining conditions."
     },
     {
       icon: (
@@ -197,11 +197,12 @@ const E777D = () => {
           />
           <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
             <div className="max-w-2xl text-white mt-32">
-              <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Tonne Battery-Electric</h1>
+              <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Ton Battery-Electric</h1>
               <p className="text-2xl mb-10">Built for tough mining conditions with zero emissions.</p>
             </div>
             <div className="mt-auto mb-20 flex space-x-4 justify-center">
               <a href="/product-enquiry/E-777D" className="text-sm md:text-base   px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+              <a href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/Datasheet+-+ENGLISH+-+08+Aug.pdf" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base px-8 py-3 bg-white hover:bg-gray-100 rounded-md font-medium uppercase tracking-wide transition-colors text-gray-800 border border-gray-300">Download Brochure</a>
             </div>
           </div>
         </section>
@@ -220,10 +221,10 @@ const E777D = () => {
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">8hr</div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">12hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        8-Hour Runtime, 14% More Power
+                        12-Hour Shift with Opportune Charging
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -257,8 +258,8 @@ const E777D = () => {
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
               <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
               <p className="text-xl text-gray-600">
-                The E-777D is EPCA's first fully battery-electric retrofit of a 100-tonne mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
-                With 8 hours of runtime, a 50-minute fast charge, and 14% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
+                The E-777D is EPCA's first fully battery-electric retrofit of a 100-ton mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
+                With a 12-hour shift continuous runtime, 30-minute fast charge, and 46% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
           </div>
@@ -321,16 +322,16 @@ const E777D = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <h4 className="text-gray-400 text-sm">Payload Capacity</h4>
-                    <p className="text-xl">100 tonnes</p>
+                    <p className="text-xl">100 tons</p>
                   </div>
                   <div>
-                    <h4 className="text-gray-400 text-sm">Power Output</h4>
-                    <p className="text-xl">850 kW</p>
-                    <p className="text-gray-400 text-sm mt-1">14% increase over equivalent diesel models</p>
+                    <h4 className="text-gray-400 text-sm">Peak Power</h4>
+                    <p className="text-xl">1020 kW</p>
+                    <p className="text-gray-400 text-sm mt-1">46% increase over equivalent diesel models</p>
                   </div>
                   <div>
-                    <h4 className="text-gray-400 text-sm">Maximum Torque</h4>
-                    <p className="text-xl">5400 Nm</p>
+                    <h4 className="text-gray-400 text-sm">Peak Torque</h4>
+                    <p className="text-xl">6100 Nm</p>
                     <p className="text-gray-400 text-sm mt-1">Instant torque at all speeds</p>
                   </div>
                 </div>
@@ -347,12 +348,12 @@ const E777D = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Battery Capacity</p>
-                    <p className="text-xl">1100 kWh</p>
+                    <p className="text-xl">1200 kWh</p>
                     <p className="text-gray-400 text-sm mt-1">High-density energy storage</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Charging Time</p>
-                    <p className="text-xl">50 minutes</p>
+                    <p className="text-xl">30 minutes</p>
                     <p className="text-gray-400 text-sm mt-1">With high-speed charging infrastructure</p>
                   </div>
                 </div>
@@ -364,12 +365,12 @@ const E777D = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <p className="text-gray-400 text-sm">Runtime</p>
-                    <p className="text-xl">8 hours</p>
-                    <p className="text-gray-400 text-sm mt-1">Based on standard mining cycle testing</p>
+                    <p className="text-xl">Continuous</p>
+                    <p className="text-gray-400 text-sm mt-1">Based on standard operator break intervals </p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Maximum Speed</p>
-                    <p className="text-xl">65 km/h</p>
+                    <p className="text-xl">67 km/h</p>
                     <p className="text-gray-400 text-sm mt-1">Safety-limited for mining applications</p>
                   </div>
                   <div>
@@ -384,9 +385,14 @@ const E777D = () => {
               <div>
                 <h3 className="text-2xl font-medium mb-8">Economics & Environment</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <p className="text-gray-400 text-sm">Maintenance Cost Reduction</p>
+                    <p className="text-xl">34%</p>
+                    <p className="text-gray-400 text-sm mt-1">Compared to equivalent diesel trucks</p>
+                  </div>
                   <div>
                     <p className="text-gray-400 text-sm">Operational Cost Reduction</p>
-                    <p className="text-xl">54%</p>
+                    <p className="text-xl">67%</p>
                     <p className="text-gray-400 text-sm mt-1">Compared to equivalent diesel trucks</p>
                   </div>
                   <div>
@@ -424,12 +430,22 @@ const E777D = () => {
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
               The E-777D is waiting for you.
             </p>
-            <a 
-              href="/product-enquiry/E-777D" 
-              className="inline-block px-12 py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium text-lg transition-colors"
-            >
-              Enquire Now
-            </a>
+            <div className="flex space-x-4 justify-center">
+              <a 
+                href="/product-enquiry/E-777D" 
+                className="inline-block px-12 py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium text-lg transition-colors"
+              >
+                Enquire Now
+              </a>
+              <a 
+                href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/Datasheet+-+ENGLISH+-+08+Aug.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block px-12 py-4 bg-white hover:bg-gray-100 text-gray-800 rounded-md font-medium text-lg transition-colors border border-gray-300"
+              >
+                Download Brochure
+              </a>
+            </div>
           </div>
         </section>
         <Footer />

@@ -101,8 +101,8 @@ const handleSubmit = async (e) => {
 };
   const specs = [
     { value: '100', unit: 't', label: 'Payload' },
-    { value: '50', unit: 'min', label: 'Charging' },
-    { value: '8', unit: 'hr', label: 'Runtime' }
+    { value: '30', unit: 'min', label: 'Charging' },
+    { value: '12', unit: 'hr', label: 'Runtime' }
   ];
   return (
     <TooltipProvider>
@@ -135,7 +135,7 @@ const handleSubmit = async (e) => {
         <div className="w-full md:w-1/3 bg-white overflow-y-auto h-[50vh] md:h-screen">
           <div className="p-12 pt-24">
             <h1 className="text-4xl font-medium mb-4 text-center">E-777D</h1>
-            <p className="text-gray-600 text-center mb-16">EPCA’s 100-tonne full battery-electric mining truck</p>
+            <p className="text-gray-600 text-center mb-16">EPCA’s 100-ton full battery-electric mining truck</p>
             
             <KeySpecs specs={specs} />
 
@@ -143,7 +143,7 @@ const handleSubmit = async (e) => {
               {/* Runtime Selection */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-medium mb-6 relative">
-                  1. Runtime Configuration
+                  1. Battery Configuration
                 </h2>
                 <div className="grid grid-cols-1 gap-4">
                   <button 
@@ -153,9 +153,9 @@ const handleSubmit = async (e) => {
                     onClick={() => handleInputChange({ target: { name: 'selectedRuntime', value: 'standard' }})}
                   >
                     <h3 className={`text-xl font-medium ${formData.selectedRuntime === 'standard' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
-                      Standard Runtime
+                      Medium Duty
                     </h3>
-                    <p className="text-gray-600 mt-2">8 hours</p>
+                    <p className="text-gray-600 mt-2">1000 kWh</p>
                   </button>
                   <button 
                     type="button" 
@@ -164,9 +164,9 @@ const handleSubmit = async (e) => {
                     onClick={() => handleInputChange({ target: { name: 'selectedRuntime', value: 'extended' }})}
                   >
                     <h3 className={`text-xl font-medium ${formData.selectedRuntime === 'extended' ? 'text-[#00CC66]' : 'group-hover:text-[#00CC66]'}`}>
-                      Extended Runtime
+                      Heavy Duty
                     </h3>
-                    <p className="text-gray-600 mt-2">10 hours</p>
+                    <p className="text-gray-600 mt-2">1200 kWh</p>
                   </button>
                 </div>
               </div>

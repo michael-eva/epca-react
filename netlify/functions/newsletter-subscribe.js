@@ -28,22 +28,23 @@ export const handler = async (event, context) => {
   }
 
   try {
-    const formData = JSON.parse(event.body);
-    
+    const formData = JSON.parse(event.body || '{}');
+
     // Validate required fields
-    if (!formData.fullName || !formData.email) {
+    if (!formData.email) {
       return {
         statusCode: 400,
         headers,
         body: JSON.stringify({
           success: false,
-          message: 'Full Name and Email are required'
+          message: 'Email is required'
         })
       };
     }
 
-    const template = generateEmailTemplate(formData, 'feasibilityStudy');
-    
+    // Reuse mailing list template for newsletter subscriptions
+    const template = generateEmailTemplate(formData, 'mailingList');
+
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL,
       to: 'contact@epca.net.au',
@@ -69,7 +70,7 @@ export const handler = async (event, context) => {
       headers,
       body: JSON.stringify({
         success: true,
-        message: 'Feasibility study request submitted successfully',
+        message: 'Newsletter subscription successful',
         data: data
       })
     };
@@ -87,3 +88,5 @@ export const handler = async (event, context) => {
     };
   }
 };
+
+

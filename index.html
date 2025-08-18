@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CT7MV2QFG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5CT7MV2QFG');
+    </script>
     <meta charset="UTF-8" />
     <link href="/src/styles.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/images/epca-logo-black1.png?v=2" />
@@ -12,6 +21,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Hidden Netlify form to ensure detection of newsletter form -->
+    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="text" name="companyName" />
+      <input type="checkbox" name="updates" />
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

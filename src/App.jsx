@@ -13,10 +13,13 @@ import About from './pages/About'
 import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms-and-Conditions'
 import PressReleases from './pages/PressReleases'
+import Careers from './pages/Careers'
 import BDSMSubscription from './pages/Terms/BDSM_Subscription'
 import SaleOfGoods from './pages/Terms/Sale_of_Goods.jsx'
 import DataGovernance from './pages/Terms/Data_Governance.jsx'
 import CodeOfConduct from './pages/Terms/CodeOfConduct.jsx'
+import Subscribe from './pages/Subscribe.jsx'
+import SubscribeThankYou from './pages/SubscribeThankYou.jsx'
 
 
 function App() {
@@ -33,6 +36,7 @@ function App() {
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/feasability-study" element={<FeasabilityStudy />} />
         <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/pressreleases" element={<PressReleases />} />
@@ -40,6 +44,8 @@ function App() {
         <Route path="/terms/Sale_of_Goods" element={<SaleOfGoods />} />
         <Route path="/terms/Data_Governance" element={<DataGovernance />} />
         <Route path="/terms/CodeOfConduct" element={<CodeOfConduct />} />
+        <Route path="/subscribe" element={<Subscribe />} />
+        <Route path="/subscribe/thank-you" element={<SubscribeThankYou />} />
       </Routes>
     </BrowserRouter>
   )

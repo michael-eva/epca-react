@@ -4,7 +4,7 @@ import { generateEmailTemplate } from './utils/emailTemplates.js';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const handler = async (event, context) => {
-  // Handle CORS
+  // CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -12,11 +12,7 @@ export const handler = async (event, context) => {
   };
 
   if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers,
-      body: ''
-    };
+    return { statusCode: 200, headers, body: '' };
   }
 
   if (event.httpMethod !== 'POST') {
@@ -28,22 +24,31 @@ export const handler = async (event, context) => {
   }
 
   try {
-    const formData = JSON.parse(event.body);
-    
+    const formData = JSON.parse(event.body || '{}');
+
     // Validate required fields
-    if (!formData.fullName || !formData.email) {
+    if (!formData.firstName || !formData.lastName || !formData.email) {
       return {
         statusCode: 400,
         headers,
         body: JSON.stringify({
           success: false,
-          message: 'Full Name and Email are required'
+          message: 'First name, Last name, and Email are required'
         })
       };
     }
 
-    const template = generateEmailTemplate(formData, 'feasibilityStudy');
-    
+    const template = generateEmailTemplate(
+      {
+        fullName: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        phone: formData.phoneNumber,
+        fieldOfInterest: formData.fieldOfInterest,
+        aboutYou: formData.aboutYou
+      },
+      'careerApplication'
+    );
+
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL,
       to: 'contact@epca.net.au',
@@ -69,11 +74,10 @@ export const handler = async (event, context) => {
       headers,
       body: JSON.stringify({
         success: true,
-        message: 'Feasibility study request submitted successfully',
-        data: data
+        message: 'Career application submitted successfully',
+        data
       })
     };
-
   } catch (error) {
     console.error('Function error:', error);
     return {
@@ -87,3 +91,5 @@ export const handler = async (event, context) => {
     };
   }
 };
+
+
