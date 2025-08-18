@@ -125,19 +125,26 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
-await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
+      const apiUrl = '/api/mailing-list';
+      
+        
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        mode: 'no-cors',
-        body: JSON.stringify({formData: {email: email}, joinMailingList: true})
+        body: JSON.stringify({email: email})
       });
-  
-      // With no-cors mode, we'll assume success if no error is thrown
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+      
       toast.success('You\'re in the loop!');
-      // Reset form
       setEmail('');
     } catch (error) {
       console.error('Error submitting configuration:', error);

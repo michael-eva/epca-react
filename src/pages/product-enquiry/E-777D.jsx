@@ -54,16 +54,23 @@ const handleSubmit = async (e) => {
   setLoading(true);
 
   try {
-    const response = await fetch('https://f4qe5xbd4vflzwi7yjrz2i4fjm0pcmfj.lambda-url.us-east-2.on.aws', {
+    const apiUrl = '/api/product-enquiry';
+    
+      
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      mode: 'no-cors',
-      body: JSON.stringify({...formData, productEnquiryForm: true})
+      body: JSON.stringify(formData)
     });
 
-    // With no-cors mode, we'll assume success if no error is thrown
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || 'Failed to submit form');
+    }
+    
     toast.success('Your enquiry has been submitted!');
 
     // Reset form
