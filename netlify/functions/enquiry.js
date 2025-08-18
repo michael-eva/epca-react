@@ -46,7 +46,7 @@ export const handler = async (event, context) => {
     
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL,
-      to: process.env.TO_EMAIL,
+      to: 'clayton.franklin@epca.net.au',
       subject: template.subject,
       html: template.html
     });
