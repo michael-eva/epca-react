@@ -1,9 +1,9 @@
-import { Resend } from 'resend';
-import { generateEmailTemplate } from './utils/emailTemplates.js';
+const { Resend } = require('resend');
+const { generateEmailTemplate } = require('./utils/emailTemplates.js');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   // CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
