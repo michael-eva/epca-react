@@ -45,8 +45,8 @@ export const handler = async (event, context) => {
     const template = generateEmailTemplate(formData, 'mailingList');
     
     const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || 'noreply@epca.net.au',
-      to: process.env.TO_EMAIL || 'contact@epca.net.au',
+      from: process.env.FROM_EMAIL,
+      to: process.env.TO_EMAIL,
       subject: template.subject,
       html: template.html
     });
