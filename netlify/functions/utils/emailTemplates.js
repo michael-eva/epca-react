@@ -1,4 +1,4 @@
-export const generateEmailTemplate = (formData, formType) => {
+const generateEmailTemplate = (formData, formType) => {
   const timestamp = new Date().toLocaleString();
   
   const templates = {
@@ -175,3 +175,5 @@ export const generateEmailTemplate = (formData, formType) => {
 
   return templates[formType] || templates.enquiry;
 };
+
+module.exports = { generateEmailTemplate };
