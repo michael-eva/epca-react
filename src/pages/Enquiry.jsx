@@ -89,7 +89,7 @@ const Enquiry = () => {
     
         setLoading(true);
         try {
-            const apiUrl = '/api/enquiry';
+            const apiUrl = '/.netlify/functions/enquiry';
             
               
             const response = await fetch(apiUrl, {

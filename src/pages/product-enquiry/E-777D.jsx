@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
   setLoading(true);
 
   try {
-    const apiUrl = '/api/product-enquiry';
+    const apiUrl = '/.netlify/functions/product-enquiry';
     
       
     const response = await fetch(apiUrl, {
