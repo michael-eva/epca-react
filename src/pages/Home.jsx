@@ -133,7 +133,7 @@ const Home = () => {
     setLoading(true);
     
     try {
-      const apiUrl = '/api/mailing-list';
+      const apiUrl = '/.netlify/functions/mailing-list';
       
         
       const response = await fetch(apiUrl, {

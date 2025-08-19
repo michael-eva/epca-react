@@ -56,7 +56,7 @@ export default function FeasabilityStudy() {
         setIsLoading(true);
       
         try {
-          const apiUrl = '/api/feasibility-study';
+          const apiUrl = '/.netlify/functions/feasibility-study';
           
             
           const response = await fetch(apiUrl, {

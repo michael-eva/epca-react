@@ -4,12 +4,15 @@
 
 [functions]
   directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["resend"]
 
 # Redirect all API calls to Netlify Functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+  force = true
 
 # SPA fallback for client-side routing
 [[redirects]]

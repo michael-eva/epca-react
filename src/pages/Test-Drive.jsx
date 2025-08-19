@@ -75,7 +75,7 @@ const TestDrive = () => {
     setIsLoading(true);
   
     try {
-      const apiUrl = '/api/test-drive';
+      const apiUrl = '/.netlify/functions/test-drive';
       
         
       const response = await fetch(apiUrl, {

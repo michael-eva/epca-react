@@ -40,7 +40,7 @@ const Careers = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/careers', {
+      const response = await fetch('/.netlify/functions/careers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
