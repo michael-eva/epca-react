@@ -67,10 +67,13 @@ export const handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      headers,
+      headers: {
+        ...headers,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         success: true,
-        message: 'Newsletter subscription successful',
+        message: 'You have successfully subscribed to the EPCA newsletter!',
         data: data
       })
     };

@@ -31,10 +31,10 @@ export default function Footer() {
                     {/* Contact Us below Products */}
                     <div className="mt-8">
                         <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-                        <div className="space-y-3">
+                        <div className="space-y-1">
                             <div className="flex items-center space-x-3">
                                 <div className="flex-shrink-0">
-                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="01 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                 </div>
@@ -84,7 +84,7 @@ export default function Footer() {
                     <ul className="text-base text-gray-400">
                         <li><a onClick={() => window.location.href = '/about'} className="cursor-pointer">Our Team</a></li>
                         <li><a onClick={() => window.location.href = '/pressreleases'} className="cursor-pointer">News & Media</a></li>
-                        <li><a onClick={() => window.location.href = '/careers'} className="cursor-pointer">Careers</a></li>0
+                        <li><a onClick={() => window.location.href = '/careers'} className="cursor-pointer">Careers</a></li>
                         <li><a onClick={() => window.location.href = '/terms'} className="cursor-pointer">Terms and Conditions</a></li> 
                     </ul>
                 </div>
