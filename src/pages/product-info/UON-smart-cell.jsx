@@ -45,7 +45,7 @@ const UONSmartCell = () => {
         </svg>
       ),
       title: "Ultra-Fast Charging",
-      description: "50-minute full charge for heavy mining equipment, minimising downtime and maximising productivity."
+      description: "30-minute full charge for heavy mining equipment, minimising downtime and maximising productivity."
     },
     {
       icon: (
@@ -98,7 +98,7 @@ const UONSmartCell = () => {
               EPCA's charging infrastructure is a flexible solution designed to withstand harsh mining conditions.
               </p>
               <p className="text-gray-600 text-sm mb-6">
-              It can be deployed anywhere and supports rapid charging for any mining truck 24/7 in only 50min, ensuring seamless operation and minimal downtime. 
+              It can be deployed anywhere and supports rapid charging for any mining truck 24/7 in only 30min, ensuring seamless operation and minimal downtime. 
               </p>
               <div className="mt-auto">
                 <a href="#enquiry" className="inline-block px-6 py-2 border-3 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors">

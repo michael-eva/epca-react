@@ -10,7 +10,7 @@ export default function TermsAndConditions() {
             links: [
                 {
                     title: "Terms and Conditions for the Sale of Goods and Services by EPCA",
-                    href: "/terms/Sale_of_Goods"
+                    href: "https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+SALES+OF+GOODS+-+PUBLISHED.pdf"
                 },
                 {
                     title: "Terms and Conditions for BDSM Software Subscription(s) and Additional Services",
