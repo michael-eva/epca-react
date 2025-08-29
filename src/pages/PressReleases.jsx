@@ -6,6 +6,33 @@ import { motion } from 'framer-motion'
 const PressReleases = () => {
     const [articles] = useState([
         {
+            id: 14,
+            title: "[Article] ABB and EPCA sign MoU on BEV retrofits for mid-size haul trucks",
+            author: "International Mining",
+            date: "August 27, 2025",
+            brief: "ABB and EPCA have signed a Memorandum of Understanding (MoU) that will see the pair team up to develop and deploy full battery electric retrofit solutions for mid-sized mining haul trucks.",
+            link: "https://im-mining.com/2025/08/27/abb-and-epca-sign-mou-on-bev-retrofits-for-mid-size-haul-trucks/",
+            image: "/images/press/IM5.webp"
+        },
+        {
+            id: 13,
+            title: "[Article] Why this WA mining company just became the exclusive electric truck converter for an entire state",
+            author: "Resources Review",
+            date: "August 27, 2025",
+            brief: "Two Australian companies are making a bold commitment to electric transportation. And their partnership could reshape how Western Australia thinks about zero-emission vehicles.",
+            link: "https://resourcesreview.com.au/business_insight/wa-epca-janus-electric/",
+            image: "/images/press/ResourcesReview1.webp"
+        },
+        {
+            id: 12,
+            title: "[Article] Janus enlists EPCA to accelerate zero emission road truck vehicle mission",
+            author: "International Mining",
+            date: "August 25, 2025",
+            brief: "EPCA’s aim to accelerate the transition to zero-emission mining fleets now extends to on-road vehicles, with the company having just signed a Western Australia-focused dealership agreement with Janus Electric.",
+            link: "https://im-mining.com/2025/08/25/janus-enlists-epca-to-accelerate-zero-emission-road-truck-vehicle-mission/",
+            image: "/images/press/IM4.webp"
+        },
+        {
             id: 11,
             title: "[Podcast] The Off-Highway Podcast – EPCA",
             author: "Alastair Hayfield - Interact Analysis",
@@ -172,9 +199,16 @@ const ArticleCard = ({ article }) => {
                         })}</span>
                     </div>
                     
-                    <h2 className="text-2xl font-semibold group-hover:text-green-600 transition-colors">
-                        {article.title}
-                    </h2>
+                    <a 
+                        href={article.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                    >
+                        <h2 className="text-2xl font-semibold group-hover:text-green-600 transition-colors cursor-pointer">
+                            {article.title}
+                        </h2>
+                    </a>
                     
                     <p className="text-gray-600 leading-relaxed">
                         {article.brief}

@@ -1,4 +1,5 @@
 import { LinkedInIcon, YouTubeIcon } from '../components/icons/SocialIcons'
+import { motion } from 'framer-motion'
 
 export default function Footer() {
     return (
@@ -11,21 +12,71 @@ export default function Footer() {
                     </div>
                     <p className="text-base text-gray-400 mb-4">Leading the transition to zero-emission mining operations with innovative battery-electric solutions.</p>
                     <div className="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+                        <motion.a 
+                            href="https://www.linkedin.com/company/electric-power-conversion-australia-epca/" 
+                            className="text-gray-400 hover:text-white relative group" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            whileHover={{ y: -2 }}
+                            transition={{ duration: 0.2 }}
+                        >
                             <LinkedInIcon />
-                        </a>
-                        <a href="https://www.youtube.com/@EPCA_" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+                        </motion.a>
+                        <motion.a 
+                            href="https://www.youtube.com/@EPCA_" 
+                            className="text-gray-400 hover:text-white relative group" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            whileHover={{ y: -2 }}
+                            transition={{ duration: 0.2 }}
+                        >
                             <YouTubeIcon />
-                        </a>
+                        </motion.a>
                     </div>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold mb-4">Products</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a onClick={() => window.location.href = '/product-info/E-777D'} className="cursor-pointer">E-777D Mining Truck</a></li>
-                        <li><a onClick={() => window.location.href = '/enquiry?subject=E-785'} className="cursor-pointer">E-785 Mining Truck</a></li>
-                        <li><a onClick={() => window.location.href = '/enquiry?subject=E-993'} className="cursor-pointer">E-993 Loader</a></li>
-                        <li><a onClick={() => window.location.href = '/product-info/UON-smart-cell'} className="cursor-pointer">Charging</a></li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/product-info/E-777D'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>E-777D Mining Truck</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/enquiry?subject=E-785'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>E-785 Mining Truck</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/enquiry?subject=E-993'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>E-993 Loader</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/product-info/UON-smart-cell'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Charging</span>
+                            </motion.a>
+                        </li>
                     </ul>
                     
                     {/* Contact Us below Products */}
@@ -75,17 +126,71 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-bold mb-4">Services</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a onClick={() => window.location.href = '/feasability-study'} className="cursor-pointer">Feasibility Study</a></li>
-                        <li><a onClick={() => window.location.href = '/test-drive'} className="cursor-pointer">Test Drive</a></li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/feasability-study'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Feasibility Study</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/test-drive'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Test Drive</span>
+                            </motion.a>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold mb-4">Company</h3>
                     <ul className="text-base text-gray-400">
-                        <li><a onClick={() => window.location.href = '/about'} className="cursor-pointer">Our Team</a></li>
-                        <li><a onClick={() => window.location.href = '/pressreleases'} className="cursor-pointer">News & Media</a></li>
-                        <li><a onClick={() => window.location.href = '/careers'} className="cursor-pointer">Careers</a></li>
-                        <li><a onClick={() => window.location.href = '/terms'} className="cursor-pointer">Terms and Conditions</a></li> 
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/about'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Our Team</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/pressreleases'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>News & Media</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/careers'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Careers</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/terms'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Terms and Conditions</span>
+                            </motion.a>
+                        </li> 
                     </ul>
                 </div>
             </div>
