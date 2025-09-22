@@ -12,19 +12,19 @@ export const timelineData = [
     {
       date: "May 2024",
       // title: "Major Milestone 3",
-      description: "The completed EPCA E-777D is unveiled at The Electric Mine Conference in Perth."
+      description: "The completed EPCA E-777 is unveiled at The Electric Mine Conference in Perth."
     }
     ,
     {
       date: "August 2024",
       // title: "Major Milestone 3",
-      description: "We showcase the E-777D at Diggers & Dealers in Kalgoorlie for visitors to see it in action."
+      description: "We showcase the E-777 at Diggers & Dealers in Kalgoorlie for visitors to see it in action."
     }
     ,
     {
       date: "August 2024",
       // title: "Major Milestone 3",
-      description: "The E-777D begins field testing at Bakers Hill and successfully carries its first tons."
+      description: "The E-777 begins field testing at Bakers Hill and successfully carries its first tons."
     }
     ,
     {

@@ -19,7 +19,6 @@ export default function FeasabilityStudy() {
         companyName: '',
         email: '',
         phone: '',
-        countryCode: '+61',
         receiveUpdates: true
     });
 
@@ -83,7 +82,6 @@ export default function FeasabilityStudy() {
             companyName: '',
             email: '',
             phone: '',
-            countryCode: '+61',
             receiveUpdates: true
           });
       
@@ -107,7 +105,7 @@ export default function FeasabilityStudy() {
                     <section className="mb-16">
                         <h2 className="text-2xl font-medium mb-6">Request a Feasibility Study</h2>
                         <p className="mb-6 text-gray-600">
-                        Our team will evaluate your haul routes, duty cycles, charging options, and site conditions to determine if a retrofit solution like the E-777D makes sense for your fleet.
+                        Our team will evaluate your haul routes, duty cycles, charging options, and site conditions to determine if a retrofit solution like the E-777 makes sense for your fleet.
                         </p>
 
                         {/* Important Notes */}
@@ -205,67 +203,16 @@ export default function FeasabilityStudy() {
                             
                             <div>
                                 <p className="mb-2 font-medium">Phone Number</p>
-                                <div className="relative">
+                                <div>
                                     <input 
                                         type="tel"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleInputChange}
-                                        className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3 pl-[122px]"
-                                        placeholder="412 345 678"
+                                        className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                                        placeholder="Enter your phone number"
                                         required
                                     />
-                                    <div className="absolute inset-y-0 left-0 flex items-center">
-                                        <Select
-                                            value={formData.countryCode}
-                                            onValueChange={(value) => handleSelectChange('countryCode', value)}
-                                        >
-                                            <SelectTrigger 
-                                                className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent w-[122px]"
-                                            >
-                                                <SelectValue placeholder="Code" />
-                                            </SelectTrigger>
-                                            <SelectContent 
-                                                className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
-                                                position="popper"
-                                                sideOffset={5}
-                                            >
-                                                <SelectItem value="+61">AU +61</SelectItem>
-                                                <SelectItem value="+372">EE +372</SelectItem>
-                                                <SelectItem value="+20">EG +20</SelectItem>
-                                                <SelectItem value="+291">ER +291</SelectItem>
-                                                <SelectItem value="+34">ES +34</SelectItem>
-                                                <SelectItem value="+251">ET +251</SelectItem>
-                                                <SelectItem value="+358">FI +358</SelectItem>
-                                                <SelectItem value="+679">FJ +679</SelectItem>
-                                                <SelectItem value="+691">FM +691</SelectItem>
-                                                <SelectItem value="+298">FO +298</SelectItem>
-                                                <SelectItem value="+33">FR +33</SelectItem>
-                                                <SelectItem value="+1">US/CA +1</SelectItem>
-                                                <SelectItem value="+44">UK +44</SelectItem>
-                                                <SelectItem value="+49">DE +49</SelectItem>
-                                                <SelectItem value="+81">JP +81</SelectItem>
-                                                <SelectItem value="+86">CN +86</SelectItem>
-                                                <SelectItem value="+91">IN +91</SelectItem>
-                                                <SelectItem value="+7">RU +7</SelectItem>
-                                                <SelectItem value="+55">BR +55</SelectItem>
-                                                <SelectItem value="+52">MX +52</SelectItem>
-                                                <SelectItem value="+82">KR +82</SelectItem>
-                                                <SelectItem value="+39">IT +39</SelectItem>
-                                                <SelectItem value="+31">NL +31</SelectItem>
-                                                <SelectItem value="+90">TR +90</SelectItem>
-                                                <SelectItem value="+966">SA +966</SelectItem>
-                                                <SelectItem value="+65">SG +65</SelectItem>
-                                                <SelectItem value="+64">NZ +64</SelectItem>
-                                                <SelectItem value="+27">ZA +27</SelectItem>
-                                                <SelectItem value="+971">AE +971</SelectItem>
-                                                <SelectItem value="+60">MY +60</SelectItem>
-                                                <SelectItem value="+66">TH +66</SelectItem>
-                                                <SelectItem value="+62">ID +62</SelectItem>
-                                                <SelectItem value="+63">PH +63</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +246,7 @@ export default function FeasabilityStudy() {
                     <div className="mb-8 bg-gray-50 p-6 rounded-lg">
                         <h3 className="text-lg font-medium mb-3">Interested in testing our truck?</h3>
                         <p className="mb-4 text-gray-600">
-                            Schedule a test drive of our E-777D to experience the future of electric mining truck firsthand.
+                            Schedule a test drive of our E-777 to experience the future of electric mining truck firsthand.
                         </p>
                         <Link 
                             to="/test-drive"

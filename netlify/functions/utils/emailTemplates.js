@@ -17,7 +17,7 @@ const generateEmailTemplate = (formData, formType) => {
               <tr><td style="padding: 8px; font-weight: bold;">Full Name:</td><td style="padding: 8px;">${formData.fullName}</td></tr>
               <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;">${formData.email}</td></tr>
               <tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px;">${formData.companyName || 'Not provided'}</td></tr>
-              <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${formData.countryCode} ${formData.phone || 'Not provided'}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${formData.phone || 'Not provided'}</td></tr>
             </table>
             
             <h2>Test Drive Details</h2>
@@ -32,7 +32,7 @@ const generateEmailTemplate = (formData, formType) => {
     },
     
     productEnquiry: {
-      subject: 'New Product Enquiry - E-777D',
+      subject: 'New Product Enquiry - E-777',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #00CC66; color: white; padding: 20px; text-align: center;">
@@ -114,7 +114,7 @@ const generateEmailTemplate = (formData, formType) => {
               <tr><td style="padding: 8px; font-weight: bold;">Full Name:</td><td style="padding: 8px;">${formData.fullName}</td></tr>
               <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;">${formData.email}</td></tr>
               <tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px;">${formData.companyName || 'Not provided'}</td></tr>
-              <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${formData.dialCode} ${formData.phone || 'Not provided'}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${formData.phone || 'Not provided'}</td></tr>
             </table>
             
             <h2>Enquiry Details</h2>

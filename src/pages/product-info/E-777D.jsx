@@ -170,7 +170,7 @@ const E777D = () => {
         </svg>
       ),
       title: "Powertrain",
-      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777D and its 46% more power even in the toughest mining conditions."
+      description: "Equipped with the world's most advanced electric powertrain, boost your productivity with the E-777 and its 21% more power even in the toughest mining conditions."
     },
     {
       icon: (
@@ -179,7 +179,7 @@ const E777D = () => {
         </svg>
       ),
       title: "Data & Analytics",
-      description: "The E-777D collects over 3,000 real-time data points from the powertrain, continuously streaming this information to a cloud-based historian platform."
+      description: "The E-777 collects over 3,000 real-time data points from the powertrain, continuously streaming this information to a cloud-based historian platform."
     }
   ];
 
@@ -193,15 +193,15 @@ const E777D = () => {
           <img 
             src="/images/truck2.webp"
             className="absolute inset-0 w-full h-full object-cover"
-            alt="E-777D Mining Truck"
+            alt="E-777 Mining Truck"
           />
           <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
             <div className="max-w-2xl text-white mt-32">
-              <h1 className="text-6xl font-bold leading-tight mb-6">E-777D: 100-Ton Battery-Electric</h1>
+              <h1 className="text-6xl font-bold leading-tight mb-6">E-777: 100-Ton Battery-Electric</h1>
               <p className="text-2xl mb-10">Built for tough mining conditions with zero emissions.</p>
             </div>
             <div className="mt-auto mb-20 flex space-x-4 justify-center">
-              <a href="/product-enquiry/E-777D" className="text-sm md:text-base   px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+              <a href="/enquiry?subject=e-777d" className="text-sm md:text-base   px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
               <a href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/Datasheet+-+ENGLISH+-+08+Aug.pdf" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base px-8 py-3 bg-white hover:bg-gray-100 rounded-md font-medium uppercase tracking-wide transition-colors text-gray-800 border border-gray-300">Download Brochure</a>
             </div>
           </div>
@@ -221,10 +221,10 @@ const E777D = () => {
                 </div>
                 
                 <div className="relative text-center px-6 md:px-8 group">
-                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">12hr</div>
+                    <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 leading-none">8hr</div>
                     <p className="text-base md:text-lg text-gray-600 max-w-xs mx-auto">
                         <span className="font-semibold text-gray-700">Superior Performance</span> &ndash; 
-                        12-Hour Shift with Opportune Charging
+                        Runtime on a single charge
                     </p>
                     <div className="h-px bg-gray-200 w-4/5 mx-auto mt-12 md:hidden"></div>
                     <div className="hidden md:block absolute top-1/10 right-0 h-4/5 w-px bg-gray-200"></div>
@@ -248,7 +248,7 @@ const E777D = () => {
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/images/truck3.webp"
-                  alt="E-777D Mining Truck" 
+                  alt="E-777 Mining Truck" 
                   className="w-full h-full object-cover md:rounded-lg"
                   loading="lazy"
                 />
@@ -256,10 +256,10 @@ const E777D = () => {
             </div>
             
             <div className="w-full max-w-[2464px] mx-auto md:pl-20 px-4">
-              <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777D</h2>
+              <h2 className="text-5xl font-bold mb-6">Introducing the EPCA E-777</h2>
               <p className="text-xl text-gray-600">
-                The E-777D is EPCA's first fully battery-electric retrofit of a 100-ton mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
-                With a 12-hour shift continuous runtime, 30-minute fast charge, and 46% more power than its diesel counterpart, the E-777D is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
+                The E-777 is EPCA's first fully battery-electric retrofit of a 100-ton mining truck. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
+                With a 8-hour continuous runtime per charge, 50-minute fast charge, and 21% more power than its diesel counterpart, the E-777 is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions. It's a practical step forward for fleets ready to transition to cleaner, more efficient operations. 
               </p>
             </div>
           </div>
@@ -272,7 +272,7 @@ const E777D = () => {
               <div className="w-full max-w-[2464px]">
                 <img 
                   src="/images/truck8.webp"
-                  alt="E-777D Mining Truck" 
+                  alt="E-777 Mining Truck" 
                   className="w-full h-full object-contain md:object-cover md:rounded-lg"
                   loading="lazy"
                 />
@@ -282,7 +282,7 @@ const E777D = () => {
             <div className="w-full max-w-[2464px] mx-auto px-4 md:px-20">
               <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">A Smarter Way to Electrify Your Fleet</h2>
               <p className="text-lg md:text-xl text-gray-600">
-                Retrofit with EPCA by transforming diesel truck into a battery-electric. The E-777D keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
+                Retrofit with EPCA by transforming diesel truck into a battery-electric. The E-777 keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
                 We extends the life of existing trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of replacing an entire fleet. It's a smart upgrade with long-term operational benefits. 
               </p>
             </div>
@@ -327,7 +327,7 @@ const E777D = () => {
                   <div>
                     <h4 className="text-gray-400 text-sm">Peak Power</h4>
                     <p className="text-xl">1020 kW</p>
-                    <p className="text-gray-400 text-sm mt-1">46% increase over equivalent diesel models</p>
+                    <p className="text-gray-400 text-sm mt-1">21% increase over equivalent diesel models</p>
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm">Peak Torque</h4>
@@ -353,7 +353,7 @@ const E777D = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Charging Time</p>
-                    <p className="text-xl">30 minutes</p>
+                    <p className="text-xl">50 minutes</p>
                     <p className="text-gray-400 text-sm mt-1">With high-speed charging infrastructure</p>
                   </div>
                 </div>
@@ -428,11 +428,11 @@ const E777D = () => {
           <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
             <h2 className="text-6xl font-bold text-white mb-8">Ready to Electrify Your Fleet?</h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              The E-777D is waiting for you.
+              The E-777 is waiting for you.
             </p>
             <div className="flex space-x-4 justify-center">
               <a 
-                href="/product-enquiry/E-777D" 
+                href="/enquiry?subject=e-777d" 
                 className="inline-block px-12 py-4 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-md font-medium text-lg transition-colors"
               >
                 Enquire Now

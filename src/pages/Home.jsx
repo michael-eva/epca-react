@@ -97,7 +97,7 @@ const Home = () => {
     {
         name: "Jason Gore",
         role: "COO, Winyama Contracting Group",
-        text: "Seeing the E-777D up close gave us real confidence in electric retrofit technology. The fact that it's quieter, cheaper to run, and still delivers on power makes it a no-brainer for where the industry is heading."
+        text: "Seeing the E-777 up close gave us real confidence in electric retrofit technology. The fact that it's quieter, cheaper to run, and still delivers on power makes it a no-brainer for where the industry is heading."
     },
     {
         name: "David Martin",
@@ -107,7 +107,7 @@ const Home = () => {
     {
         name: "Joshua Smith",
         role: "Maintenance and Workshop Manager, EMJC",
-        text: "Driving the E-777D was a big change, in a good way. It's quieter and smoother. The torque is instant, so it pulls strong even on steep grades. No exhaust fumes, just get in and go."
+        text: "Driving the E-777 was a big change, in a good way. It's quieter and smoother. The torque is instant, so it pulls strong even on steep grades. No exhaust fumes, just get in and go."
     }
   ];
 
@@ -249,13 +249,13 @@ const Home = () => {
             </div>
             <div className="mt-auto mb-20 flex space-x-4 justify-center items-center">
               <a href="/product-info/E-777D" className="text-xs md:text-base px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] rounded-md font-medium uppercase tracking-wide transition-colors text-white">Explore Our Fleet</a>
-              <a href="/product-enquiry/E-777D" className="text-xs md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
+              <a href="/enquiry?subject=e-777d" className="text-xs md:text-base px-8 py-3 border-2 border-white hover:bg-white/10 rounded-md font-medium uppercase tracking-wide transition-colors text-white">Enquire Now</a>
             </div>
           </div>
         </section>
 
         {/* Key Benefits Section */}
-        <section className="py-30">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="sr-only">Key Benefits</h2>
             <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-0">
@@ -290,6 +290,67 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Awards Carousel Section */}
+        <section className="py-12 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Awards & Recognition</h2>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll space-x-8 min-w-max">
+                {/* First set of awards */}
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/CoreAward1.webp" alt="Core Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Winner</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/DecarbonisedMine2.webp" alt="Decarbonised Mine Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/SmartEnergy1.webp" alt="Smart Energy Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/Top50Manufacturer.webp" alt="Top 50 Manufacturer Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Gold Award</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/BestinTech.webp" alt="Best in Tech Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/IOTY.webp" alt="Innovation of the Year Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                {/* Duplicate set for seamless loop */}
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/CoreAward1.webp" alt="Core Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Winner</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/DecarbonisedMine2.webp" alt="Decarbonised Mine Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/SmartEnergy1.webp" alt="Smart Energy Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/Top50Manufacturer.webp" alt="Top 50 Manufacturer Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Gold Award</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/BestinTech.webp" alt="Best in Tech Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+                <div className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center">
+                  <img src="images/awards/IOTY.webp" alt="Innovation of the Year Award" className="max-w-full max-h-full object-contain" />
+                  {/* <p className="text-gray-500 mt-2 text-sm">Finalist</p> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Machines Section */}
         <section className="py-20 bg-black text-white" id="machines">
           <div className="max-w-7xl mx-auto px-4">
@@ -300,7 +361,7 @@ const Home = () => {
               <VehicleCard 
                 imageSrc="images/truck1.webp"
                 altText="E-777 Mining Truck"
-                title="100t E-777 Mining Truck"
+                title="100t Electric Mining Truck"
                 subtitle="Available"
                 buttonText="View More"
                 buttonLink="/product-info/E-777D"
@@ -309,19 +370,19 @@ const Home = () => {
               <VehicleCard 
                 imageSrc="images/785edited2.webp"
                 altText="E-785 Mining Truck"
-                title="150t E-785 Mining Truck"
-                subtitle="Coming Soon"
+                title="150t Electric Mining Truck"
+                subtitle="Upcoming"
                 buttonText="Express Interest"
                 buttonLink="/enquiry?subject=E-785"
               />
 
               <VehicleCard 
                 imageSrc="images/993edited2.webp"
-                altText="E-993 Loader"
-                title="150t E-993 Loader"
-                subtitle="Coming Soon"
+                altText="E-988 Wheel Loader"
+                title="Electric Wheel Loaders"
+                subtitle="Upcoming"
                 buttonText="Express Interest"
-                buttonLink="/enquiry?subject=E-993"
+                buttonLink="/enquiry?subject=E-988"
               />
             </div>
           </div>
@@ -370,7 +431,7 @@ const Home = () => {
                 
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Engineered for efficiency, the fast charging solution for mining delivers a full charge 
-                  in <span className="font-semibold text-[#00CC66]">30 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                  in <span className="font-semibold text-[#00CC66]">50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -515,26 +576,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="py-10">
-          <div className="max-w-7xl mx-auto px-4">
-            {/* <h2 className="text-4xl font-bold mb-16">Recent Awards and Recognition</h2> */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
-              <div className="w-72 h-48 flex flex-col items-center justify-center">
-                <img src="images/awards/CoreAward1.webp" alt="Award 1" className="max-w-full max-h-full object-contain" />
-                <p className="text-gray-500 mt-4">Winner</p>
-              </div>
-              <div className="w-72 h-48 flex flex-col items-center justify-center">
-                <img src="images/awards/DecarbonisedMine2.webp" alt="Award 2" className="max-w-full max-h-full object-contain" />
-                <p className="text-gray-500 mt-4">Finalist</p>
-              </div>
-              <div className="w-72 h-48 flex flex-col items-center justify-center">
-                <img src="images/awards/SmartEnergy1.webp" alt="Award 3" className="max-w-full max-h-full object-contain" />
-                <p className="text-gray-500 mt-4">Finalist</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
 
         <section className="py-20 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4">

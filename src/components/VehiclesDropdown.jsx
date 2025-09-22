@@ -7,41 +7,53 @@ const VehiclesDropdown = ({ showVehicles, onMouseEnter, onMouseLeave }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 p-8">
-        <div className="flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-6 md:p-8">
+        <div className="flex flex-col items-center text-center h-full">
           <img 
-            src="/images/E777_EnquiryPage.webp" 
+            src="/images/777green.webp" 
             alt="E-777 Mining Truck" 
-            className="w-full h-auto mb-4"
+            className="w-full max-w-[400px] h-auto mb-3"
           />
-          <h3 className="text-xl mb-2 text-gray-900">E-777 Mining Truck</h3>
-          <div className="flex gap-4">
-            <a href="/product-info/E-777D" className="text-gray-900 underline text-sm hover:text-gray-600 transition-colors">More Info</a>
-            <a href="/product-enquiry/E-777D" className="text-gray-900 underline text-sm hover:text-gray-600 transition-colors">Enquire</a>
+          <h3 className="text-lg mb-2 text-gray-900 h-12 flex items-center justify-center">E-777 Mining Truck</h3>
+          <div className="flex gap-2 flex-wrap justify-center mt-auto">
+            <a href="/product-info/E-777D" className="text-gray-900 underline text-xs hover:text-gray-600 transition-colors">More Info</a>
+            <a href="/enquiry?subject=e-777d" className="text-gray-900 underline text-xs hover:text-gray-600 transition-colors">Enquire</a>
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center h-full">
           <img 
-            src="/images/785edited.webp" 
+            src="/images/785green1.webp" 
             alt="E-785 Mining Truck" 
-            className="w-[330px] h-auto mb-4"
+            className="w-full max-w-[400px] h-auto mb-3"
           />
-          <h3 className="text-xl mb-2 text-gray-900">E-785 Mining Truck</h3>
-          <div className="flex gap-4">
-            <a href="/enquiry?subject=E-785" className="text-gray-900 underline text-sm hover:text-gray-600 transition-colors">Enquire</a>
+          <h3 className="text-lg mb-2 text-gray-900 h-12 flex items-center justify-center">E-785 Mining Truck</h3>
+          <div className="flex gap-2 flex-wrap justify-center mt-auto">
+            <a href="/enquiry?subject=E-785" className="text-gray-900 underline text-xs hover:text-gray-600 transition-colors">Enquire</a>
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center h-full">
           <img 
-            src="/images/993editedv1.webp" 
-            alt="E-993 Loader" 
-            className="w-full h-auto mb-4"
+            src="/images/988green1.webp" 
+            alt="E-988 Loader" 
+            className="w-full max-w-[400px] h-auto mb-3"
           />
-          <h3 className="text-xl mb-2 text-gray-900">E-993 Loader</h3>
-          <div className="flex gap-4">
-            <a href="/enquiry?subject=E-993" className="text-gray-900 underline text-sm hover:text-gray-600 transition-colors">Enquire</a>
+          <h3 className="text-lg mb-2 text-gray-900 h-12 flex items-center justify-center">E-988 Wheel Loader</h3>
+          <div className="flex gap-2 flex-wrap justify-center mt-auto">
+            <a href="/enquiry?subject=E-988" className="text-gray-900 underline text-xs hover:text-gray-600 transition-colors">Enquire</a>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center text-center h-full">
+          <img 
+            src="/images/992green1.webp" 
+            alt="E-992 Wheel Loader" 
+            className="w-full max-w-[400px] h-auto mb-3"
+          />
+          <h3 className="text-lg mb-2 text-gray-900 h-12 flex items-center justify-center">E-992 Wheel Loader</h3>
+          <div className="flex gap-2 flex-wrap justify-center mt-auto">
+            <a href="/enquiry?subject=E-992" className="text-gray-900 underline text-xs hover:text-gray-600 transition-colors">Enquire</a>
           </div>
         </div>
       </div>

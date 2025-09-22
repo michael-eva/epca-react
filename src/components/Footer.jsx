@@ -44,7 +44,7 @@ export default function Footer() {
                                 whileHover={{ x: 5 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <span>E-777D Mining Truck</span>
+                                <span>E-777 Mining Truck</span>
                             </motion.a>
                         </li>
                         <li>
@@ -59,12 +59,12 @@ export default function Footer() {
                         </li>
                         <li>
                             <motion.a 
-                                onClick={() => window.location.href = '/enquiry?subject=E-993'} 
+                                onClick={() => window.location.href = '/enquiry?subject=E-988'} 
                                 className="cursor-pointer relative group inline-block"
                                 whileHover={{ x: 5 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <span>E-993 Loader</span>
+                                <span>E-988 Loader</span>
                             </motion.a>
                         </li>
                         <li>
@@ -191,6 +191,16 @@ export default function Footer() {
                                 <span>Terms and Conditions</span>
                             </motion.a>
                         </li> 
+                        <li>
+                            <motion.a 
+                                onClick={() => window.location.href = '/faq'} 
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>FAQ</span>
+                            </motion.a>
+                        </li>
                     </ul>
                 </div>
             </div>

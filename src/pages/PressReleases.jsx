@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion'
 
 const PressReleases = () => {
     const [articles] = useState([
+        {
+            id: 15,
+            title: "[Article] EPCA advancing mining electrification",
+            author: "The Australian Mining Review",
+            date: "September 27, 2025",
+            brief: "ABB is a Switzerland-based leading global technology company and together the companies will deliver retrofit solutions for conventionally powered trucks for mid-sized haul trucks with capacities of 100-150t.",
+            link: "https://australianminingreview.com.au/news/epca-advancing-mining-electrification/",
+            image: "/images/press/AMR1.webp"
+        },
         {
             id: 14,
             title: "[Article] ABB and EPCA sign MoU on BEV retrofits for mid-size haul trucks",
@@ -34,7 +43,7 @@ const PressReleases = () => {
         },
         {
             id: 11,
-            title: "[Podcast] The Off-Highway Podcast – EPCA",
+            title: "[Radio] The Off-Highway Podcast – EPCA",
             author: "Alastair Hayfield - Interact Analysis",
             date: "March 21, 2025",
             brief: "Clayton talks about his background in engineering and designing renewable energy system, before starting EPCA and focusing on battery electric mining trucks, and the achievements with these",
@@ -70,7 +79,7 @@ const PressReleases = () => {
         },
         {
             id: 7,
-            title: "[TV/Article] Electric and hydrogen truck trials roll out as mining industry pushes to lower emissions",
+            title: "[TV] Electric and hydrogen truck trials roll out as mining industry pushes to lower emissions",
             author: "Jarrod Lucas & Tara de Landgrafft - ABC News",
             date: "August 28, 2024",
             brief: "The push to lower emissions from Australia's mining industry is gaining momentum with trials of large-scale electric and hydrogen trucks now underway, and the race on to find the best solution...",
@@ -133,6 +142,61 @@ const PressReleases = () => {
         }
     ])
 
+    // State for filtering and pagination
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedMediaType, setSelectedMediaType] = useState('All');
+    const [currentPage, setCurrentPage] = useState(1);
+    const articlesPerPage = 8;
+
+    // Filter articles based on search term and media type
+    const filteredArticles = useMemo(() => {
+        return articles.filter(article => {
+            const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                article.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                article.brief.toLowerCase().includes(searchTerm.toLowerCase());
+            
+            const mediaType = article.title.includes('[Article]') ? 'Article' :
+                             article.title.includes('[Radio]') ? 'Radio' :
+                             article.title.includes('[TV]') ? 'TV' : 'Article';
+            
+            const matchesMediaType = selectedMediaType === 'All' || mediaType === selectedMediaType;
+            
+            return matchesSearch && matchesMediaType;
+        });
+    }, [articles, searchTerm, selectedMediaType]);
+
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+    const startIndex = (currentPage - 1) * articlesPerPage;
+    const endIndex = startIndex + articlesPerPage;
+    const currentArticles = filteredArticles.slice(startIndex, endIndex);
+
+    // Reset to first page when filters change
+    React.useEffect(() => {
+        setCurrentPage(1);
+    }, [searchTerm, selectedMediaType]);
+
+    // Generate page numbers for pagination
+    const getPageNumbers = () => {
+        const pages = [];
+        const maxVisiblePages = 5;
+        
+        if (totalPages <= maxVisiblePages) {
+            for (let i = 1; i <= totalPages; i++) {
+                pages.push(i);
+            }
+        } else {
+            const start = Math.max(1, currentPage - 2);
+            const end = Math.min(totalPages, start + maxVisiblePages - 1);
+            
+            for (let i = start; i <= end; i++) {
+                pages.push(i);
+            }
+        }
+        
+        return pages;
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar mode="dark"/>
@@ -148,19 +212,127 @@ const PressReleases = () => {
                     </motion.h1>
                 </div>
 
-                {/* Articles Grid */}
-                <div className="max-w-7xl mx-auto px-4 py-16">
-                    <div className="grid gap-8">
-                        {articles.map((article) => (
+                {/* Search and Filter Controls */}
+                <div className="max-w-7xl mx-auto px-4 py-8">
+                    <div className="flex flex-col md:flex-row gap-4 mb-8">
+                        {/* Search Bar */}
+                        <div className="flex-1">
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search articles..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                />
+                                <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        {/* Media Type Filter */}
+                        <div className="md:w-48">
+                            <select
+                                value={selectedMediaType}
+                                onChange={(e) => setSelectedMediaType(e.target.value)}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            >
+                                <option value="All">All Media Types</option>
+                                <option value="Article">Articles</option>
+                                <option value="Radio">Radio</option>
+                                <option value="TV">TV</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Results Count */}
+                    <div className="mb-6">
+                        <p className="text-gray-600">
+                            Showing {startIndex + 1}-{Math.min(endIndex, filteredArticles.length)} of {filteredArticles.length} articles
+                        </p>
+                    </div>
+
+                    {/* Top Pagination */}
+                    {totalPages > 1 && (
+                        <PaginationControls
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={setCurrentPage}
+                            getPageNumbers={getPageNumbers}
+                        />
+                    )}
+
+                    {/* Articles Grid */}
+                    <div className="grid gap-8 mt-8">
+                        {currentArticles.map((article) => (
                             <ArticleCard key={article.id} article={article} />
                         ))}
                     </div>
+
+                    {/* Bottom Pagination */}
+                    {totalPages > 1 && (
+                        <div className="mt-12">
+                            <PaginationControls
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={setCurrentPage}
+                                getPageNumbers={getPageNumbers}
+                            />
+                        </div>
+                    )}
+
+                    {/* No Results Message */}
+                    {currentArticles.length === 0 && (
+                        <div className="text-center py-12">
+                            <p className="text-gray-500 text-lg">No articles found matching your criteria.</p>
+                        </div>
+                    )}
                 </div>
             </main>
             <Footer />
         </div>
     )
 }
+
+const PaginationControls = ({ currentPage, totalPages, onPageChange, getPageNumbers }) => {
+    return (
+        <div className="flex justify-center items-center space-x-2">
+            {/* Previous Button */}
+            <button
+                onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+                disabled={currentPage === 1}
+                className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Previous
+            </button>
+
+            {/* Page Numbers */}
+            {getPageNumbers().map((pageNum) => (
+                <button
+                    key={pageNum}
+                    onClick={() => onPageChange(pageNum)}
+                    className={`px-3 py-2 text-sm font-medium rounded-md ${
+                        pageNum === currentPage
+                            ? 'bg-green-600 text-white'
+                            : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                    }`}
+                >
+                    {pageNum}
+                </button>
+            ))}
+
+            {/* Next Button */}
+            <button
+                onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+                disabled={currentPage === totalPages}
+                className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Next
+            </button>
+        </div>
+    );
+};
 
 const ArticleCard = ({ article }) => {
     return (

@@ -21,8 +21,9 @@ const Enquiry = () => {
         
         const subjectMapping = {
             'e-785': 'E-785 Mining Truck',
-            'e-777d': 'E-777D Mining Truck',
-            'e-993': 'E-993 Loader',
+            'e-777d': 'E-777 Mining Truck',
+            'e-988': 'E-988 Wheel Loader',
+            'e-992': 'E-992 Wheel Loader',
             'UON-smart-cell': 'DC Charger',
             'uon': 'DC Charger',
             'general': 'General Enquiry',
@@ -36,23 +37,27 @@ const Enquiry = () => {
     };
 
     const [formData, setFormData] = useState({
-        fullName: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        phone: '',
+        businessPhone: '',
         subject: getInitialSubject(), // Initialize with URL param if present
-        message: '',
-        companyName: '',
+        message: '', // Additional information
+        businessName: '',
+        fullBusinessAddress: '',
         updates: true,
-        dialCode: '+61'
+        
     });
     const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     // Move subjectOptions outside of component or use useMemo
     const subjectOptions = React.useMemo(() => [
         'Please select a subject',
         'E-785 Mining Truck',
-        'E-777D Mining Truck',
-        'E-993 Loader',
+        'E-777 Mining Truck',
+        'E-988 Wheel Loader',
+        'E-992 Wheel Loader',
         'DC Charger',
         'General Enquiry',
         'Sales Question',
@@ -73,31 +78,48 @@ const Enquiry = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmitted(true);
     
         // Basic validation
-        if (!formData.fullName || !formData.email || !formData.phone || !formData.subject || !formData.message) {
-            toast.error('Please fill in all fields');
-            return;
-        }
+        const subjectInvalid = !formData.subject || formData.subject === 'Please select a subject';
+        const missingRequired =
+            !formData.firstName ||
+            !formData.lastName ||
+            !formData.email ||
+            !formData.businessPhone ||
+            !formData.businessName ||
+            !formData.fullBusinessAddress ||
+            !formData.message ||
+            subjectInvalid;
+        if (missingRequired) return;
     
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
-            toast.error('Please enter a valid email address');
-            return;
-        }
+        if (!emailRegex.test(formData.email)) return;
     
         setLoading(true);
         try {
             const apiUrl = '/.netlify/functions/enquiry';
             
               
+            // Map new field names to legacy payload keys expected by backend
+            const payload = {
+                fullName: `${formData.firstName} ${formData.lastName}`.trim(),
+                email: formData.email,
+                phone: formData.businessPhone,
+                subject: formData.subject,
+                message: formData.message,
+                companyName: formData.businessName,
+                updates: formData.updates,
+                fullBusinessAddress: formData.fullBusinessAddress,
+            };
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(payload)
             });
 
             const result = await response.json();
@@ -110,15 +132,18 @@ const Enquiry = () => {
             
             // Reset form
             setFormData({
-                fullName: '',
+                firstName: '',
+                lastName: '',
                 email: '',
-                phone: '',
+                businessPhone: '',
                 subject: subjectOptions[0],
                 message: '',
-                companyName: '',
+                businessName: '',
+                fullBusinessAddress: '',
                 updates: true,
-                dialCode: '+61'
+                
             });
+            setSubmitted(false);
 
         } catch (error) {
             console.error('Error sending email:', error);
@@ -132,7 +157,7 @@ const Enquiry = () => {
         <>
             <Navbar mode="dark" />
             <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
-                <h1 className="text-4xl font-medium text-center mb-16">Send Us an Enquiry</h1>
+                <h1 className="text-4xl font-medium text-center mb-16">Submit an Enquiry</h1>
 
                 {/* Important Notes */}
                 <div className="bg-gray-50 border-l-4 border-[#00CC66] p-5 rounded-lg mb-8">
@@ -156,7 +181,7 @@ const Enquiry = () => {
                 <form onSubmit={handleSubmit} className="space-y-8">
                     {/* Subject Selection - Replace with shadcn Select */}
                     <div>
-                        <p className="mb-2 font-medium">Enquiry Subject</p>
+                        <p className="mb-2 font-medium">Enquiry Subject<span className="text-red-600">*</span></p>
                         <Select
                             value={formData.subject}
                             onValueChange={handleSelectChange}
@@ -182,11 +207,14 @@ const Enquiry = () => {
                                 ))}
                             </SelectContent>
                         </Select>
+                        {submitted && (!formData.subject || formData.subject === 'Please select a subject') && (
+                            <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                        )}
                     </div>
 
-                    {/* Message */}
+                    {/* Additional Information */}
                     <div>
-                        <p className="mb-2 font-medium">Your Message</p>
+                        <p className="mb-2 font-medium">Additional Information<span className="text-red-600">*</span></p>
                         <textarea
                             id="message"
                             name="message"
@@ -194,8 +222,10 @@ const Enquiry = () => {
                             value={formData.message}
                             onChange={handleChange}
                             className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
-                            required
                         />
+                        {submitted && !formData.message && (
+                            <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                        )}
                     </div>
 
                     {/* Contact Information Section */}
@@ -203,19 +233,38 @@ const Enquiry = () => {
                         <h2 className="text-2xl font-medium mb-6">Contact Information</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <p className="mb-2 font-medium">Full Name</p>
+                                <p className="mb-2 font-medium">First Name<span className="text-red-600">*</span></p>
                                 <input
                                     type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    value={formData.fullName}
+                                    id="firstName"
+                                    name="firstName"
+                                    value={formData.firstName}
                                     onChange={handleChange}
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
-                                    required
                                 />
+                                {submitted && !formData.firstName && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
                             </div>
                             <div>
-                                <p className="mb-2 font-medium">Email Address</p>
+                                <p className="mb-2 font-medium">Last Name<span className="text-red-600">*</span></p>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                                />
+                                {submitted && !formData.lastName && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <p className="mb-2 font-medium">Email<span className="text-red-600">*</span></p>
                                 <input
                                     type="email"
                                     id="email"
@@ -223,62 +272,62 @@ const Enquiry = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
-                                    required
                                 />
+                                {submitted && !formData.email && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
+                                {submitted && formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && (
+                                    <p className="mt-2 text-sm text-red-600">Please enter a valid email address.</p>
+                                )}
+                            </div>
+                            <div>
+                                <p className="mb-2 font-medium">Business Phone<span className="text-red-600">*</span></p>
+                                <div>
+                                    <input
+                                        type="tel"
+                                        id="businessPhone"
+                                        name="businessPhone"
+                                        value={formData.businessPhone}
+                                        onChange={handleChange}
+                                        className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                                        placeholder="Phone number"
+                                    />
+                                </div>
+                                {submitted && !formData.businessPhone && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <p className="mb-2 font-medium">Company Name</p>
+                                <p className="mb-2 font-medium">Business Name<span className="text-red-600">*</span></p>
                                 <input
                                     type="text"
-                                    id="companyName"
-                                    name="companyName"
-                                    value={formData.companyName}
+                                    id="businessName"
+                                    name="businessName"
+                                    value={formData.businessName}
                                     onChange={handleChange}
                                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
                                 />
+                                {submitted && !formData.businessName && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
                             </div>
                             <div>
-                                <p className="mb-2 font-medium">Phone Number</p>
-                                <div className="relative">
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3 pl-[122px]"
-                                        placeholder="412 345 678"
-                                        required
-                                    />
-                                    <div className="absolute inset-y-0 left-0 flex items-center">
-                                        <Select
-                                            value={formData.dialCode}
-                                            onValueChange={(value) => setFormData(prev => ({ ...prev, dialCode: value }))}
-                                        >
-                                            <SelectTrigger 
-                                                className="h-full py-0 pl-4 pr-2 bg-transparent text-gray-900 text-sm focus:ring-[#00CC66] focus:border-[#00CC66] rounded-l-lg border-r border-transparent w-[122px]"
-                                            >
-                                                <SelectValue placeholder="Code" />
-                                            </SelectTrigger>
-                                            <SelectContent 
-                                                className="bg-white border border-gray-300 text-gray-900 rounded-lg shadow-md z-50"
-                                                position="popper"
-                                                sideOffset={5}
-                                            >
-                                                <SelectItem value="+61">AU +61</SelectItem>
-                                                <SelectItem value="+1">US/CA +1</SelectItem>
-                                                <SelectItem value="+44">UK +44</SelectItem>
-                                                <SelectItem value="+49">DE +49</SelectItem>
-                                                <SelectItem value="+81">JP +81</SelectItem>
-                                                <SelectItem value="+86">CN +86</SelectItem>
-                                                <SelectItem value="+91">IN +91</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
-                                </div>
+                                <p className="mb-2 font-medium">Full Business Address<span className="text-red-600">*</span></p>
+                                <input
+                                    type="text"
+                                    id="fullBusinessAddress"
+                                    name="fullBusinessAddress"
+                                    value={formData.fullBusinessAddress}
+                                    onChange={handleChange}
+                                    className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3"
+                                    placeholder="Street, City, State, Postcode, Country"
+                                />
+                                {submitted && !formData.fullBusinessAddress && (
+                                    <p className="mt-2 text-sm text-red-600">This field is required.</p>
+                                )}
                             </div>
                         </div>
 

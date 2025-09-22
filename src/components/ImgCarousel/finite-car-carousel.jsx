@@ -36,7 +36,7 @@ export default function FiniteCarCarousel() {
       image: "/images/screen.webp",
       title: "Technology Upgrades",
       description:
-        "The E-777D features advanced technology upgrades that includes the electric motors, high-capacity batteries and data systems.",
+        "The E-777 features advanced technology upgrades that includes the electric motors, high-capacity batteries and data systems.",
     },
     {
       image: null,

@@ -20,6 +20,7 @@ import DataGovernance from './pages/Terms/Data_Governance.jsx'
 import CodeOfConduct from './pages/Terms/CodeOfConduct.jsx'
 import Subscribe from './pages/Subscribe.jsx'
 import SubscribeThankYou from './pages/SubscribeThankYou.jsx'
+import FAQ from './pages/FAQ.jsx'
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/terms/CodeOfConduct" element={<CodeOfConduct />} />
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/subscribe/thank-you" element={<SubscribeThankYou />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </BrowserRouter>
   )

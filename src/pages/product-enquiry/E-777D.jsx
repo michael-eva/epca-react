@@ -134,7 +134,7 @@ const handleSubmit = async (e) => {
         {/* Right side - Form */}
         <div className="w-full md:w-1/3 bg-white overflow-y-auto h-[50vh] md:h-screen">
           <div className="p-12 pt-24">
-            <h1 className="text-4xl font-medium mb-4 text-center">E-777D</h1>
+            <h1 className="text-4xl font-medium mb-4 text-center">E-777</h1>
             <p className="text-gray-600 text-center mb-16">EPCA’s 100-ton full battery-electric mining truck</p>
             
             <KeySpecs specs={specs} />
