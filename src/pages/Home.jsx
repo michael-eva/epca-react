@@ -24,7 +24,6 @@ const Home = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [showInvestModal, setShowInvestModal] = useState(false);
   // State for number animation
   const [numbers, setNumbers] = useState({
     carbon: 0,
@@ -52,10 +51,6 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowInvestModal(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
   
   const nextChargerImage = () => {
     setCurrentChargerImageIndex((prevIndex) => (prevIndex + 1) % chargerImages.length);
@@ -188,54 +183,6 @@ const Home = () => {
       />
       <Navbar />
       <div className="text-gray-800 leading-relaxed overflow-x-hidden">
-        {/* {showInvestModal && (
-          <div className="fixed inset-0 z-[999] flex items-center justify-center">
-            ...
-          </div>
-        )} */}
-        
-        {showInvestModal && (
-          <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl mx-4 overflow-hidden transform transition-all duration-300 scale-100">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-[#00CC66] to-[#009f50] p-6 text-white text-center relative">
-                <button 
-                  onClick={() => setShowInvestModal(false)}
-                  className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-                <h2 className="text-3xl font-bold mb-2">🚀 Join the Future of Mining</h2>
-                <p className="text-lg opacity-90">Crowdfunding Campaign Now Live!</p>
-              </div>
-
-              {/* Content */}
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Invest in one of the most promising Australian mining electrification technologies.
-                  </h3>
-                </div>
-
-                {/* Call to Action */}
-                <div className="text-center space-y-4">
-                  <div className="flex justify-center">
-                    <a 
-                      href="https://www.venturecrowd.com.au/s/lp/electric-power-conversions-australia-eoi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-8 py-3 bg-[#00CC66] hover:bg-[#00b359] text-white rounded-lg font-semibold transition-colors duration-200"
-                    >
-                      Register to Invest
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
         {/* Hero Section */}
         <section className="h-screen flex items-center relative bg-black">
           <div className="absolute inset-0 bg-black/30 z-10"></div>   
