@@ -12,7 +12,7 @@ const PressReleases = () => {
             date: "January 7, 2026",
             brief: "Energy and Decarbonisation Minister Amber-Jade Sanderson made the announcement during a visit to Electric Power Conversions Australia, a local business that previously received a CEFF grant to retrofit a diesel mining haul truck to full battery electric.",
             link: "https://firstnationsnews.com.au/9-million-in-grants-to-support-clean-energy-projects/",
-            image: "/images/press/IM-id17"
+            image: "/images/press/IM-id17.webp"
         },
         {
             id: 16,
@@ -20,7 +20,7 @@ const PressReleases = () => {
             author: "7NEWS Regional WA",
             date: "January 7, 2026",
             brief: "The WA Minister for Energy and Decarbonisation, Hon. Amber-Jade Sanderson, visited EPCA’s workshop to announce Round 4 of the Clean Energy Future Fund (CEFF). EPCA previously received CEFF support to retrofit a diesel mining truck to full battery-electric [...].",
-            link: "https://youtu.be/2SXh_TTLMcw",
+            link: "https://youtu.be/NgblJi8321s",
             image: "/images/press/7NEWS_1.webp"
         },
         {
