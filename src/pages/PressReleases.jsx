@@ -6,6 +6,24 @@ import { motion } from 'framer-motion'
 const PressReleases = () => {
     const [articles] = useState([
         {
+            id: 17,
+            title: "[Article] $9 million in grants to support clean energy projects",
+            author: "First Nations News",
+            date: "January 7, 2026",
+            brief: "Energy and Decarbonisation Minister Amber-Jade Sanderson made the announcement during a visit to Electric Power Conversions Australia, a local business that previously received a CEFF grant to retrofit a diesel mining haul truck to full battery electric.",
+            link: "https://firstnationsnews.com.au/9-million-in-grants-to-support-clean-energy-projects/",
+            image: "/images/press/IM-id17"
+        },
+        {
+            id: 16,
+            title: "[TV] Minister for Energy Announces CEFF Round 4 at EPCA’s Electric Mining Truck Facility",
+            author: "7NEWS Regional WA",
+            date: "January 7, 2026",
+            brief: "The WA Minister for Energy and Decarbonisation, Hon. Amber-Jade Sanderson, visited EPCA’s workshop to announce Round 4 of the Clean Energy Future Fund (CEFF). EPCA previously received CEFF support to retrofit a diesel mining truck to full battery-electric [...].",
+            link: "https://youtu.be/2SXh_TTLMcw",
+            image: "/images/press/7NEWS_1.webp"
+        },
+        {
             id: 15,
             title: "[Article] EPCA advancing mining electrification",
             author: "The Australian Mining Review",
