@@ -6,6 +6,15 @@ import { motion } from 'framer-motion'
 const PressReleases = () => {
     const [articles] = useState([
         {
+            id: 18,
+            title: "[Article] The former farm boy on a mission to electrify mining’s big guns",
+            author: "Australian Financial Review",
+            date: "January 14, 2026",
+            brief: "Almost 40 years after he helped his father electrify a quad bike on the family farm, Clayton Franklin is converting massive diesel mining trucks to electric at a pace quickly gaining interest from Australia’s mining majors.",
+            link: "https://www.afr.com/companies/mining/the-former-farm-boy-on-a-mission-to-electrify-mining-s-big-guns-20260113-p5ntpo",
+            image: "/images/press/AFR-id18.webp"
+        },
+        {
             id: 17,
             title: "[Article] $9 million in grants to support clean energy projects",
             author: "First Nations News",
