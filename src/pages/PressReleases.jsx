@@ -6,6 +6,33 @@ import { motion } from 'framer-motion'
 const PressReleases = () => {
     const [articles] = useState([
         {
+            id: 21,
+            title: "[Blog] Powering Future Cost Savings and Sustainability in Mining: EPCA’s Retrofitting Journey",
+            author: "LEAP Australia",
+            date: "April 13, 2026",
+            brief: "Mining has always demanded ingenuity, but the pressures of the past few years have sharpened that need considerably. Disrupted oil supply chains and soaring diesel prices have forced mine operators to take a hard look [...]",
+            link: "https://www.leapaust.com.au/blog/systems/powering-future-cost-savings-and-sustainability-in-mining-epcas-retrofitting-journey/",
+            image: "/images/press/LEAP_01.webp"
+        },
+        {
+            id: 20,
+            title: "[Article] EPCA to electrify Cat 988 loader for EMJC",
+            author: "Sean Costain - Tovah Mining",
+            date: "April 1, 2026",
+            brief: "EPCA has entered into an agreement to electrify a Caterpillar 988 wheel loader, marking a major milestone in the deployment of zero-emissions heavy mining equipment in Australia. The diesel powertrain will be replaced with a high-capacity lithium-ion battery system delivering up to 350 kWh [...]",
+            link: "https://tovahmining.com/epca-to-electrify-cat-988-loader-for-emjc/",
+            image: "/images/988green2.webp"
+        },
+        {
+            id: 19,
+            title: "[Article] EPCA to electrify Cat 988 wheel loader for EMJC",
+            author: "International Mining",
+            date: "April 1, 2026",
+            brief: "EPCA has entered into an agreement to electrify a Caterpillar 988 wheel loader, marking what it says is a major milestone in the deployment of zero-emissions heavy mining equipment in Australia. EMJC will operate the E-988 under a long-term deployment at a major mining site in Western Australia [...]",
+            link: "https://im-mining.com/2026/04/01/epca-to-electrify-cat-988-wheel-loader-for-emjc/",
+            image: "/images/988green1.webp"
+        },
+        {
             id: 18,
             title: "[Article] The former farm boy on a mission to electrify mining’s big guns",
             author: "Australian Financial Review",

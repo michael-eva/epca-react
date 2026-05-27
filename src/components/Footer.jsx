@@ -49,32 +49,12 @@ export default function Footer() {
                         </li>
                         <li>
                             <motion.a 
-                                onClick={() => window.location.href = '/enquiry?subject=E-785'} 
-                                className="cursor-pointer relative group inline-block"
-                                whileHover={{ x: 5 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <span>E-785 Mining Truck</span>
-                            </motion.a>
-                        </li>
-                        <li>
-                            <motion.a 
                                 onClick={() => window.location.href = '/enquiry?subject=E-988'} 
                                 className="cursor-pointer relative group inline-block"
                                 whileHover={{ x: 5 }}
                                 transition={{ duration: 0.2 }}
                             >
                                 <span>E-988 Loader</span>
-                            </motion.a>
-                        </li>
-                        <li>
-                            <motion.a 
-                                onClick={() => window.location.href = '/product-info/UON-smart-cell'} 
-                                className="cursor-pointer relative group inline-block"
-                                whileHover={{ x: 5 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <span>Charging</span>
                             </motion.a>
                         </li>
                     </ul>
@@ -127,8 +107,28 @@ export default function Footer() {
                     <h3 className="text-xl font-bold mb-4">Services</h3>
                     <ul className="text-base text-gray-400">
                         <li>
-                            <motion.a 
-                                onClick={() => window.location.href = '/feasability-study'} 
+                            <motion.a
+                                onClick={() => window.location.href = '/product-info/engineering-services'}
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Engineering Services</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a
+                                onClick={() => window.location.href = '/green-fleet-provider'}
+                                className="cursor-pointer relative group inline-block"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Green Fleet Provider</span>
+                            </motion.a>
+                        </li>
+                        <li>
+                            <motion.a
+                                onClick={() => window.location.href = '/feasability-study'}
                                 className="cursor-pointer relative group inline-block"
                                 whileHover={{ x: 5 }}
                                 transition={{ duration: 0.2 }}
@@ -137,8 +137,8 @@ export default function Footer() {
                             </motion.a>
                         </li>
                         <li>
-                            <motion.a 
-                                onClick={() => window.location.href = '/test-drive'} 
+                            <motion.a
+                                onClick={() => window.location.href = '/test-drive'}
                                 className="cursor-pointer relative group inline-block"
                                 whileHover={{ x: 5 }}
                                 transition={{ duration: 0.2 }}
@@ -189,16 +189,6 @@ export default function Footer() {
                                 transition={{ duration: 0.2 }}
                             >
                                 <span>Terms and Conditions</span>
-                            </motion.a>
-                        </li> 
-                        <li>
-                            <motion.a 
-                                onClick={() => window.location.href = '/faq'} 
-                                className="cursor-pointer relative group inline-block"
-                                whileHover={{ x: 5 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <span>FAQ</span>
                             </motion.a>
                         </li>
                     </ul>

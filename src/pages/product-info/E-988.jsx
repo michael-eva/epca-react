@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '../../components/Navbar';
-import FiniteCarCarousel from '../../components/ImgCarousel/finite-car-carousel';
-import TCOCalculator from '../../components/TCOCalculator';
 import Footer from '../../components/Footer';
 
 /* ── Animated count-up hook ── */
@@ -62,7 +60,7 @@ const AnimatedStat = ({ value, suffix = '', label, sublabel }) => {
   );
 };
 
-const E777D = () => {
+const E988 = () => {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
@@ -74,32 +72,42 @@ const E777D = () => {
     {
       icon: (
         <svg className="w-10 h-10 text-[#00CC66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-      ),
-      title: 'Battery System',
-      description:
-        'A 1,200 kWh lithium-ion battery system engineered for extended runtime in heavy mining cycles. Built to withstand the harshest conditions while delivering consistent, high-performance output across every shift.',
-    },
-    {
-      icon: (
-        <svg className="w-10 h-10 text-[#00CC66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 3L6 14h7l-1 7 8-11h-7l1-7z" />
         </svg>
       ),
       title: 'Electric Powertrain',
       description:
-        'The E-777 delivers 1,020 kW peak power and 6,100 Nm of instant torque, outperforming the diesel equivalent by 21%. Full torque is available from zero RPM, giving operators more control and productivity at every stage of the haul cycle.',
+        'A purpose-engineered electric drive system replaces the diesel powertrain: delivering instant full torque across the entire operating range, with zero warm-up time.',
     },
     {
       icon: (
         <svg className="w-10 h-10 text-[#00CC66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: 'Data and Analytics',
+      title: 'Extended Runtime',
       description:
-        'The E-777 continuously collects over 3,000 real-time data points from the powertrain and streams them to a cloud-based historian platform, giving operations teams live visibility into machine health, performance, and efficiency.',
+        'Engineered around real-world loading duty cycles. High-density lithium-ion storage supports continuous production shifts with scheduled fast-charge windows.',
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10 text-[#00CC66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      title: 'Safety & Control',
+      description:
+        'Integrated safety-rated control system with real-time diagnostics, fault monitoring, and remote telemetry, designed for mine-site functional safety requirements.',
+    },
+    {
+      icon: (
+        <svg className="w-10 h-10 text-[#00CC66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      title: 'Mine-Ready Build',
+      description:
+        'Built on the proven CAT 988 platform, retaining the trusted structural chassis, operator environment, and serviceability while transforming the powertrain to zero-emission electric.',
     },
   ];
 
@@ -112,33 +120,35 @@ const E777D = () => {
         <section className="h-screen flex items-end relative overflow-hidden bg-black">
           <div className="absolute inset-0">
             <img
-              src="/images/truck2.webp"
-              alt="E-777 Battery-Electric Mining Truck"
-              className={`w-full h-full object-cover transition-opacity duration-1000 ${heroLoaded ? 'opacity-55' : 'opacity-0'}`}
+              src="/images/988green1.webp"
+              alt="E-988 Electric Wheel Loader"
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${heroLoaded ? 'opacity-60' : 'opacity-0'}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
-            <div className="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-[#00CC66]/8 blur-[120px] rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+            {/* Green ambient glow */}
+            <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-[#00CC66]/8 blur-[100px] rounded-full" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 pb-24 w-full">
+            {/* Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#00CC66]/40 bg-[#00CC66]/10 text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00CC66]" />
-              100-Ton Battery-Electric Mining Truck
+              50-Ton Battery-Electric Wheel Loader
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.0] tracking-tight mb-6">
-              E-777<br />
-              <span className="text-[#00CC66]">Mining Truck</span>
+              E-988<br />
+              <span className="text-[#00CC66]">Wheel Loader</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-white/70 max-w-2xl mb-10 leading-relaxed">
-              Built for tough mining conditions. Zero emissions. Eight hours of continuous runtime on a single charge.
+              Battery-electric. Mine-ready. Built on the proven CAT 988 platform with zero diesel, zero compromise.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="/enquiry?subject=e-777d"
+                href="/enquiry?subject=e-988"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#00CC66] hover:bg-[#00e673] text-black rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-200 hover:shadow-[0_0_40px_rgba(0,204,102,0.5)]"
               >
                 Enquire Now
@@ -147,7 +157,7 @@ const E777D = () => {
                 </svg>
               </a>
               <a
-                href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/E-777+Datasheet+-+ENGLISH.pdf"
+                href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/E-988+Datasheet+-+ENGLISH.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-200"
@@ -162,10 +172,10 @@ const E777D = () => {
         <section className="py-20 border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:divide-x divide-gray-100">
-              <AnimatedStat value={100} suffix="%" label="Zero Emissions" sublabel="Zero direct CO2 output" />
-              <AnimatedStat value={8}   suffix="hr"  label="Shift Runtime"   sublabel="On a single charge" />
-              <AnimatedStat value={54}  suffix="%" label="Lower Operating Costs" sublabel="Versus diesel equivalent" />
-              <AnimatedStat value={50}  suffix="min" label="Fast Charge"     sublabel="With high-speed DC charging" />
+              <AnimatedStat value={100} suffix="%" label="Zero Emissions" sublabel="No direct CO₂ output" />
+              <AnimatedStat value={53} suffix="%" label="Lower Operating Costs" sublabel="Versus diesel equivalent" />
+              <AnimatedStat value={7.5} suffix="hr" label="Shift Runtime" sublabel="Per full charge cycle" />
+              <AnimatedStat value={50} suffix="min" label="Fast Charge" sublabel="High-speed DC charging" />
             </div>
           </div>
         </section>
@@ -175,65 +185,37 @@ const E777D = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-5">About the E-777</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-5">About the E-988</p>
                 <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
-                  The World's Highest<br />Energy Density 100-Ton<br />Electric Mining Truck
+                  The World's First<br />Battery-Electric<br />Wheel Loader
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-5">
-                  The E-777 is EPCA's fully battery-electric retrofit of a 100-ton mining truck and the highest energy density electric mining truck in the world. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
+                  The E-988 is the world's first battery-electric conversion of a large wheel loader built at EPCA's workshop. Based on the industry-standard CAT 988, retaining 80% of the original machine's proven structure, the diesel powertrain is replaced with a high-performance electric drive system delivering instant torque, reduced noise, and zero direct emissions.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  With 8 hours of continuous runtime per charge, a 50-minute fast charge, and 21% more power than its diesel counterpart, the E-777 is engineered to meet the demands of modern mining — without the noise, fuel costs, or emissions.
+                  Designed for loading operations in open-cut and underground mining environments, the E-988
+                  supports continuous production with planned fast-charge windows aligned to standard shift rotations.
+                  It's the practical, proven path to electrifying your loading fleet.
                 </p>
               </div>
 
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden">
                   <img
-                    src="/images/truck3.webp"
-                    alt="E-777 Mining Truck"
+                    src="/images/988green1.webp"
+                    alt="E-988 Electric Wheel Loader"
                     className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
+                {/* Floating stat card */}
                 <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-5">
                   <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">Payload Capacity</p>
                   <p className="text-3xl font-extrabold text-gray-900">
-                    100<span className="text-lg font-semibold text-gray-500 ml-1">tonnes</span>
+                    12.5<span className="text-lg font-semibold text-gray-500 ml-1">m³</span>
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">Industry-leading electric haulage</p>
+                  <p className="text-xs text-gray-500 mt-1">Standard bucket configuration</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Image Carousel ── */}
-        <FiniteCarCarousel />
-
-        {/* ── Retrofit Section ── */}
-        <section className="py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="rounded-3xl overflow-hidden order-last md:order-first">
-                <img
-                  src="/images/truck8.webp"
-                  alt="E-777 Retrofit"
-                  className="w-full h-[500px] object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-5">The Retrofit Approach</p>
-                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
-                  A Smarter Way to Electrify Your Fleet
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-5">
-                  Retrofitting with EPCA means transforming your diesel truck into a battery-electric machine. The E-777 keeps 80% of its original structure while replacing the diesel components with a high-efficiency electric powertrain.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  This extends the life of existing, trusted equipment, reduces fuel and maintenance costs, and avoids the long lead times and capital outlay of replacing an entire fleet. It is a smart upgrade with long-term operational benefits.
-                </p>
               </div>
             </div>
           </div>
@@ -244,41 +226,58 @@ const E777D = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="max-w-2xl mb-16">
               <p className="text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-4">Engineering</p>
-              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">Built to Outperform</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">Built Different</h2>
               <p className="mt-5 text-gray-500 text-lg leading-relaxed">
-                Three core engineering pillars that make the E-777 the benchmark for battery-electric mining trucks.
+                Four engineering pillars that define why the E-988 is the right electric loader for your fleet.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
+            <div className="grid md:grid-cols-2 gap-6">
+              {features.map((f, idx) => (
                 <div
-                  key={index}
+                  key={idx}
                   className="group rounded-2xl border border-gray-200 bg-white p-8 hover:border-[#00CC66]/40 hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-[#00CC66]/10 border border-[#00CC66]/20 flex items-center justify-center mb-6 group-hover:bg-[#00CC66]/15 transition-colors duration-300">
-                    {feature.icon}
+                    {f.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{f.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">{f.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── TCO Calculator ── */}
-        <section className="py-20 bg-white">
-          <TCOCalculator />
+        {/* ── Image section ── */}
+        <section className="bg-white py-28 md:px-10">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="rounded-3xl overflow-hidden mb-12">
+              <img
+                src="/images/988green1.webp"
+                alt="E-988 on site"
+                className="w-full h-[400px] md:h-[600px] object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">A Smarter Way to Load</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                By converting your existing 988 fleet rather than replacing it, you retain trusted equipment and
+                deep operator familiarity while cutting fuel costs, reducing maintenance spend, and eliminating
+                direct emissions from your loading operations.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* ── Technical Specifications ── */}
-        <section className="py-28 bg-white">
+        <section id="specifications" className="py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="max-w-2xl mb-16">
               <p className="text-xs uppercase tracking-[0.2em] text-[#00CC66] mb-4">Specifications</p>
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">Technical Data</h2>
-              <p className="mt-5 text-gray-500 text-lg">E-777 100-Ton Battery-Electric Mining Truck technical parameters.</p>
+              <p className="mt-5 text-gray-500 text-lg">E-988 Electric Wheel Loader technical parameters.</p>
             </div>
 
             <div className="space-y-14">
@@ -286,34 +285,33 @@ const E777D = () => {
                 {
                   label: 'Performance',
                   rows: [
-                    { label: 'Payload Capacity', value: '100 tons', note: 'Industry-leading electric haulage' },
-                    { label: 'Peak Power', value: '1,020 kW', note: '21% more than the diesel equivalent' },
-                    { label: 'Peak Torque', value: '6,100 Nm', note: 'Instant torque at all speeds' },
+                    { label: 'Bucket Capacity', value: 'Up to 12.5 m³', note: 'Standard loading configuration' },
+                    { label: 'Peak Power', value: '660 kW', note: 'Electric motor output' },
+                    { label: 'Peak Torque', value: 'Instant', note: 'Full torque from zero RPM' },
                   ],
                 },
                 {
                   label: 'Battery and Charging',
                   rows: [
-                    { label: 'Battery Type', value: 'Lithium-ion', note: 'Advanced cell chemistry optimised for energy density' },
-                    { label: 'Battery Capacity', value: '1,530 kWh', note: 'High-density energy storage' },
-                    { label: 'Charging Time', value: '50 minutes', note: 'With high-speed DC charging infrastructure' },
+                    { label: 'Battery Type', value: 'Lithium-ion', note: 'High-density mining-grade cells' },
+                    { label: 'Battery Capacity', value: '1,020 kWh', note: 'High-density storage' },
+                    { label: 'Charging Time', value: '50 min', note: 'With DC fast charging infrastructure' },
                   ],
                 },
                 {
                   label: 'Operation',
                   rows: [
-                    { label: 'Runtime', value: '8 hrs', note: 'Aligned to standard operator break intervals' },
-                    { label: 'Maximum Speed', value: '67 km/h', note: 'Safety-limited for mining applications' },
-                    { label: 'Gradeability', value: 'Up to 20%', note: 'At full payload' },
+                    { label: 'Runtime per Charge', value: '~7.5 hours', note: 'Typical loading duty cycle' },
+                    { label: 'Operating Weight', value: '~90,000 kg', note: 'Fully loaded configuration' },
+                    { label: 'Base Platform', value: 'CAT 988', note: '80% original structure retained' },
                   ],
                 },
                 {
                   label: 'Economics and Environment',
                   rows: [
-                    { label: 'Operational Cost Reduction', value: '67%', note: 'Compared to the diesel equivalent' },
-                    { label: 'Maintenance Cost Reduction', value: '34%', note: 'Fewer moving parts, no engine service' },
+                    { label: 'Operational Cost Reduction', value: '70%', note: 'Compared to diesel equivalent' },
+                    { label: 'Maintenance Cost Reduction', value: '36%', note: 'Fewer moving parts, no engine service' },
                     { label: 'CO2 Reduction', value: '100%', note: 'Zero direct emissions at point of operation' },
-                    { label: 'Warranty', value: '1 yr / 6,000 hrs', note: '5-year extended warranty available' },
                   ],
                 },
               ].map((group) => (
@@ -341,25 +339,25 @@ const E777D = () => {
         <section className="h-screen relative overflow-hidden flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/truck4.webp"
-              alt="E-777 Mining Truck"
+              src="/images/988green1.webp"
+              alt="E-988 Wheel Loader"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/25" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#00CC66]/10 blur-[120px] rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#00CC66]/10 blur-[120px] rounded-full" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#00CC66] mb-6">E-777 Mining Truck</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#00CC66] mb-6">E-988 Wheel Loader</p>
             <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-              Ready to Electrify<br />Your Fleet?
+              Ready to Electrify<br />Your Loading Fleet?
             </h2>
             <p className="text-xl text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
-              The E-777 is available now. Talk to our team about deployment, retrofit, or fleet transition.
+              The E-988 is now available. Speak with our engineering team about deployment for your site.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/enquiry?subject=e-777d"
+                href="/enquiry?subject=e-988"
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#00CC66] hover:bg-[#00e673] text-black rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-200 hover:shadow-[0_0_50px_rgba(0,204,102,0.6)]"
               >
                 Enquire Now
@@ -368,12 +366,10 @@ const E777D = () => {
                 </svg>
               </a>
               <a
-                href="https://public-pdf-sharing.s3.ap-southeast-2.amazonaws.com/E-777+Datasheet+-+ENGLISH.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/feasability-study"
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-white/25 hover:border-white/50 hover:bg-white/5 text-white rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-200"
               >
-                Download Brochure
+                Feasibility Study
               </a>
             </div>
           </div>
@@ -385,4 +381,4 @@ const E777D = () => {
   );
 };
 
-export default E777D;
+export default E988;

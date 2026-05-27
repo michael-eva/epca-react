@@ -7,19 +7,6 @@ import HLSPlayer from '../components/HlsPlayer.jsx';
 import SEO from '../components/SEO'
 
 const Home = () => {
-    // For carousel
-    const chargerImages = [
-        "images/EPCACharger.webp",
-        "images/UON_Charger.webp"
-      ];
-      const [currentChargerImageIndex, setCurrentChargerImageIndex] = useState(0);
-      
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setCurrentChargerImageIndex(prevIndex => (prevIndex + 1) % chargerImages.length);
-        }, 8000); // Change image every 8 seconds
-        return () => clearInterval(interval);
-      }, []);
   // State for testimonials
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [email, setEmail] = useState('');
@@ -52,14 +39,6 @@ const Home = () => {
   }, []);
 
   
-  const nextChargerImage = () => {
-    setCurrentChargerImageIndex((prevIndex) => (prevIndex + 1) % chargerImages.length);
-  };
-  
-  const prevChargerImage = () => {
-    setCurrentChargerImageIndex((prevIndex) => (prevIndex - 1 + chargerImages.length) % chargerImages.length);
-  };
-
   const animateNumbers = () => {
     const targets = {
       carbon: 2021,
@@ -323,13 +302,13 @@ const Home = () => {
                 buttonLink="/enquiry?subject=E-785"
               />
 
-              <VehicleCard 
-                imageSrc="images/993edited2.webp"
+              <VehicleCard
+                imageSrc="images/988green1.webp"
                 altText="E-988 Wheel Loader"
-                title="Electric Wheel Loaders"
-                subtitle="Upcoming"
-                buttonText="Express Interest"
-                buttonLink="/enquiry?subject=E-988"
+                title="E-988 Wheel Loader"
+                subtitle="Available"
+                buttonText="View More"
+                buttonLink="/product-info/E-988"
               />
             </div>
           </div>
@@ -341,44 +320,26 @@ const Home = () => {
               <div className="lg:w-1/2">
                 <div className="h-[600px] rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] transition-transform duration-300 relative group cursor-pointer">
                   <div className="relative w-full h-full">
-                    <img 
-                      src={chargerImages[currentChargerImageIndex]} 
-                      alt="UON SMART CELL Charging Station" 
-                      className="w-full h-full object-contain"
-                      onClick={() => window.location.href = '/product-info/UON-smart-cell'}
+                    <img
+                      src="/images/GreenTruckMining1.webp"
+                      alt="Green truck mining"
+                      className="w-full h-full object-cover"
+                      onClick={() => window.location.href = '/product-info/engineering-services'}
                     />
                   </div>
-                </div>
-                <div className="flex justify-center mt-4">
-                  <button 
-                    className="mx-2 bg-white p-2 rounded-full shadow-lg transition-transform duration-200 hover:scale-120"
-                    onClick={(e) => { e.stopPropagation(); prevChargerImage(); }}
-                  >
-                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button 
-                    className="mx-2 bg-white p-2 rounded-full shadow-lg transition-transform duration-200 hover:scale-120"
-                    onClick={(e) => { e.stopPropagation(); nextChargerImage(); }}
-                  >
-                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
                 </div>
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
                   <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">DC Charger:</span>
-                    <br />High-Speed Charging Solution
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">EPCA Engineering Services:</span>
+                    <br />Design. Build. Deliver.
                   </h2>
                 </div>
                 
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Engineered for efficiency, the fast charging solution for mining delivers a full charge 
-                  in <span className="font-semibold text-[#00CC66]">50 minutes</span> . Designed specifically for electric mining fleets, it reduces downtime and maximises operational performance with innovative fast-charging technology.
+                  Diesel-to-electric engineering for heavy-haulage mining electrification, delivered through feasibility,
+                  design, retrofit delivery, testing and deployment. In-house or as exportable retrofit kits.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -388,7 +349,7 @@ const Home = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <span className="font-medium text-gray-800">Fast Charging</span>
+                    <span className="font-medium text-gray-800">Feasibility Studies</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                     <div className="text-[#00CC66] mb-2">
@@ -396,7 +357,7 @@ const Home = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                     </div>
-                    <span className="font-medium text-gray-800">Modular and Scalable</span>
+                    <span className="font-medium text-gray-800">Powertrain Engineering</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                     <div className="text-[#00CC66] mb-2">
@@ -404,11 +365,78 @@ const Home = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span className="font-medium text-gray-800">Off-Grid Ready</span>
+                    <span className="font-medium text-gray-800">Testing & Validation</span>
                   </div>
                 </div>
                 
-                <a href="/product-info/UON-smart-cell" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-md">
+                <a href="/product-info/engineering-services" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-md">
+                  <span className="absolute left-0 w-0 h-full bg-[#009f50] transition-all duration-300 ease-out group-hover:w-full"></span>
+                  <span className="relative flex items-center font-medium text-white">
+                    Learn More
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Green Fleet Provider Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
+              <div className="lg:w-1/2">
+                <div className="h-[600px] rounded-2xl overflow-hidden shadow-2xl relative group cursor-pointer">
+                  <img
+                    src="/images/truck5.webp"
+                    alt="Electric fleet on site"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onClick={() => window.location.href = '/green-fleet-provider'}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00CC66]/10 border border-[#00CC66]/20 text-xs font-semibold text-[#00874a] uppercase tracking-wider mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00CC66]" />
+                  Fleet-as-a-Service
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00CC66] to-[#009f50]">Green Fleet Provider:</span>
+                  <br />Electric Fleets. No Capital.
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  EPCA deploys fully electrified mining fleets under fixed-rate operating agreements. No equipment purchase, no ownership risk. You operate the machines; we own, maintain, and optimise them.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                  <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div className="text-[#00CC66] mb-2">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-gray-800">Zero CapEx</span>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div className="text-[#00CC66] mb-2">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-gray-800">Risk Transfer</span>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div className="text-[#00CC66] mb-2">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-gray-800">Scalable Fleet</span>
+                  </div>
+                </div>
+                <a href="/green-fleet-provider" className="group relative inline-flex items-center px-8 py-3 overflow-hidden bg-[#00CC66] rounded-md">
                   <span className="absolute left-0 w-0 h-full bg-[#009f50] transition-all duration-300 ease-out group-hover:w-full"></span>
                   <span className="relative flex items-center font-medium text-white">
                     Learn More

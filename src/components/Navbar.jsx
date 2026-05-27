@@ -155,7 +155,6 @@ const Navbar = ({ mode }) => {
                 <div className="absolute h-6 -bottom-6 left-0 right-0 bg-transparent z-50" />
               </div>
             </li>
-            <li><a href="/product-info/UON-smart-cell" className={`font-medium transition-colors duration-300 ${showVehicles ? 'text-black hover:text-gray-600' : mode === 'dark' ? 'text-gray-800' : 'text-white'}`}>Charging</a></li>
             <li>
               <div 
                 onMouseEnter={handleShowServices}
@@ -170,7 +169,13 @@ const Navbar = ({ mode }) => {
                   Services
                 </span>
                 {showServices && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-md py-2 mt-2 z-50">
+                  <div className="absolute top-full left-0 w-56 bg-white shadow-lg rounded-md py-2 mt-2 z-50">
+                    <a
+                      href="/product-info/engineering-services"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Engineering Services
+                    </a>
                     <a href="/feasability-study" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Feasibility Study</a>
                     <a href="/test-drive" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Test Drive</a>
                   </div>
@@ -178,7 +183,19 @@ const Navbar = ({ mode }) => {
               </div>
             </li>
             <li>
-              <div 
+              <a
+                href="/green-fleet-provider"
+                className={`font-medium transition-colors duration-300 cursor-pointer border-b-2 border-transparent hover:border-current pb-1
+                  ${showVehicles ? 'text-black hover:text-gray-600' :
+                    mode === 'dark' ? 'text-gray-800' :
+                    'text-white'}
+                  ${!mode === 'dark' && isScrolled && !showVehicles ? 'hover:text-white/80' : 'hover:text-blue-200'}`}
+              >
+                Green Fleet Provider
+              </a>
+            </li>
+            <li>
+              <div
                 onMouseEnter={handleShowAboutUs}
                 onMouseLeave={handleHideAboutUs}
                 className="relative h-full group"
@@ -228,17 +245,37 @@ const Navbar = ({ mode }) => {
                       Machines
                     </a>
                   </li>
-                  <li><a href="/product-info/UON-smart-cell" className="text-2xl font-medium text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Charging</a></li>
                   <li>
                     <div className="text-2xl font-medium text-white">
-                      <span className="cursor-pointer hover:text-blue-200 transition-colors" onClick={() => setShowServices(!showServices)}>Services</span>
+                      <span
+                        className="cursor-pointer hover:text-blue-200 transition-colors"
+                        onClick={() => setShowServices(!showServices)}
+                      >
+                        Services
+                      </span>
                       {showServices && (
                         <div className="mt-2 space-y-2">
+                          <a
+                            href="/product-info/engineering-services"
+                            className="block text-xl text-white hover:text-blue-200 transition-colors"
+                            onClick={() => toggleMobileMenu(false)}
+                          >
+                            Engineering Services
+                          </a>
                           <a href="/feasability-study" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Feasibility Study</a>
                           <a href="/test-drive" className="block text-xl text-white hover:text-blue-200 transition-colors" onClick={() => toggleMobileMenu(false)}>Test Drive</a>
                         </div>
                       )}
                     </div>
+                  </li>
+                  <li>
+                    <a
+                      href="/green-fleet-provider"
+                      className="text-2xl font-medium text-white hover:text-blue-200 transition-colors"
+                      onClick={() => toggleMobileMenu(false)}
+                    >
+                      Green Fleet Provider
+                    </a>
                   </li>
                   <li>
                     <div className="text-2xl font-medium text-white">

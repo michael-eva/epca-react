@@ -26,6 +26,8 @@ const Enquiry = () => {
             'e-992': 'E-992 Wheel Loader',
             'UON-smart-cell': 'DC Charger',
             'uon': 'DC Charger',
+            'engineering-services': 'Engineering Services',
+            'engineering': 'Engineering Services',
             'general': 'General Enquiry',
         };
 
@@ -59,6 +61,7 @@ const Enquiry = () => {
         'E-988 Wheel Loader',
         'E-992 Wheel Loader',
         'DC Charger',
+        'Engineering Services',
         'General Enquiry',
         'Sales Question',
         'Service Request',

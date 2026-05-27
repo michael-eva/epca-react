@@ -13,6 +13,10 @@ export default function TermsAndConditions() {
                     href: "https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+SALES+OF+GOODS+-+PUBLISHED.pdf"
                 },
                 {
+                    title: "EPCA General Hire Terms And Conditions [PDF]",
+                    href: "https://epca-terms-and-conditions.s3.ap-southeast-2.amazonaws.com/EPCA+GeneralHireTermsAndConditions_v1.3_Nov2025.pdf"
+                },
+                {
                     title: "Terms and Conditions for BDSM Software Subscription(s) and Additional Services",
                     href: "/Terms/BDSM_Subscription"
                 },
