@@ -79,7 +79,7 @@ const E777D = () => {
       ),
       title: 'Battery System',
       description:
-        'A 1,200 kWh lithium-ion battery system engineered for extended runtime in heavy mining cycles. Built to withstand the harshest conditions while delivering consistent, high-performance output across every shift.',
+        'A 1,530 kWh lithium-ion battery system engineered for extended runtime in heavy mining cycles. Built to withstand the harshest conditions while delivering consistent, high-performance output across every shift.',
     },
     {
       icon: (
@@ -183,7 +183,7 @@ const E777D = () => {
                   The E-777 is EPCA's fully battery-electric retrofit of a 100-ton mining truck and the highest energy density electric mining truck in the world. Built from the chassis of a CAT 777D, this machine combines proven mining design with a powerful zero-emission electric drivetrain.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  With 8 hours of continuous runtime per charge, a 50-minute fast charge, and 21% more power than its diesel counterpart, the E-777 is engineered to meet the demands of modern mining — without the noise, fuel costs, or emissions.
+                  With 8 hours of continuous runtime per charge, a 50-minute fast charge, and 21% more power than its diesel counterpart, the E-777 is engineered to meet the demands of modern mining, without the noise, fuel costs, or emissions.
                 </p>
               </div>
 
