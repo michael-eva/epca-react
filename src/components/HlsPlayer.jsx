@@ -1,88 +1,111 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
-const HLSPlayer = ({ src, autoPlay = true, muted = true, loop = true, controls = false, className = '' }) => {
+const isHlsSource = (src) => src.endsWith('.m3u8');
+
+const HLSPlayer = ({
+  src,
+  autoPlay = true,
+  muted = true,
+  loop = true,
+  controls = false,
+  className = '',
+  poster = '',
+}) => {
   const videoRef = useRef(null);
+  const hlsRef = useRef(null);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    let hls;
-    
-    const initPlayer = () => {
-      const video = videoRef.current;
-      
-      if (video) {
-        if (Hls.isSupported()) {
-          hls = new Hls({
-            enableWorker: true,
-            lowLatencyMode: true,
-          });
-          
-          hls.loadSource(src);
-          hls.attachMedia(video);
-          
-          hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            if (autoPlay) {
-              video.play().catch(error => {
-                console.error('Error attempting to play:', error);
-              });
-            }
-          });
-          
-          hls.on(Hls.Events.ERROR, (event, data) => {
-            console.error('HLS Error:', data);
-            console.error('Error details:', data.details);
-            if (data.response) console.error('Error response:', data.response);
-            
-            if (data.fatal) {
-              switch (data.type) {
-                case Hls.ErrorTypes.NETWORK_ERROR:
-                  console.log('Network error, trying to recover...');
-                  hls.startLoad();
-                  break;
-                case Hls.ErrorTypes.MEDIA_ERROR:
-                  console.log('Media error, trying to recover...');
-                  hls.recoverMediaError();
-                  break;
-                default:
-                  console.error('Fatal error, destroying HLS instance:', data);
-                  hls.destroy();
-                  break;
-              }
-            }
-          });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-          // For Safari, which has native HLS support
-          video.src = src;
-          
-          if (autoPlay) {
-            video.play().catch(error => {
-              console.error('Error attempting to play:', error);
-            });
-          }
-        } else {
-          console.error('HLS is not supported in this browser');
-        }
+    setHasError(false);
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      if (autoPlay) {
+        video.play().catch((error) => {
+          console.error('Error attempting to play:', error);
+        });
       }
     };
 
-    initPlayer();
+    const handleVideoError = () => {
+      console.error('Video failed to load:', src);
+      setHasError(true);
+    };
 
-    // Cleanup function to destroy HLS instance when component unmounts
+    video.addEventListener('error', handleVideoError);
+
+    if (isHlsSource(src)) {
+      if (Hls.isSupported()) {
+        const hls = new Hls({ enableWorker: true });
+        hlsRef.current = hls;
+
+        hls.loadSource(src);
+        hls.attachMedia(video);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, playVideo);
+
+        hls.on(Hls.Events.ERROR, (_event, data) => {
+          if (data.fatal) {
+            console.error('HLS fatal error:', data);
+            setHasError(true);
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                hls.startLoad();
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                hls.recoverMediaError();
+                break;
+              default:
+                hls.destroy();
+                hlsRef.current = null;
+                break;
+            }
+          }
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = src;
+        playVideo();
+      } else {
+        console.error('HLS is not supported in this browser');
+        setHasError(true);
+      }
+    } else {
+      video.src = src;
+      playVideo();
+    }
+
     return () => {
-      if (hls) {
-        hls.destroy();
+      video.removeEventListener('error', handleVideoError);
+      if (hlsRef.current) {
+        hlsRef.current.destroy();
+        hlsRef.current = null;
       }
     };
   }, [src, autoPlay]);
+
+  if (hasError && poster) {
+    return (
+      <img
+        src={poster}
+        alt=""
+        className={`w-full h-full object-cover ${className}`}
+      />
+    );
+  }
 
   return (
     <video
       ref={videoRef}
       className={`w-full h-full object-cover ${className}`}
       playsInline
+      autoPlay={autoPlay}
       muted={muted}
       loop={loop}
       controls={controls}
+      poster={poster}
+      preload="auto"
     />
   );
 };

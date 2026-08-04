@@ -43,54 +43,95 @@ export const timelineData = [
       date: "December 2024",
       // title: "Major Milestone 3",
       description: "EPCA secures a $3M grant from The Clean Energy Future Fund."
+    },
+    {
+      date: "May 2025",
+      description: "Dealership agreement signed with Janus Electric (WA); MOU signed with Winyama Contracting."
+    },
+    {
+      date: "August 2025",
+      description: "ABB and EPCA sign MOU on BEV retrofits for mid-size haul trucks."
+    },
+    {
+      date: "November 2025",
+      description: "EPCA awarded the 2025 Commercialisation Bridge Grant (New Industries and Innovation Fund)."
+    },
+    {
+      date: "January 2026",
+      description: "Hon Amber-Jade Sanderson MLA, Minister for Energy and Decarbonisation, visits the Hazelmere workshop."
+    },
+    {
+      date: "April 2026",
+      description: "EPCA signs an agreement to electrify a CAT 988 wheel loader for a WA miner."
+    },
+    {
+      date: "20 May 2026",
+      description: "Launch of the world-first E-988 battery-electric wheel loader, attended by Hon Stephen Dawson MLC."
     }
   ];
-export const TimelineItem = ({ date, title, description, isLeft }) => (
-  <div className="flex flex-col md:flex-row items-start">
-    {isLeft ? (
-      <>
-        <div className="w-full md:w-1/2 pl-12 md:pl-0 md:pr-16 text-left md:text-right relative">
-          <div className="text-sm text-gray-400 mb-2">{date}</div>
-          <div className="bg-zinc-900 p-6 rounded-lg relative">
-            <div className="absolute left-0 md:left-auto md:right-0 top-0 h-full w-1 bg-green-600 rounded-l md:rounded-l-none md:rounded-r"></div>
-            {/* <h3 className="text-xl font-bold mb-2">{title}</h3> */}
-            <p className="text-gray-300">{description}</p>
-          </div>
-        </div>
-        <div className="hidden md:block md:w-1/2"></div>
-      </>
-    ) : (
-      <>
-        <div className="hidden md:block md:w-1/2"></div>
-        <div className="w-full md:w-1/2 pl-12 md:pl-16 relative">
-          <div className="text-sm text-gray-400 mb-2">{date}</div>
-          <div className="bg-zinc-900 p-6 rounded-lg relative">
-            <div className="absolute left-0 top-0 h-full w-1 bg-green-600 rounded-l"></div>
-            {/* <h3 className="text-xl font-bold mb-2">{title}</h3> */}
-            <p className="text-gray-300">{description}</p>
-          </div>
-        </div>
-      </>
-    )}
+
+export const TimelineItem = ({ date, description, col }) => (
+  <div className={col === "left" ? "text-left md:text-right" : "text-left"}>
+    <div className="text-sm text-gray-400 mb-2">{date}</div>
+    <div className="bg-zinc-900 p-6 rounded-lg relative">
+      <div
+        className={
+          col === "left"
+            ? "absolute left-0 md:left-auto md:right-0 top-0 h-full w-1 bg-green-600 rounded-l md:rounded-l-none md:rounded-r"
+            : "absolute left-0 top-0 h-full w-1 bg-green-600 rounded-l"
+        }
+      ></div>
+      <p className="text-gray-300">{description}</p>
+    </div>
   </div>
 );
 
 export const Timeline = () => {
+  const leftItems = timelineData.filter((_, index) => index % 2 === 0);
+  const rightItems = timelineData.filter((_, index) => index % 2 !== 0);
+
   return (
     <div className="relative">
-      {/* Vertical line */}
-      <div className="absolute left-6 md:left-1/2 h-full w-0.5 bg-green-500 transform -translate-x-1/2"></div>
-      
-      <div className="space-y-12">
-        {timelineData.map((item, index) => (
-          <TimelineItem
-            key={item.date}
-            date={item.date}
-            title={item.title}
-            description={item.description}
-            isLeft={index % 2 === 0}
-          />
-        ))}
+      {/* Mobile: single chronological column */}
+      <div className="md:hidden relative pl-8">
+        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-green-500"></div>
+        <div className="space-y-4">
+          {timelineData.map((item, index) => (
+            <TimelineItem
+              key={`m-${item.date}-${index}`}
+              date={item.date}
+              description={item.description}
+              col="right"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: two independently-packed, staggered columns */}
+      <div className="hidden md:block relative">
+        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-green-500 -translate-x-1/2"></div>
+        <div className="grid grid-cols-2 gap-x-16">
+          <div className="space-y-4">
+            {leftItems.map((item, index) => (
+              <TimelineItem
+                key={`l-${item.date}-${index}`}
+                date={item.date}
+                description={item.description}
+                col="left"
+              />
+            ))}
+          </div>
+          <div className="space-y-4 mt-20">
+            {rightItems.map((item, index) => (
+              <TimelineItem
+                key={`r-${item.date}-${index}`}
+                date={item.date}
+                description={item.description}
+                col="right"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

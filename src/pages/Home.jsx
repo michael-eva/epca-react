@@ -165,8 +165,12 @@ const Home = () => {
         {/* Hero Section */}
         <section className="h-screen flex items-center relative bg-black">
           <div className="absolute inset-0 bg-black/30 z-10"></div>   
-          <div className='absolute inset-0 w-full h-full object-cover'>
-              <HLSPlayer src="https://dv08xm1b73q8i.cloudfront.net/videos/home-vid-hls.m3u8" />
+          <div className="absolute inset-0 overflow-hidden">
+              <HLSPlayer
+                src="/videos/HomePage_Video_v2.mp4"
+                poster="/images/truck2.webp"
+                className="absolute inset-0 min-w-full min-h-full w-auto h-auto object-cover"
+              />
           </div>
           <div className="max-w-7xl mx-auto px-4 relative z-20 flex flex-col h-full">
             <div className="max-w-2xl text-white mt-32">
