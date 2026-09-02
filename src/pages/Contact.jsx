@@ -23,9 +23,14 @@ const Contact = () => {
                   <a href="mailto:clayton.franklin@epca.net.au" className="text-white hover:underline">clayton.franklin@epca.net.au</a>
                   </p>
               <p className="text-white-400">+61 427 086 301</p>
-              <button onClick={() => window.location.href = '/enquiry?subject=general'} className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
-                CONTACT US
-              </button>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => window.location.href = '/enquiry?subject=general'} className="border border-white text-white px-8 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
+                  CONTACT US
+                </button>
+                <Link to="/quote-request" className="inline-block border border-[#00CC66] bg-[#00CC66] text-black px-8 py-2 rounded-md hover:bg-[#00b359] transition-colors">
+                  REQUEST A QUOTE
+                </Link>
+              </div>
             </div>
 
             {/* Open Hours */}

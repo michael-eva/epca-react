@@ -9,6 +9,7 @@ import E777DEnquiry from './pages/product-enquiry/E-777D'
 import Contact from './pages/Contact'
 import TestDrive from './pages/Test-Drive'
 import Enquiry from './pages/Enquiry'
+import QuoteRequest from './pages/QuoteRequest'
 import FeasabilityStudy from './pages/FeasabilityStudy'
 import About from './pages/About'
 import PrivacyPolicy from './pages/Privacy-Policy'
@@ -36,6 +37,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/test-drive" element={<TestDrive />} />
         <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/quote-request" element={<QuoteRequest />} />
         <Route path="/feasability-study" element={<FeasabilityStudy />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
