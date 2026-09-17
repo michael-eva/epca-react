@@ -4,6 +4,9 @@ import Footer from "../components/Footer";
 import { toast } from 'react-hot-toast';
 
 const inputClass = "bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00CC66] focus:border-[#00CC66] block w-full p-3";
+const commentInputClass = "bg-transparent border-0 border-b border-gray-200 text-gray-500 text-xs focus:ring-0 focus:border-[#00CC66] block w-full px-1 py-1.5 placeholder-gray-400";
+
+const Required = () => <span className="text-red-500">*</span>;
 
 const emptyMachine = () => ({
     makeAndModel: '',
@@ -135,8 +138,11 @@ export default function QuoteRequest() {
             <Navbar mode="dark" />
             <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
                 <h1 className="text-4xl font-medium text-center mb-4">Request a Quote</h1>
-                <p className="text-center text-gray-600 mb-16">
+                <p className="text-center text-gray-600 mb-2">
                     Tell us about your machine, site, and service preferences and our team will prepare a tailored quote.
+                </p>
+                <p className="text-center text-sm text-gray-400 mb-16">
+                    Fields marked <Required /> are required.
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -159,22 +165,22 @@ export default function QuoteRequest() {
                         <h2 className="text-2xl font-medium mb-6">Contact Information</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <p className="mb-2 font-medium">Full Name</p>
+                                <p className="mb-2 font-medium">Full Name <Required /></p>
                                 <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className={inputClass} required />
                             </div>
                             <div>
-                                <p className="mb-2 font-medium">Email Address</p>
+                                <p className="mb-2 font-medium">Email Address <Required /></p>
                                 <input type="email" name="email" value={formData.email} onChange={handleInputChange} className={inputClass} required />
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <p className="mb-2 font-medium">Company</p>
-                                <input type="text" name="companyName" value={formData.companyName} onChange={handleInputChange} className={inputClass} />
+                                <p className="mb-2 font-medium">Company <Required /></p>
+                                <input type="text" name="companyName" value={formData.companyName} onChange={handleInputChange} className={inputClass} required />
                             </div>
                             <div>
-                                <p className="mb-2 font-medium">Phone Number</p>
-                                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className={inputClass} />
+                                <p className="mb-2 font-medium">Phone Number <Required /></p>
+                                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className={inputClass} required />
                             </div>
                         </div>
                     </section>
@@ -200,32 +206,32 @@ export default function QuoteRequest() {
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Make and Model</p>
-                                        <input type="text" value={machine.makeAndModel} onChange={(e) => handleMachineChange(index, 'makeAndModel', e.target.value)} className={inputClass} placeholder="e.g. CAT777" />
+                                        <p className="mb-2 text-sm font-medium">Make and Model <Required /></p>
+                                        <input type="text" value={machine.makeAndModel} onChange={(e) => handleMachineChange(index, 'makeAndModel', e.target.value)} className={inputClass} placeholder="e.g. CAT777" required />
                                     </div>
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Quantity to Electrify</p>
-                                        <input type="number" value={machine.quantity} onChange={(e) => handleMachineChange(index, 'quantity', e.target.value)} className={inputClass} />
+                                        <p className="mb-2 text-sm font-medium">Quantity to Electrify <Required /></p>
+                                        <input type="number" value={machine.quantity} onChange={(e) => handleMachineChange(index, 'quantity', e.target.value)} className={inputClass} required />
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Diesel Consumption (L/hr)</p>
-                                        <input type="text" value={machine.dieselConsumption} onChange={(e) => handleMachineChange(index, 'dieselConsumption', e.target.value)} className={inputClass} />
+                                        <p className="mb-2 text-sm font-medium">Diesel Consumption (L/hr) <Required /></p>
+                                        <input type="text" value={machine.dieselConsumption} onChange={(e) => handleMachineChange(index, 'dieselConsumption', e.target.value)} className={inputClass} required />
                                     </div>
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Annual Operating Hours (hr/year)</p>
-                                        <input type="text" value={machine.annualOperatingHours} onChange={(e) => handleMachineChange(index, 'annualOperatingHours', e.target.value)} className={inputClass} />
+                                        <p className="mb-2 text-sm font-medium">Annual Operating Hours (hr/year) <Required /></p>
+                                        <input type="text" value={machine.annualOperatingHours} onChange={(e) => handleMachineChange(index, 'annualOperatingHours', e.target.value)} className={inputClass} required />
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Typical Cycle Details</p>
-                                        <input type="text" value={machine.cycleDetails} onChange={(e) => handleMachineChange(index, 'cycleDetails', e.target.value)} className={inputClass} placeholder="Utilisation rate, duration of breaks, etc." />
+                                        <p className="mb-2 text-sm font-medium">Typical Cycle Details <Required /></p>
+                                        <input type="text" value={machine.cycleDetails} onChange={(e) => handleMachineChange(index, 'cycleDetails', e.target.value)} className={inputClass} placeholder="Utilisation rate, duration of breaks, etc." required />
                                     </div>
                                     <div>
-                                        <p className="mb-2 text-sm font-medium">Operating Cost /hour</p>
-                                        <input type="text" value={machine.operatingCost} onChange={(e) => handleMachineChange(index, 'operatingCost', e.target.value)} className={inputClass} placeholder="incl. maintenance and operating cost" />
+                                        <p className="mb-2 text-sm font-medium">Operating Cost /hour <Required /></p>
+                                        <input type="text" value={machine.operatingCost} onChange={(e) => handleMachineChange(index, 'operatingCost', e.target.value)} className={inputClass} placeholder="incl. maintenance and operating cost" required />
                                     </div>
                                 </div>
                             </div>
@@ -235,28 +241,25 @@ export default function QuoteRequest() {
                     {/* Site Information */}
                     <section className="mb-16">
                         <h2 className="text-2xl font-medium mb-6">Site Information</h2>
-                        <div className="space-y-5">
+                        <div className="space-y-6">
                             {SITE_INFO_FIELDS.map((field) => (
-                                <div key={field.key} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <p className="mb-2 text-sm font-medium">{field.label}</p>
-                                        <input
-                                            type="text"
-                                            value={siteInfo[field.key].response}
-                                            onChange={(e) => handleSiteInfoChange(field.key, 'response', e.target.value)}
-                                            className={inputClass}
-                                            placeholder={field.placeholder}
-                                        />
-                                    </div>
-                                    <div>
-                                        <p className="mb-2 text-sm font-medium text-gray-500">Comment (optional)</p>
-                                        <input
-                                            type="text"
-                                            value={siteInfo[field.key].comment}
-                                            onChange={(e) => handleSiteInfoChange(field.key, 'comment', e.target.value)}
-                                            className={inputClass}
-                                        />
-                                    </div>
+                                <div key={field.key}>
+                                    <p className="mb-2 text-sm font-medium">{field.label} <Required /></p>
+                                    <input
+                                        type="text"
+                                        value={siteInfo[field.key].response}
+                                        onChange={(e) => handleSiteInfoChange(field.key, 'response', e.target.value)}
+                                        className={inputClass}
+                                        placeholder={field.placeholder}
+                                        required
+                                    />
+                                    <input
+                                        type="text"
+                                        value={siteInfo[field.key].comment}
+                                        onChange={(e) => handleSiteInfoChange(field.key, 'comment', e.target.value)}
+                                        className={commentInputClass}
+                                        placeholder="Add a comment (optional)"
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -267,11 +270,11 @@ export default function QuoteRequest() {
                         <h2 className="text-2xl font-medium mb-6">Type of Service</h2>
 
                         <div className="mb-6">
-                            <p className="mb-2 font-medium">Origin of the Machine</p>
+                            <p className="mb-2 font-medium">Origin of the Machine <Required /></p>
                             <div className="flex flex-col gap-2">
                                 {['Provided by Client', 'Provided by EPCA'].map((opt) => (
                                     <label key={opt} className="flex items-center gap-2 text-sm text-gray-700">
-                                        <input type="radio" name="origin" value={opt} checked={formData.origin === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" />
+                                        <input type="radio" name="origin" value={opt} checked={formData.origin === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" required />
                                         {opt}{opt === 'Provided by Client' ? ' (if client is donating the machine)' : ''}
                                     </label>
                                 ))}
@@ -279,11 +282,11 @@ export default function QuoteRequest() {
                         </div>
 
                         <div className="mb-6">
-                            <p className="mb-2 font-medium">Contract Options</p>
+                            <p className="mb-2 font-medium">Contract Options <Required /></p>
                             <div className="flex flex-col gap-2">
                                 {['Outright Purchase', 'Leasing Agreement - NO CAPEX'].map((opt) => (
                                     <label key={opt} className="flex items-center gap-2 text-sm text-gray-700">
-                                        <input type="radio" name="contractOption" value={opt} checked={formData.contractOption === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" />
+                                        <input type="radio" name="contractOption" value={opt} checked={formData.contractOption === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" required />
                                         {opt}
                                     </label>
                                 ))}
@@ -302,11 +305,11 @@ export default function QuoteRequest() {
                         </div>
 
                         <div className="mb-2">
-                            <p className="mb-2 font-medium">Include Fast DC Charger</p>
+                            <p className="mb-2 font-medium">Include Fast DC Charger <Required /></p>
                             <div className="flex gap-6">
                                 {['Yes', 'No'].map((opt) => (
                                     <label key={opt} className="flex items-center gap-2 text-sm text-gray-700">
-                                        <input type="radio" name="includeFastDcCharger" value={opt} checked={formData.includeFastDcCharger === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" />
+                                        <input type="radio" name="includeFastDcCharger" value={opt} checked={formData.includeFastDcCharger === opt} onChange={handleInputChange} className="w-4 h-4 text-[#00CC66] focus:ring-[#00CC66]" required />
                                         {opt}
                                     </label>
                                 ))}
