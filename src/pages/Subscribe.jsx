@@ -41,7 +41,18 @@ const Subscribe = () => {
             <Navbar mode="dark" />
             <div className="max-w-2xl mx-auto px-4 py-16 mt-12">
                 <h1 className="text-4xl font-medium text-center mb-6">Subscribe to EPCA Updates</h1>
-                <p className="text-center text-gray-700 mb-10">Join our newsletter to receive product updates, press releases, and event announcements.</p>
+                <p className="text-center text-gray-700 mb-6">Join our newsletter to receive product updates, press releases, and event announcements.</p>
+
+                <div className="text-center mb-10">
+                    <a
+                        href="https://clt1654008.bmeurl.co/14295166"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-6 py-3 font-medium rounded-md border border-[#00CC66] text-[#00CC66] hover:bg-[#00CC66] hover:text-white transition-colors"
+                    >
+                        See Latest Newsletter
+                    </a>
+                </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                     <div>
